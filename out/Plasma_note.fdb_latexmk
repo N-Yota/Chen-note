@@ -1,6 +1,6 @@
 # Fdb version 4
-["lualatex"] 1756456212.27287 "/Users/naka/Desktop/latex/Chen-note/Plasma_note.tex" "out/Plasma_note.pdf" "Plasma_note" 1756456213.81425 0
-  "/Users/naka/Desktop/latex/Chen-note/Plasma_note.tex" 1756450622.15809 912 c0a9da185dd5d33e1ad6ebe4b5a5b995 ""
+["lualatex"] 1756951564.95228 "/Users/naka/Desktop/latex/Chen-note/Plasma_note.tex" "out/Plasma_note.pdf" "Plasma_note" 1756951566.46155 0
+  "/Users/naka/Desktop/latex/Chen-note/Plasma_note.tex" 1756951563.48859 917 40ef6953a30fc2391986ff512de8d647 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1756358818.60447 1924615 00e631720a15f814ed6146121037dccf ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1756358816.80226 2011213 f3ef4f31d2fe078f6ff31258426a4ba7 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/ipaexg.luc" 1756439561.08987 1416495 a26f24b5c2d999306c63d4a959cd456b ""
@@ -13,7 +13,7 @@
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc" 1756439561.55943 128516 d25d6ff58e1079629986a51338bfd167 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc" 1756358268.64458 128375 6a1f11bd388330107704b77c6417c07b ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1756358817.0986 128146 725fe7f98082e4316d75600fb2954f4b ""
-  "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1756450623.93386 6935 61d5b767be66e18cbbf9a5b31b84ed88 ""
+  "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1756709733.00553 7225 8bfc6adaf71b4f5cb639be5ef1dbc187 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1756358268.52677 407907 fb7a1692875c93690ee68d837d95fb61 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatexja/extra_haranoajigothic-medium.luc" 1756358818.68378 321567 0255ab164706cc8c51a947045dd2c12c ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatexja/extra_haranoajimincho-regular.luc" 1756358816.89273 322628 82aa0cd87d5621b6bedde516ba9b6eb5 ""
@@ -193,8 +193,8 @@
   "/usr/local/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty" 1720988330 18655 988d7f23464591f321cce5720dc67e3d ""
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1756097684 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1756097610 5582628 44ab61309d0590893264e75f759ab203 ""
-  "Plasma_note.tex" 1756450622.15809 912 c0a9da185dd5d33e1ad6ebe4b5a5b995 ""
-  "out/Plasma_note.aux" 1756456213.54027 419 4ac5ee15acf7aed1b4174a58a2682810 "lualatex"
+  "Plasma_note.tex" 1756951563.48859 917 40ef6953a30fc2391986ff512de8d647 ""
+  "out/Plasma_note.aux" 1756951566.1924 420 ccc362331ac35a64022952768bce5716 "lualatex"
   (generated)
   "out/Plasma_note.aux"
   "out/Plasma_note.log"
