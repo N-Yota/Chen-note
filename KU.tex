@@ -4,8 +4,11 @@
 \usepackage{graphicx}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{xcolor}
-
+\usepackage{mathtools}
+\usepackage{siunitx}
 \usepackage{amsmath}
+\usepackage{sepnum} % sepnumパッケージを読み込む
+\usepackage{at}
 \numberwithin{equation}{section} % 数式番号をセクションごとに分ける
 
 
@@ -90,7 +93,141 @@ $n_i \sim 1 cm^{-3}$と非常に低密度のため、再結合が遅く、高温
 
 
 \subsection{温度の概念}
-先に進む前に、温度の物理的な概念を見直そう。熱平衡状態の気体の速度分布はマクスウェル分布
+先に進む前に、温度の物理的な概念を見直そう。熱平衡状態の気体の速度分布はマクスウェル分布に従う。
+
+\begin{eqbox}{一次元のマクスウェル分布}
+\begin{equation}
+f(u) = A \exp\left(-\frac{1}{2}mu^2/KT\right),\hspace{2pc} A = n\left(\frac{m}{2\pi KT}\right)^{1/2} \label{Max}
+\end{equation}
+\end{eqbox}
+
+マクスウェル分布の導出は\url{https://www1.doshisha.ac.jp/~bukka/lecture/statistic/pdftext/std-02.pdf}を参照してほしい。
+
+分布の幅は定数Tによって特徴づけられ、これを温度と呼ぶ。Tの正確な意味を理解するために、この分布における粒子の平均運動エネルギーを計算しよう。
+
+\begin{equation}
+ E_{av} = \frac{\int_{-\infty}^{\infty} \frac{1}{2}mu^2 f(u)du}{\int_{-\infty}^{\infty} f(u)du} \label{AV.K}
+\end{equation}
+ここで、
+\begin{equation}
+  v_{th} \coloneqq (2KT/m)^{1/2}, \hspace{1pc} y \coloneqq u/v_{th}
+\end{equation}
+と定義すると、式\eqref{Max}は
+
+\begin{center}
+ $f(u) = A \exp(-u^2/v^2_{th})$ 
+\end{center}
+となり、式\eqref{AV.K}は
+
+\begin{center}
+  $E_{av} = \dfrac{\frac{1}{2}mAv^3_{th}\int_{-\infty}^{\infty}[\exp(-y^2)]y^2dy}{Av_{th}\int_{-\infty}^{\infty}[\exp(-y^2)]dy}$
+\end{center}
+となる。分子における積分部分について、部分積分を用いることで、
+
+\begin{center}
+  $\int_{-\infty}^{\infty} [-\frac{1}{2}\exp(-y^2)]'\cdot ydy = \left[-\frac{1}{2}\exp(-y^2)y\right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} -\frac{1}{2}\exp(-y^2)dy
+  = \frac{1}{2}\int_{-\infty}^{\infty}\exp(-y^2)dy $
+\end{center}
+となり、積分部分が相殺される。これより、
+
+\begin{equation}
+  E_{av} = \frac{\frac{1}{2}mAv_{th}^3\frac{1}{2}}{Av_{th}} = \frac{1}{4}mv_{th}^2 = \frac{1}{2}KT
+\end{equation}
+が得られる。つまり、平均運動エネルギーは$\frac{1}{2}KT$である。
+
+3次元への拡張は簡単であるため、導出を省き、結果を書くと、
+\begin{equation}
+  E_{av} = \frac{3}{2}KT
+\end{equation}
+
+上で見たように、$T$は$E_{av}$で記述できるため、プラズマ物理では温度をエネルギーの単位で表すことが慣習になっている。次元による混乱を避けるため$E_{av}$ではなく、$KT$で温度を表す。$KT = 1\space eV = 1.6 \time 10^{-19}\space J $から
+
+\begin{center}
+  $T= \dfrac{1.6\time 10{-19}}{1.38\time 10^{-23}} = {11,600}$
+\end{center}
+したがって、変換係数は、
+
+\begin{equation}
+  1\;\unit{eV}= {11,600}\; \unit{\kelvin}
+\end{equation}
+である。
+
+面白いのは、プラズマは異なる温度を持つことである。電子とイオンは衝突頻度の違いにより、それぞれ異なる温度
+  \( T_e, T_i \) を持つことがある。磁場中では、一種類の粒子でもローレンツ力の作用により、
+  平行方向の温度 \( T_{\parallel} \) と垂直方向の温度 \( T_{\perp} \) が異なる場合がある。
+
+次章に進む前に温度の概念の誤解を解かなければならない。高温であることが必ずしも「大量の熱」を意味するわけではないのだ。
+例えば、蛍光灯内の電子温度は約 $2\times 10^4 \ \mathrm{K}$ だが、電子密度が低いため壁への熱伝達は小さい。
+タバコの灰は高温でも、含まれる熱量が少ないため手に落ちても大きな火傷をしない。実験室プラズマでは $10^6 \ \mathrm{K}$ 程度の温度を持つこともあるが、
+密度が $10^{18}$--$10^{19} \ \mathrm{m^{-3}}$ と低いため、壁加熱は深刻な問題とならない。
+
+
+\subsection{デバイ遮蔽}
+プラズマが示す特徴的な挙動は電位を遮蔽することである。図\refeq{fig.debye}のように電源に繋がれた２つの荷電粒子をプラズマ中に入れた状況を考える。それぞれの荷電粒子は逆符号の粒子を印加し、荷電粒子の周りにイオンまたは電子の「雲」が作られる。
+荷電粒子のすぐ近くでは多くのイオン(電子)が引き寄せられるため、密度及びポテンシャルの勾配は高く、逆に遠方では低い。もしプラズマが低温で、熱運動がないのであれば、ポテンシャルは完全に遮蔽される。しかし、温度が高ければ、「雲」の
+端では静電ポテンシャルが低いため、熱エネルギーがその壁を越えることができる。このときの「雲」の縁は、ポテンシャルエネルギーが粒子の熱エネルギーKTとほぼ等しくなる半径で生じ、遮蔽は完全ではない。
+$KT/e$オーダーのポテンシャルがプラズマに漏れ込み、そこに有限の電場が存在することとなる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{debye.png}
+  \caption{デバイ遮蔽の様子}
+  \label{fig.debye}
+\end{figure}
+
+
+雲の中心（荷電粒子の位置）$x=0$のポテンシャルを$\phi _0$として、そこから減少し、無限遠で0になるポテンシャルを考える。このときの$\phi (x)$を求めてみよう。
+
+一次元のポアソン方程式より、
+
+\begin{equation}
+  \epsilon_0 \nabla^2 \phi = \epsilon_0 \frac{d^2\phi}{dx^2} = -e(n_i - n_e) \hspace{1pc}  (Z=1) \label{poisson}
+\end{equation}
+\\
+もし遠方の密度が$n_\infty$ であるなら、
+\begin{center}
+  $n_i = n_\infty$
+\end{center}
+となる。
+
+ポテンシャルエネルギー$q\phi$の存在下において、電子の分布関数（ボルツマン分布）は、
+\begin{equation}
+  f(u) = A\exp[-(\frac{1}{2}mv^2 + q\phi)/KT_e]
+\end{equation}
+$q=-e$として、$u$で積分すると、
+
+\begin{align}
+  n_e &= \iiint A\exp[-(\frac{1}{2}mv^2 - e\phi)/KT_e]du^3 = \underline{A}e^{\frac{e\phi}{K T_e}} 
+\underset{\equiv n_0}{\underline{\iiint e^{-\frac{m u^2}{2 K T_e}} \, du^3}}\\
+       &= n_0 \exp(e\phi/KT_e)
+\end{align}
+遠方（$x\to \infty$）で$\phi \to 0$より、
+\begin{center}
+  $n_e = n_0\cdot 1 = n_o = n_\infty$
+\end{center}
+これより、
+
+\begin{center}
+ $n_e =  n_\infty \exp(e\phi/KT_e)$
+\end{center}
+この式は3.5節でより物理的な洞察をもって導く。以上のことから、\eqref{poisson}式を書き直すと、
+
+\[
+\epsilon_0 \frac{d^2\phi}{dx^2}= en_\infty(e^{e\phi/KT_e} - 1)
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{結論}
 LaTeXを使えば、美しい日本語の文書を作成することができます。ぜひ活用してみてください。
