@@ -215,13 +215,38 @@ $q=-e$として、$u$で積分すると、
 \[
 \epsilon_0 \frac{d^2\phi}{dx^2}= en_\infty(e^{e\phi/KT_e} - 1)
 \]
+クーロンポテンシャルよりも運動エネルギーの方がはるかに大きい領域、つまり、$|e\phi / KT_e| \ll 1$の領域においてテーラー展開することで、
+\[
+ \epsilon_0 \frac{d^2\phi}{dx^2} = en_\infty\left[\frac{e\phi}{KT_e}+ \frac{1}{2}(\frac{e\phi}{KT_e})^2 + \cdots \right] \label{telor.1}
+\]
+さらに、デバイ長を次のように定義する。
+\begin{eqbox}{デバイ長}
+\begin{equation}
+ \lambda_D = \left(\dfrac{\epsilon_0 KT_e}{ne^2}\right)^{1/2} \label{debye}
+\end{equation}
+\end{eqbox}
+これにより、式\refeq{telor.1}の解は、
+\begin{equation}
+  \phi = \phi_0 \exp(-|x|/\lambda_D)
+\end{equation}
+となる。デバイ長は遮蔽の距離を決める。密度が増えると$\lambda_D$が減るのは、より電子が集まり、雲が濃くなるからである。$\lambda_D$の定義に使われているのは電子の温度である。なぜなら、電子はイオンに比べはるかに軽く、動きやすいため、電子が動くことにより遮蔽が生じるからである。
 
+式\refeq{debye}の便利な式として、
+\begin{align}
+  \begin{split}
+    \lambda_D &= 69(T_e/n)^{1/2}\si{\metre}, \hspace{2pc}  T_e\, \text{in} \, \si{\kelvin}\\
+    \lambda_D &= 7430(KT_e/n)^{1/2}\si{\metre}, \hspace{2pc} KT_e\, \text{in} \, \si{\electronvolt}
+  \end{split}
+\end{align}
+を与えておく。
 
+ここまでで先に述べた「準中性」を定義できる。もし距離$L$の系が$\lambda_D$よりはるかに大きい場合、デバイ遮蔽が生じる。その外では$\nabla^2 \phi$は非常に小さく、$n_i$は$10^{-6}$以上の精度で$n_e$と等しい。
+つまり、プラズマの「準中性」とは、$n$をプラズマ密度と呼ばれる一般的な密度とした場合、$n_i \simeq n_e \simeq n$とみなせるほど十分に中性であるが、興味深い電磁気力がすべて消滅するほど中性ではない状態のことである。 
 
+デバイ遮蔽は、電子が非常に高速で互いに衝突せず、熱分布を維持できない場合に破られる。後述するように、電子が非常に高温の場合、電子衝突は稀である。この場合、イオンの正電荷に引き寄せられた一部の電子は、角度をつけて高速で進入し、惑星を周回する衛星のようにイオンの周囲を軌道運動する。
+この仕組みは、後述するラングミュアプローブの解説で明らかになる。この効果を「反遮蔽」と呼ぶ者もいる。
 
-
-
-
+1つの種類の系でもデバイ遮蔽は起きることがいえるが、ここでは立ち入らないことにする。
 
 
 
