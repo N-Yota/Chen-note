@@ -7,6 +7,7 @@
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{sepnum} % sepnumパッケージを読み込む
 \usepackage{at}
 \numberwithin{equation}{section} % 数式番号をセクションごとに分ける
@@ -227,7 +228,7 @@ $q=-e$として、$u$で積分すると、
 \end{eqbox}
 これにより、式\refeq{telor.1}の解は、
 \begin{equation}
-  \phi = \phi_0 \exp(-|x|/\lambda_D)
+  \phi = \phi_0 \exp(-|x|/\lambda_D) \label{debye.poten}
 \end{equation}
 となる。デバイ長は遮蔽の距離を決める。密度が増えると$\lambda_D$が減るのは、より電子が集まり、雲が濃くなるからである。$\lambda_D$の定義に使われているのは電子の温度である。なぜなら、電子はイオンに比べはるかに軽く、動きやすいため、電子が動くことにより遮蔽が生じるからである。
 
@@ -247,6 +248,29 @@ $q=-e$として、$u$で積分すると、
 この仕組みは、後述するラングミュアプローブの解説で明らかになる。この効果を「反遮蔽」と呼ぶ者もいる。
 
 1つの種類の系でもデバイ遮蔽は起きることがいえるが、ここでは立ち入らないことにする。
+
+\subsection{プラズマパラメータ}
+上で述べたように、デバイ遮蔽が生じるのは「雲」を作るのに十分な粒子が存在するときである。
+\refeq{debye.poten}式からデバイ領域の粒子数$N_D$を計算できる。
+\begin{equation}
+  N_D = n\cdot \frac{4}{3}\pi \lambda_D ^3 = 1.38 \time 10^6T^{3/2}/n^{1/2} \hspace{1pc}(T\text{in}\, \si{\kelvin})
+\end{equation}
+
+「集団運動」をするためには、$\lambda_D \ll L$ に加えて、
+\begin{equation}
+  N_D \lll 1
+\end{equation}
+が必要である。この$N_D$を\textcolor{red}{プラズマパラメータ}と呼ぶ。
+
+\subsection{プラズマの条件}
+イオン化された気体がプラズマとみなされる条件は次の3つである。
+\begin{enumerate}
+  \item $\lambda_D \ll L$
+  \item $N_D \ggg 1$
+  \item $\omega_\tau > 1$
+\end{enumerate}
+
+
 
 
 
