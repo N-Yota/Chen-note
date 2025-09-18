@@ -10,7 +10,13 @@
 \usepackage{amssymb}
 \usepackage{sepnum} % sepnumパッケージを読み込む
 \usepackage{at}
+\usepackage{bm}
+\usepackage{titlesec}
 \numberwithin{equation}{section} % 数式番号をセクションごとに分ける
+\titleformat{\subsubsection}
+  {\normalfont\large\bfseries}
+  {\thesubsubsection}{1em}{}
+
 
 
 \usepackage[most]{tcolorbox}
@@ -28,9 +34,9 @@
 }
 
 
-\title{日本語のLaTeX入門}
-\author{あなたの名前}
-\date{\today}
+\title{Introduction to Plasma Physics}
+\author{中 陽太}
+\date{2025年8月29日}
 
 \begin{document}
 
@@ -267,8 +273,45 @@ $q=-e$として、$u$で積分すると、
 \begin{enumerate}
   \item $\lambda_D \ll L$
   \item $N_D \ggg 1$
-  \item $\omega_\tau > 1$
+  \item $\omega \tau > 1$
 \end{enumerate}
+1,2の条件はこれまでに述べた。3について、プラズマ中の荷電粒子は、電磁力によって支配されている必要がある。
+しかし、弱電離ガス（例：飛行機のジェット排気）では、中性粒子との衝突頻度が高すぎるため、運動は流体力学的な力に支配される。
+典型的なプラズマ振動の角振動数を$\omega$、中性粒子との平均衝突時間を$\tau$とすると、プラズマと言えるためには、$\omega \tau > 1$が必要である。
+
+\section{1粒子の運動}
+\subsection{一様な電場と磁場}
+プラズマの解析の難しい点は、流体のように個々の運動は考慮せず、集団運動で考える時もあれば、個々の粒子の集まりと考える時もあることである。
+まずは簡単な例として、この章では、1粒子が電場または磁場においての運動を確認しよう。
+
+\subsubsection{E=0}
+この系では粒子は単にサイクロトロン運動をする。運動方程式は、
+\begin{equation}
+  m\frac{d\bm{v}}{dt} = q\bm{v}\times \bm{B} \label{E=0}
+\end{equation}
+ここで、\bm{B}はz方向を向き、$\bm{B}=B\bm{\hat{z}}$である。\eqref{E=0}式から、
+\begin{equation}
+\begin{gathered}
+  m\dot{v}_x = qB v_y, \quad
+  m\dot{v}_y = -qB v_x, \quad
+  m\dot{v}_z = 0 \\
+  \begin{aligned}
+    \ddot{v}_x &= \frac{qB}{m}\dot{v}_y = -\left(\frac{qB}{m}\right)^2 v_x \\
+    \ddot{v}_y &= -\frac{qB}{m}\dot{v}_x = -\left(\frac{qB}{m}\right)^2 v_y
+  \end{aligned}
+\end{gathered}
+\end{equation}
+
+
+  
+
+
+
+
+
+
+
+
 
 
 

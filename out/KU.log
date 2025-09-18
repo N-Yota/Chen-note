@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.25)  10 SEP 2025 16:32
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.25)  18 SEP 2025 14:34
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/naka/Desktop/latex/Chen-note/KU.tex
@@ -629,18 +629,48 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \extratabsurround=\skip60
 \backup@length=\skip61
 \ar@cellbox=\box83
-)) (/usr/local/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-siunitx.sty) (/usr/local/texlive/2025/texmf-dist/tex/latex/sepnum/sepnum.sty
+)) (/usr/local/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-siunitx.sty) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/sepnum/sepnum.sty
 Package: sepnum 1996/09/05 v2.0 Insert a separator every three digits (br)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/mdwtools/at.sty
 Package: at 1996/05/02 1.3 @-command support (MDW)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+\symboldmincho=\mathgroup10
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box84
+\beforetitleunit=\skip62
+\aftertitleunit=\skip63
+\ttl@plus=\dimen197
+\ttl@minus=\dimen198
+\ttl@toksa=\toks33
+\titlewidth=\dimen199
+\titlewidthlast=\dimen256
+\titlewidthfirst=\dimen257
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
  (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks33
-\pgfutil@tempdima=\dimen197
-\pgfutil@tempdimb=\dimen198
+\pgfutil@everybye=\toks34
+\pgfutil@tempdima=\dimen258
+\pgfutil@tempdimb=\dimen259
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box84
+\pgfutil@abb=\box85
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
@@ -648,30 +678,30 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks34
-\pgfkeys@temptoks=\toks35
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks36
+\pgfkeys@tmptoks=\toks37
 ))
-\pgf@x=\dimen199
-\pgf@y=\dimen256
-\pgf@xa=\dimen257
-\pgf@ya=\dimen258
-\pgf@xb=\dimen259
-\pgf@yb=\dimen260
-\pgf@xc=\dimen261
-\pgf@yc=\dimen262
-\pgf@xd=\dimen263
-\pgf@yd=\dimen264
+\pgf@x=\dimen260
+\pgf@y=\dimen261
+\pgf@xa=\dimen262
+\pgf@ya=\dimen263
+\pgf@xb=\dimen264
+\pgf@yb=\dimen265
+\pgf@xc=\dimen266
+\pgf@yc=\dimen267
+\pgf@xd=\dimen268
+\pgf@yd=\dimen269
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
 \c@pgf@counta=\count325
 \c@pgf@countb=\count326
 \c@pgf@countc=\count327
 \c@pgf@countd=\count328
-\t@pgf@toka=\toks37
-\t@pgf@tokb=\toks38
-\t@pgf@tokc=\toks39
+\t@pgf@toka=\toks38
+\t@pgf@tokb=\toks39
+\t@pgf@tokc=\toks40
 \pgf@sys@id@count=\count329
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
@@ -690,52 +720,52 @@ File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen265
+\pgfmath@dimen=\dimen270
 \pgfmath@count=\count332
-\pgfmath@box=\box85
-\pgfmath@toks=\toks40
-\pgfmath@stack@operand=\toks41
-\pgfmath@stack@operation=\toks42
+\pgfmath@box=\box86
+\pgfmath@toks=\toks41
+\pgfmath@stack@operand=\toks42
+\pgfmath@stack@operation=\toks43
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count333
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen266
-\pgf@picmaxx=\dimen267
-\pgf@picminy=\dimen268
-\pgf@picmaxy=\dimen269
-\pgf@pathminx=\dimen270
-\pgf@pathmaxx=\dimen271
-\pgf@pathminy=\dimen272
-\pgf@pathmaxy=\dimen273
-\pgf@xx=\dimen274
-\pgf@xy=\dimen275
-\pgf@yx=\dimen276
-\pgf@yy=\dimen277
-\pgf@zx=\dimen278
-\pgf@zy=\dimen279
+\pgf@picminx=\dimen271
+\pgf@picmaxx=\dimen272
+\pgf@picminy=\dimen273
+\pgf@picmaxy=\dimen274
+\pgf@pathminx=\dimen275
+\pgf@pathmaxx=\dimen276
+\pgf@pathminy=\dimen277
+\pgf@pathmaxy=\dimen278
+\pgf@xx=\dimen279
+\pgf@xy=\dimen280
+\pgf@yx=\dimen281
+\pgf@yy=\dimen282
+\pgf@zx=\dimen283
+\pgf@zy=\dimen284
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen280
-\pgf@path@lasty=\dimen281
+\pgf@path@lastx=\dimen285
+\pgf@path@lasty=\dimen286
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen282
-\pgf@shorten@start@additional=\dimen283
+\pgf@shorten@end@additional=\dimen287
+\pgf@shorten@start@additional=\dimen288
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box86
-\pgf@hbox=\box87
-\pgf@layerbox@main=\box88
+\pgfpic=\box87
+\pgf@hbox=\box88
+\pgf@layerbox@main=\box89
 \pgf@picture@serial@count=\count334
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen284
+\pgflinewidth=\dimen289
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen285
-\pgf@pt@y=\dimen286
-\pgf@pt@temp=\dimen287
+\pgf@pt@x=\dimen290
+\pgf@pt@y=\dimen291
+\pgf@pt@temp=\dimen292
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -744,17 +774,17 @@ File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen288
+\pgfarrowsep=\dimen293
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen289
+\pgf@max=\dimen294
 \pgf@sys@shading@range@num=\count335
 \pgf@shadingcount=\count336
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box89
+\pgfexternal@startupbox=\box90
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -765,40 +795,40 @@ File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box90
+\pgfnodeparttextbox=\box91
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen290
-\pgf@nodesepend=\dimen291
+\pgf@nodesepstart=\dimen295
+\pgf@nodesepend=\dimen296
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen292
-\pgffor@skip=\dimen293
-\pgffor@stack=\toks43
-\pgffor@toks=\toks44
+\pgffor@iter=\dimen297
+\pgffor@skip=\dimen298
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count337
-\pgfplotmarksize=\dimen294
+\pgfplotmarksize=\dimen299
 )
-\tikz@lastx=\dimen295
-\tikz@lasty=\dimen296
-\tikz@lastxsaved=\dimen297
-\tikz@lastysaved=\dimen298
-\tikz@lastmovetox=\dimen299
-\tikz@lastmovetoy=\dimen300
-\tikzleveldistance=\dimen301
-\tikzsiblingdistance=\dimen302
-\tikz@figbox=\box91
-\tikz@figbox@bg=\box92
-\tikz@tempbox=\box93
-\tikz@tempbox@bg=\box94
+\tikz@lastx=\dimen300
+\tikz@lasty=\dimen301
+\tikz@lastxsaved=\dimen302
+\tikz@lastysaved=\dimen303
+\tikz@lastmovetox=\dimen304
+\tikz@lastmovetoy=\dimen305
+\tikzleveldistance=\dimen306
+\tikzsiblingdistance=\dimen307
+\tikz@figbox=\box92
+\tikz@figbox@bg=\box93
+\tikz@tempbox=\box94
+\tikz@tempbox@bg=\box95
 \tikztreelevel=\count338
 \tikznumberofchildren=\count339
 \tikznumberofcurrentchild=\count340
@@ -814,27 +844,27 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks45
-\verbatim@line=\toks46
+\every@verbatim=\toks46
+\verbatim@line=\toks47
 \verbatim@in@stream=\read3
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
  (/usr/local/texlive/2025/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box95
-\tcb@upperbox=\box96
-\tcb@lowerbox=\box97
-\tcb@phantombox=\box98
+\tcb@titlebox=\box96
+\tcb@upperbox=\box97
+\tcb@lowerbox=\box98
+\tcb@phantombox=\box99
 \c@tcbbreakpart=\count346
 \c@tcblayer=\count347
 \c@tcolorbox@number=\count348
-\l__tcobox_tmpa_box=\box99
-\l__tcobox_tmpa_dim=\dimen303
-\tcb@temp=\box100
+\l__tcobox_tmpa_box=\box100
+\l__tcobox_tmpa_dim=\dimen308
 \tcb@temp=\box101
 \tcb@temp=\box102
 \tcb@temp=\box103
+\tcb@temp=\box104
  (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.4.1'
 \c@tcbrastercolumn=\count349
@@ -849,7 +879,7 @@ Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
 Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
-\l__tikzfill_img_box=\box104
+\l__tikzfill_img_box=\box105
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.4.1'
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
@@ -858,18 +888,18 @@ Library (tcolorbox): 'tcbbreakable.code.tex' version '6.4.1'
 Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 )
 Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
-\tcb@testbox=\box105
-\tcb@totalupperbox=\box106
-\tcb@totallowerbox=\box107
+\tcb@testbox=\box106
+\tcb@totalupperbox=\box107
+\tcb@totallowerbox=\box108
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
 Library (tcolorbox): 'tcbhooks.code.tex' version '6.4.1'
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.4.1'
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '6.4.1'
-\tcbfitdim=\dimen304
-\tcb@lowerfitdim=\dimen305
-\tcb@upperfitdim=\dimen306
+\tcbfitdim=\dimen309
+\tcb@lowerfitdim=\dimen310
+\tcb@upperfitdim=\dimen311
 \tcb@cur@hbadness=\count353
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.4.1'
@@ -877,24 +907,24 @@ Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.4.1'
 Library (tcolorbox): 'tcblistings.code.tex' version '6.4.1'
 (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count354
-\lst@gtempboxa=\box108
-\lst@token=\toks47
+\lst@gtempboxa=\box109
+\lst@token=\toks48
 \lst@length=\count355
-\lst@currlwidth=\dimen307
+\lst@currlwidth=\dimen312
 \lst@column=\count356
 \lst@pos=\count357
-\lst@lostspace=\dimen308
-\lst@width=\dimen309
+\lst@lostspace=\dimen313
+\lst@width=\dimen314
 \lst@newlines=\count358
 \lst@lineno=\count359
-\lst@maxwidth=\dimen310
+\lst@maxwidth=\dimen315
  (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 \c@lstnumber=\count360
 \lst@skipnumbers=\count361
-\lst@framebox=\box109
+\lst@framebox=\box110
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
@@ -904,10 +934,10 @@ Package: luatexbase-cctb 2015/10/04 v1.3 luatexbase interface to LuaTeX (legacy 
 )
 \ltj@lst@japanese@min=\count362
 \CatcodeTableLTJlistings=\catcodetable17
-\ltj@lst@frame@lslimit=\dimen311
+\ltj@lst@frame@lslimit=\dimen316
  (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\lst@WFtoken=\toks48
+\lst@WFtoken=\toks49
 \lst@WF=\write4
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
 Library (tcolorbox): 'tcblistingscore.code.tex' version '6.4.1'
@@ -932,54 +962,54 @@ Library (tcolorbox): 'tcbposter.code.tex' version '6.4.1'
 )) (/usr/local/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
 Package: lltjp-array 2024-07-21 Patch to array for LuaTeX-ja
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 34.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 41.
  (./out/KU.aux)
 \openout1 = KU.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count364
-\scratchdimen=\dimen312
-\scratchbox=\box110
+\scratchdimen=\dimen317
+\scratchbox=\box111
 \nofMPsegments=\count365
 \nofMParguments=\count366
-\everyMPshowfont=\toks49
+\everyMPshowfont=\toks50
 \MPscratchCnt=\count367
-\MPscratchDim=\dimen313
+\MPscratchDim=\dimen318
 \MPnumerator=\count368
 \makeMPintoPDFobject=\count369
-\everyMPtoPDFconversion=\toks50
+\everyMPtoPDFconversion=\toks51
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 34.
+Package hyperref Info: Link coloring ON on input line 41.
  (./out/KU.out) (./out/KU.out)
 \@outlinefile=\write5
 
@@ -987,107 +1017,142 @@ Package hyperref Info: Link coloring ON on input line 34.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 34.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 41.
 \c@lstlisting=\count370
 (load cache: extra_lmroman17-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 15.97903pt on input line 37.
+(Font)              scaled to size 15.97903pt on input line 44.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 15.97903pt on input line 37.
+(Font)              scaled to size 15.97903pt on input line 44.
 (load cache: extra_lmroman12-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 37.
+(Font)              scaled to size 11.09656pt on input line 44.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 37.
+(Font)              scaled to size 11.09656pt on input line 44.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 5.54828pt on input line 37.
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 39.
+(Font)              scaled to size 5.54828pt on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 39.
-(load cache: extra_haranoajigothic-medium.luc)(load cache: extra_lmsans10-regular.luc)
+(Font)              scaled to size 11.09656pt on input line 44.
+(load cache: extra_haranoajigothic-medium.luc)
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 7.3977pt on input line 44.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 5.54828pt on input line 44.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 46.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 46.
+(load cache: extra_lmsans10-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 39.
+(Font)              scaled to size 13.31586pt on input line 46.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 39.
+(Font)              scaled to size 13.31586pt on input line 46.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 39.
+(Font)              scaled to size 13.31586pt on input line 46.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 39.
+(Font)              scaled to size 13.31586pt on input line 46.
 (load cache: extra_lmsans12-regular.luc) (./out/KU.toc
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
 (Font)              scaled to size 6.47299pt on input line 2.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 2.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 6.47299pt on input line 2.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 4.62357pt on input line 2.
 )
 \tf@toc=\write6
 
 \openout6 = KU.toc
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 54.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 54.
-(load cache: extra_lmroman10-bold.luc)
-LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <10> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 63.
-LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 63.
+(Font)              scaled to size 11.09656pt on input line 61.
 
 
 [1
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<solid_angle.png, id=94, 740.7675pt x 335.2525pt>
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}](load cache: extra_lmroman10-bold.luc)
+LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <10> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 70.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 70.
+LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 70.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 70.
+<solid_angle.png, id=112, 740.7675pt x 335.2525pt>
 File: solid_angle.png Graphic file (type png)
 <use solid_angle.png>
-Package luatex.def Info: solid_angle.png  used on input line 89.
+Package luatex.def Info: solid_angle.png  used on input line 96.
 (luatex.def)             Requested size: 317.17522pt x 143.54701pt.
 (load cache: extra_lmroman9-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 90.
+(Font)              scaled to size 8.32242pt on input line 97.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 90.
+(Font)              scaled to size 8.32242pt on input line 97.
+(load cache: extra_lmmono10-regular.luc)
 
+[2]
 
-[2<./solid_angle.png>](load cache: extra_lmmono10-regular.luc)
-
-[3]
-<debye.png, id=128, 692.5875pt x 305.14pt>
+[3<./solid_angle.png>]
+<debye.png, id=150, 692.5875pt x 305.14pt>
 File: debye.png Graphic file (type png)
 <use debye.png>
-Package luatex.def Info: debye.png  used on input line 173.
+Package luatex.def Info: debye.png  used on input line 180.
 (luatex.def)             Requested size: 317.17522pt x 139.74217pt.
 
 
-[4<out/debye.png>]
+[4<out/debye.png>](load cache: extra_lmroman7-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 6.47299pt on input line 247.
+(load cache: extra_lmroman5-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 247.
 
-[5] (./out/KU.aux)
+
+[5]
+
+[6](load cache: extra_lmroman12-bold.luc)
+LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <12> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 287.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 287.
+LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <12> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 287.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 287.
+
+
+[7] (./out/KU.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `KU.out' has not changed.
-(rerunfilecheck)             Checksum: E1C3B10E93E47BC6672CFB553A9F5F4F;586.
+(rerunfilecheck)             Checksum: 2FD43BF151125F7AC98F1C39A8E61AFA;1038.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33430 strings out of 475506
- 156557,1373583 words of node,token memory allocated
- 4445 words of node memory still in use:
-   35 hlist, 2 vlist, 17 rule, 2 glue, 4 kern, 1 glyph, 1441 attribute, 60 glue_spec, 163 attribute_list, 2 write, 38 user_defined, 24 pdf_literal, 3 pdf_action, 24 pdf_colorstack nodes
-   avail lists: 1:45,2:40548,3:633,4:439,5:268,6:69,7:4540,8:208,9:2058,10:39,11:21
- 55596 multiletter control sequences out of 65536+600000
- 62 fonts using 49052079 bytes
- 125i,14n,128p,1882b,1376s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on KU.pdf (5 pages, 392465 bytes).
+ 34413 strings out of 475506
+ 195699,1373583 words of node,token memory allocated
+ 7493 words of node memory still in use:
+   78 hlist, 6 vlist, 20 rule, 12 math, 33 glue, 13 kern, 2 sub_mlist, 74 glyph, 2189 attribute, 61 glue_spec, 240 attribute_list, 2 write, 58 user_defined, 24 pdf_literal, 3 pdf_action, 24 pdf_colorstack nodes
+   avail lists: 1:49,2:50825,3:957,4:442,5:230,6:79,7:5253,8:208,9:2457,10:39,11:27
+ 56535 multiletter control sequences out of 65536+600000
+ 99 fonts using 66443079 bytes
+ 125i,16n,128p,1882b,1382s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on KU.pdf (7 pages, 447011 bytes).
 
-PDF statistics: 248 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 131072)
- 304 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 316 PDF objects out of 1000 (max. 8388607)
+ 231 compressed objects within 3 object streams
+ 45 named destinations out of 1000 (max. 131072)
+ 336 words of extra memory for PDF output out of 10000 (max. 100000000)
 
