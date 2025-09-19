@@ -356,8 +356,8 @@ OUTPUT out/KU.toc
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-bold.luc
 INPUT /Users/naka/Library/texlive/2025/texmf-var/luatexja/extra_lmroman10-bold.luc
-INPUT ./solid_angle.png
-INPUT ./solid_angle.png
+INPUT ./out/solid_angle.png
+INPUT out/solid_angle.png
 INPUT /Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman9-regular.luc
 INPUT /Users/naka/Library/texlive/2025/texmf-var/luatexja/extra_lmroman9-regular.luc
 INPUT /Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc

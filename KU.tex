@@ -232,13 +232,13 @@ $q=-e$として、$u$で積分すると、
  \lambda_D = \left(\dfrac{\epsilon_0 KT_e}{ne^2}\right)^{1/2} \label{debye}
 \end{equation}
 \end{eqbox}
-これにより、式\refeq{telor.1}の解は、
+これにより、式\eqref{telor.1}の解は、
 \begin{equation}
   \phi = \phi_0 \exp(-|x|/\lambda_D) \label{debye.poten}
 \end{equation}
 となる。デバイ長は遮蔽の距離を決める。密度が増えると$\lambda_D$が減るのは、より電子が集まり、雲が濃くなるからである。$\lambda_D$の定義に使われているのは電子の温度である。なぜなら、電子はイオンに比べはるかに軽く、動きやすいため、電子が動くことにより遮蔽が生じるからである。
 
-式\refeq{debye}の便利な式として、
+式\eqref{debye}の便利な式として、
 \begin{align}
   \begin{split}
     \lambda_D &= 69(T_e/n)^{1/2}\si{\metre}, \hspace{2pc}  T_e\, \text{in} \, \si{\kelvin}\\
@@ -257,7 +257,7 @@ $q=-e$として、$u$で積分すると、
 
 \subsection{プラズマパラメータ}
 上で述べたように、デバイ遮蔽が生じるのは「雲」を作るのに十分な粒子が存在するときである。
-\refeq{debye.poten}式からデバイ領域の粒子数$N_D$を計算できる。
+\eqref{debye.poten}式からデバイ領域の粒子数$N_D$を計算できる。
 \begin{equation}
   N_D = n\cdot \frac{4}{3}\pi \lambda_D ^3 = 1.38 \time 10^6T^{3/2}/n^{1/2} \hspace{1pc}(T\text{in}\, \si{\kelvin})
 \end{equation}
@@ -297,19 +297,77 @@ $q=-e$として、$u$で積分すると、
   m\dot{v}_z = 0 \\
   \begin{aligned}
     \ddot{v}_x &= \frac{qB}{m}\dot{v}_y = -\left(\frac{qB}{m}\right)^2 v_x \\
-    \ddot{v}_y &= -\frac{qB}{m}\dot{v}_x = -\left(\frac{qB}{m}\right)^2 v_y
+    \ddot{v}_y &= -\frac{qB}{m}\dot{v}_x = -\left(\frac{qB}{m}\right)^2 v_y \label{E=0.eq}
   \end{aligned}
 \end{gathered}
+\end{equation} 
+これは調和振動子を表し、その振動数を
+
+\begin{eqbox}{サイクロトロン振動数}
+\begin{equation}
+  \omega_c = \frac{|q|B}{m} \label{cyclon}
 \end{equation}
+\end{eqbox}  
+と定義すると、\eqref{E=0.eq}式の解は、
 
+\[
+v_{x,y} = v_\perp \exp(\pm i\omega_ct + i\delta_{x,y})
+\]
+ここで、\pm の符号はイオンであれば「＋」、電子であれば「−」である。また、$v_\perp$は\bm{B}に垂直な速度の成分である。
 
-  
+位相の任意性から、
+\begin{subequations}
+  \begin{equation}
+    v_x = v_\perp e^{i\omega_c t} = \dot{x}
+  \end{equation}
+と選ぶことにより、
+  \begin{equation}
+    v_y = \frac{m}{qB}\dot{v_x} = \pm \frac{1}{\omega_c}\dot{v_x} = \pm iv_\perp e^{i\omega_c t} = \dot{y}
+  \end{equation}
+\end{subequations}
+これらを積分することで、
 
+\begin{equation}
+  x - x_0 = -i\frac{v_\perp}{\omega_c}e^{i\omega_c t}, \hspace{2pc} y -y_0 = \pm \frac{v_\perp}{\omega_c}e^{i\omega_c t} \label{larmor.eq}
+\end{equation}
+ここで、ラーモア半径を
 
+\begin{eqbox}{ラーモア半径}
+\begin{equation}
+  r_L \equiv \frac{v_\perp}{\omega_c} = \frac{mv_\perp}{|q|B} \label{larmor.radi}
+\end{equation}
+\end{eqbox}  
+を定義すると、\eqref{larmor.eq}式は、
 
+\begin{equation}
+  x - x_0 = r_L \sin \omega_c t, \hspace{2pc} y -y_0 = \pm r_L \cos \omega_c t
+\end{equation}
+となる。これは案内中心$(x_0, y_0)$を中心とした円軌道を表す。
 
+粒子の回転運動の向きは磁場を減らそうとする向きであり、イオンと電子で反対になる。また、この働きからプラズマは反磁性であると言える。
+粒子はこのサイクロトロン運動に加え、\bm{B}の方向に$v_z$で等加速度運動している。
 
+\subsubsection{有限の電場}
+次に、一様な電場がある場合を考える。同様に\bm{B}の方向にz軸をとり、$E_y=0$となるように\bm{E}をx-z面に配置するように座標空間をとる。
+先の議論からz成分と他の成分は分けて考えることができる。運動方程式は、
 
+\begin{equation}
+  m\frac{d\bm{v}}{dt} = q(\bm{E} + \bm{v}\times \bm{B}) \label{finite.E}
+\end{equation}
+z成分は簡単に求まり、
+
+\begin{equation}
+  \frac{dv_z}{dt} = \frac{q}{m}E_z \hspace{3pc} \therefore v_z = \frac{qE_z}{m}t + v_{z0}
+\end{equation}
+となる。
+
+残りの成分、つまり\bm{B}に垂直な面での運動は、\eqref{finite.E}式から
+\begin{align}
+  \begin{split}
+    \frac{dv_x}{dt} &= \frac{q}{m}E_x \pm \omega_c v_y\\
+    \frac{dv_y}{dt} &= 0 \mp \omega_c v_x
+  \end{split}
+\end{align}
 
 
 

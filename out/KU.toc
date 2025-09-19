@@ -8,4 +8,5 @@
 \contentsline {section}{\numberline {2}1粒子の運動}{7}{section.2}%
 \contentsline {subsection}{\numberline {2.1}一様な電場と磁場}{7}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}E=0}{7}{subsubsection.2.1.1}%
-\contentsline {section}{\numberline {3}結論}{7}{section.3}%
+\contentsline {subsubsection}{\numberline {2.1.2}有限の電場}{8}{subsubsection.2.1.2}%
+\contentsline {section}{\numberline {3}結論}{8}{section.3}%

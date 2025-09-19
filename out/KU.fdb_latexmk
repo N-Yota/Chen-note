@@ -1,6 +1,6 @@
 # Fdb version 4
-["lualatex"] 1758173643.1298 "/Users/naka/Desktop/latex/Chen-note/KU.tex" "out/KU.pdf" "KU" 1758173645.61294 0
-  "/Users/naka/Desktop/latex/Chen-note/KU.tex" 1758173642.86806 17817 6ab6f7e89e3708ae6ab9c88db58adfa5 ""
+["lualatex"] 1758266645.10773 "/Users/naka/Desktop/latex/Chen-note/KU.tex" "out/KU.pdf" "KU" 1758266647.51184 0
+  "/Users/naka/Desktop/latex/Chen-note/KU.tex" 1758266642.36201 20420 1c338fd73b3b0d084af010ed17259ada ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1756358818.60447 1924615 00e631720a15f814ed6146121037dccf ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1756358816.80226 2011213 f3ef4f31d2fe078f6ff31258426a4ba7 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1756951596.97749 81837 7091cab214959897276971ec5ae174a1 ""
@@ -353,12 +353,12 @@
   "/usr/local/texlive/2025/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1601931076 5585 8e4615c54073c390d14154b29cee89cb ""
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1756097684 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1756097610 5582628 44ab61309d0590893264e75f759ab203 ""
-  "KU.tex" 1758173642.86806 17817 6ab6f7e89e3708ae6ab9c88db58adfa5 ""
-  "out/KU.aux" 1758173645.29213 2449 4006c488de5b38b6d6179fa0c15b1497 "lualatex"
-  "out/KU.out" 1758173645.29287 1038 2fd43bf151125f7ac98f1c39a8e61afa "lualatex"
-  "out/KU.toc" 1758173645.29311 899 413c7267a18422fbeab3a73ad34d9c9f "lualatex"
+  "KU.tex" 1758266642.36201 20420 1c338fd73b3b0d084af010ed17259ada ""
+  "out/KU.aux" 1758266647.20899 2848 b8a5510578902267b19c0e80e5f69932 "lualatex"
+  "out/KU.out" 1758266647.20976 1038 2fd43bf151125f7ac98f1c39a8e61afa "lualatex"
+  "out/KU.toc" 1758266647.21029 990 bfc724ac5971df1b009f2d3dbb83e9b9 "lualatex"
   "out/debye.png" 1757314844.67222 79289 aafd2b7996b601536e6086cbe33ec87f ""
-  "solid_angle.png" 1756953576.11445 81828 a6c3270e02c68c7003e5327b38902556 ""
+  "out/solid_angle.png" 1756953576.11445 81828 a6c3270e02c68c7003e5327b38902556 ""
   (generated)
   "out/KU.aux"
   "out/KU.log"

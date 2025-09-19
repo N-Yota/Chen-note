@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.25)  18 SEP 2025 14:34
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.8.25)  19 SEP 2025 16:24
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/naka/Desktop/latex/Chen-note/KU.tex
@@ -1101,7 +1101,7 @@ LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
 
 [2]
 
-[3<./solid_angle.png>]
+[3<out/solid_angle.png>]
 <debye.png, id=150, 692.5875pt x 305.14pt>
 File: debye.png Graphic file (type png)
 <use debye.png>
@@ -1130,7 +1130,11 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 11.09656pt on input line 287.
 
 
-[7] (./out/KU.aux)
+[7]
+
+[8]
+
+[9] (./out/KU.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1140,19 +1144,19 @@ Package rerunfilecheck Info: File `KU.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 34413 strings out of 475506
+ 34437 strings out of 475506
  195699,1373583 words of node,token memory allocated
- 7493 words of node memory still in use:
-   78 hlist, 6 vlist, 20 rule, 12 math, 33 glue, 13 kern, 2 sub_mlist, 74 glyph, 2189 attribute, 61 glue_spec, 240 attribute_list, 2 write, 58 user_defined, 24 pdf_literal, 3 pdf_action, 24 pdf_colorstack nodes
-   avail lists: 1:49,2:50825,3:957,4:442,5:230,6:79,7:5253,8:208,9:2457,10:39,11:27
- 56535 multiletter control sequences out of 65536+600000
+ 7461 words of node memory still in use:
+   89 hlist, 10 vlist, 24 rule, 12 math, 35 glue, 16 kern, 2 sub_mlist, 40 glyph, 2201 attribute, 61 glue_spec, 237 attribute_list, 2 write, 55 user_defined, 24 pdf_literal, 3 pdf_action, 24 pdf_colorstack nodes
+   avail lists: 1:49,2:50816,3:957,4:445,5:227,6:79,7:5285,8:208,9:2438,10:39,11:27
+ 56546 multiletter control sequences out of 65536+600000
  99 fonts using 66443079 bytes
  125i,16n,128p,1882b,1382s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on KU.pdf (7 pages, 447011 bytes).
+Output written on KU.pdf (9 pages, 462751 bytes).
 
-PDF statistics: 316 PDF objects out of 1000 (max. 8388607)
- 231 compressed objects within 3 object streams
- 45 named destinations out of 1000 (max. 131072)
+PDF statistics: 340 PDF objects out of 1000 (max. 8388607)
+ 253 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 131072)
  336 words of extra memory for PDF output out of 10000 (max. 100000000)
 
