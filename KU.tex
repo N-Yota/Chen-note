@@ -17,6 +17,19 @@
   {\normalfont\large\bfseries}
   {\thesubsubsection}{1em}{}
 
+\usepackage[normalem]{ulem} % \uline, \uwave
+
+% 直線 → \ulineunder、波線 → \uwaveunder
+\newcommand{\ulineunder}[2]{%
+  \underset{\smash{\text{\scriptsize #2}}}{\uline{\ensuremath{#1}}}%
+}
+\newcommand{\uwaveunder}[2]{%
+  \underset{\smash{\text{\scriptsize #2}}}{\uwave{\ensuremath{#1}}}%
+}
+
+% 下線の“下げ量”と太さ（グローバル設定）
+\setlength{\ULdepth}{1.2ex} 
+\renewcommand\ULthickness{0.8pt} % 波線/直線の太さ
 
 
 \usepackage[most]{tcolorbox}
@@ -368,7 +381,108 @@ z成分は簡単に求まり、
     \frac{dv_y}{dt} &= 0 \mp \omega_c v_x
   \end{split}
 \end{align}
+微分してそれぞれ計算すると、
 
+\begin{subequations}
+  \begin{align}
+    \ddot{v_x} &= -\omega_c^2v_x\\
+    \ddot{v_y} &= \mp \omega\left(\frac{q}{m}E_x \pm \omega_c v_y\right) = -\omega_c\left(\frac{E_x}{B}+v_y\right) \label{v_e.eq}
+  \end{align}
+\end{subequations}
+  ここで、前節との類似点から粒子がサイクロトロン運動をすることを見越して、
+
+\begin{equation}
+  v_y = \uwaveunder{\pm v_\perp e^{i\omega_c t}}{サイクロトロン運動}+v_E \label{if.ve}
+\end{equation}
+を仮定する\footnote{Introduction to Plasma Physics and Controlled Fusionの方法ではなく、\url{https://youtu.be/6PL0fKNmRmQ}での方法に従った。}。これの2階微分は、
+
+\begin{equation}
+  \begin{aligned}
+    \ddot{v_y} = \mp i\omega_c ^2 v_\perp e^{i\omega_c t} &= -\omega_c ^2 (\ulineunder{\pm iv_\perp e^{i\omega_c t}+v_E}{$=\,v_y$})+\omega_c ^2 v_E\\
+                                                          &= -\omega_c ^2(-v_E + v_y)
+  \end{aligned}
+\end{equation}
+これと\eqref{v_e.eq}式を比較すると、
+
+\begin{equation}
+  v_E = -\frac{E_x}{B}
+\end{equation}
+となる。これより、\eqref{if.ve}式を書き直すと
+\begin{equation}
+  v_y = \pm iv_\perp e^{i\omega_c t} - \frac{E_x}{B}
+\end{equation}
+さらに、
+\begin{equation}
+  v_x = \mp \frac{1}{\omega_c}\dot{v_y} = v_\perp e^{i\omega_c t}
+\end{equation}
+となる。サイクロトロン運動は以前と同様であるが、案内中心のy方向へのドリフト$v_E$が重ね合わされる。
+$v_E$の一般式は、ベクトル形式で表すことができる。
+
+\[
+  \bm{E} \times \bm{B} = 
+\begin{pmatrix}
+E_x \\ 0 \\ E_z
+\end{pmatrix}
+\times
+\begin{pmatrix}
+0 \\ 0 \\ B
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\ -BE_x \\ 0
+\end{pmatrix}
+\]
+となることから、
+
+\begin{equation}
+  \boxed{\bm{v}_E = \frac{\bm{E}\times \bm{B}}{B^2}} \label{general.ve}
+\end{equation}
+と表せる。この$\bm{v}_E$は\textcolor{red}{$\bm{E}\times \bm{B}$ドリフト}と呼ばれる。$v_E$は$q$,$m$,$v_\perp$に依存しない。
+
+このドリフトが生じる背景は図\refeq{fig.EB_drift}を見てほしい。まず半回転する間において、粒子は電場$E_x$により加速され、$r_L$が大きくなる。反対に、もう半回転する間は$r_L$は小さくなる。
+この差が$-y$方向へのドリフトを生じさせる。イオンと電子では、$\bm{E}\times \bm{B}$ドリフトは同じ方向であるが回転は逆となる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{EB_drift.png}
+  \caption{\bm{E}\times \bm{B}ドリフト\,+\,サイクロトロン運動の軌道}
+  \label{fig.EB_drift}
+\end{figure}
+
+これらを踏まえて、z方向を含めた粒子の運動は、
+\[
+\bm{v} =
+\left(
+  \vcenter{\hbox{\shortstack{磁場に平行なクーロン力による\\等加速度直線運動}}}
+\right)
++ \left(\text{サイクロトロン運動}\right)
++ \left(\text{\( \bm{E}\times\bm{B} \) ドリフト}\right)
+\]
+となる。もし$\bm{B}\perp \bm{E}$であるならば、第一項の運動はなくなる。
+
+\subsubsection{重力場}
+先の結果は$q\bm{E} \to \bm{F}$と置き換えることで一般的な力$\bm{F}$に適用できる。$\bm{F}$による案内中心のドリフトは\eqref{general.ve}式より
+
+\begin{equation}
+  \boxed{\bm{v}_f = \frac{1}{q}\frac{\bm{F}\times \bm{B}}{B^2}}
+\end{equation}
+特に、$\bm{F}$が重力$m\bm{g}$であるとき、
+
+\begin{equation}
+  \boxed{\bm{v}_g = \frac{m}{q}\frac{\bm{g}\times \bm{B}}{B^2}}
+\end{equation}
+となる。ここで注意すべきは、$\bm{v_E}$では粒子によらず同じ方向であったが、$\bm{v_g}$ではイオンと電子で方向が逆になる。
+プラズマ中で電子とイオンが逆向きに動くことは電流を流れることを意味する。電子だけ動いても電流が流れると思うかもしれないが、
+プラズマでは荷電分離がすぐに電場を生んで打ち消してしまうので、持続的に電流が流れるためには電子とイオンが逆向きに動く必要がある。
+この$\bm{v}_g$により生じる電流密度は、
+
+\begin{equation}
+  \bm{j} = nev_{g,i} + n\cdot (-e)v_{g,e} = n(M+n)\frac{\bm{g}\times \bm{B}}{B^2}
+\end{equation}
+となる。
+
+実際には、地上の重力$\bm{g}$は小さいため、$|\bm{v}_g|$は通常、無視してよい。しかし、磁力線が曲がっている場合、後述するように、遠心力に起因する「有効重力」が生じる。
+遠心力は「重力」不安定と呼ばれるプラズマ不安定性の基盤であり、これは実際の重力とは無関係である。
 
 
 
