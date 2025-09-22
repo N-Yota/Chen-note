@@ -331,11 +331,11 @@ v_{x,y} = v_\perp \exp(\pm i\omega_ct + i\delta_{x,y})
 位相の任意性から、
 \begin{subequations}
   \begin{equation}
-    v_x = v_\perp e^{i\omega_c t} = \dot{x}
+    v_x = v_\perp e^{i\omega_c t} = \dot{x} \label{normal.x}
   \end{equation}
 と選ぶことにより、
   \begin{equation}
-    v_y = \frac{m}{qB}\dot{v_x} = \pm \frac{1}{\omega_c}\dot{v_x} = \pm iv_\perp e^{i\omega_c t} = \dot{y}
+    v_y = \frac{m}{qB}\dot{v_x} = \pm \frac{1}{\omega_c}\dot{v_x} = \pm iv_\perp e^{i\omega_c t} = \dot{y} \label{normal.y}
   \end{equation}
 \end{subequations}
 これらを積分することで、
@@ -483,6 +483,36 @@ E_x \\ 0 \\ E_z
 
 実際には、地上の重力$\bm{g}$は小さいため、$|\bm{v}_g|$は通常、無視してよい。しかし、磁力線が曲がっている場合、後述するように、遠心力に起因する「有効重力」が生じる。
 遠心力は「重力」不安定と呼ばれるプラズマ不安定性の基盤であり、これは実際の重力とは無関係である。
+
+\subsection{非一様磁場}
+これまで見てきたように、一様な場では厳密な解を求めることができた。しかし、空間や時間によって変わる電場や磁場下での粒子の運動は非常に複雑であり、厳密解が得ることは難しい。
+そこで近似解を求める方法として、非一様性を表すスケール長$L$を用いて、微小量$r_L/L$で展開することがよくなされる。この種の理論は「軌道理論」と呼ばれ、非常に複雑である。
+ここでは、同時には1つの非一様性しか含まないような最も簡単な場合について考える。
+
+\subsubsection{\nabla \bm{B} \perp \bm{B} : grad Bドリフト}
+図\refeq{fig.gradB_drift}のようにz方向の磁場がy方向に応じて密度（大きさ）が増えるとする。
+粒子の軌道は予想できる。上部と下部での磁場の大きさの違いによりラーモア半径が変わり、その差がドリフトを生み出す。（$\bm{E}\times \bm{B}$ドリフトと同じ原理。）
+
+1回転について平均したローレンツ力 $\bm{F} = q\bm{v} \times \bm{B}$について考える。$\bar{F_x}$について、図\refeq{fig.gradB_drift}からわかるように、下部および上部での回転それぞれで$F_x$はちょうど打ち消し合うため、$\bar{F_x}=0$である。
+$\bar{F_y}$は近似的に求めることになるが、ゆがみのない粒子軌道を考えることから出発する。ゆがみのない粒子軌道は、一様磁場で\eqref{normal.x},\eqref{normal.y},\eqref{larmor.eq}式とすでに求めた。
+$r_L/L\ll 1$を満たす任意の場所において$\bm{B}$は1次までのテーラー展開で表せる。（2次以上は無視できるため。）
+\begin{equation}
+  \bm{B} = bm{B}_0 + (\bm{r}\cdot \nabla)\bm{B} + \cdots
+\end{equation}
+\[
+  B_z = B_0 + y(\partial B_z/\partial y) + \cdots
+\]
+展開点に$x_0=0, y_0=0$を選び、\eqref{normal.x}式で実部を取ると、
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{gradB_drift.png}
+  \caption{非一様磁場でのドリフト}
+  \label{fig.gradB_drift}
+\end{figure}
+
+
+
 
 
 
