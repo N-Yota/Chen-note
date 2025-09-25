@@ -464,7 +464,7 @@ E_x \\ 0 \\ E_z
 先の結果は$q\bm{E} \to \bm{F}$と置き換えることで一般的な力$\bm{F}$に適用できる。$\bm{F}$による案内中心のドリフトは\eqref{general.ve}式より
 
 \begin{equation}
-  \boxed{\bm{v}_f = \frac{1}{q}\frac{\bm{F}\times \bm{B}}{B^2}}
+  \boxed{\bm{v}_f = \frac{1}{q}\frac{\bm{F}\times \bm{B}}{B^2}} \label{drift_F}
 \end{equation}
 特に、$\bm{F}$が重力$m\bm{g}$であるとき、
 
@@ -494,15 +494,6 @@ E_x \\ 0 \\ E_z
 粒子の軌道は予想できる。上部と下部での磁場の大きさの違いによりラーモア半径が変わり、その差がドリフトを生み出す。（$\bm{E}\times \bm{B}$ドリフトと同じ原理。）
 
 1回転について平均したローレンツ力 $\bm{F} = q\bm{v} \times \bm{B}$について考える。$\bar{F_x}$について、図\refeq{fig.gradB_drift}からわかるように、下部および上部での回転それぞれで$F_x$はちょうど打ち消し合うため、$\bar{F_x}=0$である。
-$\bar{F_y}$は近似的に求めることになるが、ゆがみのない粒子軌道を考えることから出発する。ゆがみのない粒子軌道は、一様磁場で\eqref{normal.x},\eqref{normal.y},\eqref{larmor.eq}式とすでに求めた。
-$r_L/L\ll 1$を満たす任意の場所において$\bm{B}$は1次までのテーラー展開で表せる。（2次以上は無視できるため。）
-\begin{equation}
-  \bm{B} = bm{B}_0 + (\bm{r}\cdot \nabla)\bm{B} + \cdots
-\end{equation}
-\[
-  B_z = B_0 + y(\partial B_z/\partial y) + \cdots
-\]
-展開点に$x_0=0, y_0=0$を選び、\eqref{normal.x}式で実部を取ると、
 
 \begin{figure}[htbp]
   \centering
@@ -511,13 +502,30 @@ $r_L/L\ll 1$を満たす任意の場所において$\bm{B}$は1次までのテ�
   \label{fig.gradB_drift}
 \end{figure}
 
+$\bar{F_y}$は近似的に求めることになるが、ゆがみのない粒子軌道を考えることから出発する。ゆがみのない粒子軌道は、一様磁場で\eqref{normal.x},\eqref{normal.y},\eqref{larmor.eq}式とすでに求めた。
+$r_L/L\ll 1$を満たす任意の場所において$\bm{B}$は1次までのテーラー展開で表せる。（2次以上は無視できるため。）
 
+\begin{equation}
+  \bm{B} = bm{B}_0 + (\bm{r}\cdot \nabla)\bm{B} + \cdots
+\end{equation}
+\[
+  B_z = B_0 + y(\partial B_z/\partial y) + \cdots
+\]
+展開点に$x_0=0, y_0=0$を選び、\eqref{normal.x}式で実部を取ると、
 
+\begin{equation}
+  F_y = -qv_x B_z(y) = -qv_\perp (\cos{\omega_ct})\left[B_0 \pm r_L(\cos{\omega_c t})\frac{\partial B}{\partial y}\right] \label{grad_B_drift}
+\end{equation}
+\eqref{grad_B_drift}式の第一項は1回転で平均すれば0となる。第二項は$\cos^2{\omega_c t}$の平均が1/2であることから、
 
+\begin{equation}
+  \bar{F_y} = \mp q v_\perp r_L \frac{1}{2}\frac{\partial B}{\partial y}
+\end{equation}
+これより、案内中心のドリフト速度は\eqref{drift_F}式より、
 
-
-
-
+\begin{equation}
+  \bm{v}_{gc} = \frac{1}{q}\frac{\bm{F} \times \bm{B}}{B^2} = \frac{1}{q} \frac{\bar{F_y}}{|B|}\hat{\bm{x}} = \mp \frac{}{}
+\end{equation}
 
 
 
