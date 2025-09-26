@@ -491,7 +491,7 @@ E_x \\ 0 \\ E_z
 
 \subsubsection{\nabla \bm{B} \perp \bm{B} : grad Bドリフト}
 図\refeq{fig.gradB_drift}のようにz方向の磁場がy方向に応じて密度（大きさ）が増えるとする。
-粒子の軌道は予想できる。上部と下部での磁場の大きさの違いによりラーモア半径が変わり、その差がドリフトを生み出す。（$\bm{E}\times \bm{B}$ドリフトと同じ原理。）
+この場合の粒子の軌道は予想できる。上部と下部での磁場の大きさの違いによりラーモア半径が変わり、その差がドリフトを生み出す。（$\bm{E}\times \bm{B}$ドリフトと同じ原理。）
 
 1回転について平均したローレンツ力 $\bm{F} = q\bm{v} \times \bm{B}$について考える。$\bar{F_x}$について、図\refeq{fig.gradB_drift}からわかるように、下部および上部での回転それぞれで$F_x$はちょうど打ち消し合うため、$\bar{F_x}=0$である。
 
@@ -506,7 +506,7 @@ $\bar{F_y}$は近似的に求めることになるが、ゆがみのない粒子
 $r_L/L\ll 1$を満たす任意の場所において$\bm{B}$は1次までのテーラー展開で表せる。（2次以上は無視できるため。）
 
 \begin{equation}
-  \bm{B} = bm{B}_0 + (\bm{r}\cdot \nabla)\bm{B} + \cdots
+  \bm{B} = \bm{B}_0 + (\bm{r}\cdot \nabla)\bm{B} + \cdots
 \end{equation}
 \[
   B_z = B_0 + y(\partial B_z/\partial y) + \cdots
@@ -524,8 +524,80 @@ $r_L/L\ll 1$を満たす任意の場所において$\bm{B}$は1次までのテ�
 これより、案内中心のドリフト速度は\eqref{drift_F}式より、
 
 \begin{equation}
-  \bm{v}_{gc} = \frac{1}{q}\frac{\bm{F} \times \bm{B}}{B^2} = \frac{1}{q} \frac{\bar{F_y}}{|B|}\hat{\bm{x}} = \mp \frac{}{}
+  \bm{v}_{gc} = \frac{1}{q}\frac{\bm{F} \times \bm{B}}{B^2} = \frac{1}{q} \frac{\bar{F_y}}{|B|}\hat{\bm{x}} = \mp \frac{v_\perp r_L}{B} \frac{1}{2} \frac{\partial B}{\partial y}\hat{\bm{x}}
 \end{equation}
+これには平均化した力をそのまま\eqref{drift_F}式に使っていいのかといった疑問を抱くかもしれないが、grad B ドリフトよりも旋回運動の方がずっと速いため、平均を考えた1周はドリフトにとっては一瞬であると考えられるので問題はない。
+これをより一般的に書くと、$\bm{E}\times \bm{B}$ドリフトと同じ計算で、
+
+\begin{equation}
+  \boxed{\bm{v}_{\nabla B} = \pm \frac{1}{2}v_\perp r_L \frac{\bm{B}\times \nabla B}{B^2}} \label{df.grad_B_drift}
+\end{equation}
+
+この$\bm{v}_{\nabla B}$は\textcolor{red}{grad B ドリフト}と呼ばれる。$\pm$が表すようにイオンと電子で方向が反対になり、$\bm{B}$に垂直な方向に電流が生じる。
+$\bm{v}_{\nabla B}$の正確な計算には、平均化プロセスにおいてドリフトを含む正確な軌道の使用が必要となる。
+
+\subsubsection{湾曲磁場：湾曲ドリフト}
+磁力線が一定の曲率半径$R_c$で湾曲しており、|B|は一定である場合を考える（図\refeq{fig.curvature}）。
+粒子が熱運動で磁力線に沿って移動する際に、粒子が受ける遠心力により案内中心のドリフトが起きる。ランダムな速度の$\bm{B}$方向の2乗平均を$v_\parallel ^2$と表すと、
+平均的な遠心力は
+
+\begin{equation}
+  \bm{F}_{cf} = \frac{mv_\parallel ^2}{R_c} \hat{\bm{r}} = mv_\parallel ^2 \frac{\bm{R}_c}{R_c ^2}
+\end{equation}
+これによって起きるドリフト速度は\eqref{drift_F}式より、
+
+\begin{equation}
+  \boxed{\bm{v}_R = \frac{1}{q}\frac{\bm{F}_{cf} \times \bm{B}}{B^2} = \frac{mv_\parallel ^2 }{qB^2} \frac{\bm{R}_c \times \bm{B}}{R_c ^2}}
+\end{equation}
+このドリフト$\bm{v}_R$は\textcolor{red}{湾曲ドリフト}と呼ばれる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{curvature.png}
+  \caption{湾曲磁場}
+  \label{fig.curvature}
+\end{figure}
+
+湾曲磁場では、湾曲ドリフトに加えてgrad B ドリフトも生じる。次にgrad B ドリフトを曲率半径方向の|B|の減少を考慮して計算してみよう。真空中ではマクスウェル方程式より、$\nabla \times \bm{B} = 0$が成り立っている。
+図\refeq{fig.curvature} の円柱座標において、$\bm{B}$は$\theta$方向の成分のみ、$\nabla B$はr方向の成分のみであるため、$\nabla \times \bm{B}$はz成分のみとなる。
+円柱座標系で表されたベクトル場$\bm{A}$の回転$\nabla \times \bm{A}$は、
+\[
+ \nabla \times \bm{A} = \left\{\frac{1}{r}\frac{\partial A_z}{\partial \theta}\right\}\bm{e}_r + \left\{\frac{\partial A_r}{\partial z}-\frac{\partial E_z}{\partial r}\right\}\bm{e}_\theta + \dfrac{1}{r}\left\{\frac{\partial}{\partial r}(rA_\theta) - \frac{\partial E_r}{\partial \theta}\right\}\bm{e}_z
+\]
+で表されるので、
+
+\begin{equation}
+  (\nabla \times \bm{B})_z = \frac{1}{r}\frac{\partial}{\partial r} (rB_\theta) = 0 \hspace{2pc} B_\theta \propto \frac{1}{r} \hspace{2pc} \therefore |B| \propto \frac{1}{R_c}
+\end{equation}
+また、
+\[
+  \nabla |B| = \frac{d|B|}{dr}\hat{r} \propto -\frac{1}{r^2}\hat{r} 
+\]
+より、
+\begin{equation}
+  \frac{\nabla |B|}{|B|} = -\frac{\bm{R}_c}{R_c ^2}
+\end{equation}
+これより、\eqref{df.grad_B_drift}式を用いて、
+
+\begin{equation}
+  \bm{v}_{\nabla B} = \mp \frac{1}{2}\frac{v_\perp r_L}{B^2}\bm{B}\times |B| \frac{\bm{R}_c}{R_c ^2} = \pm \frac{1}{2} \frac{v_\perp ^2}{\omega_c}\frac{\bm{R}_c \times \bm{B}}{R_c ^2B^2} = \frac{1}{2}\frac{m}{q}v_\perp ^2 \frac{\bm{R}_c \times \bm{B}}{R_c ^2 B^2}
+\end{equation}
+
+前の$\bm{v}_R$にこれを加えて、真空湾曲磁場中でのドリフトは
+\begin{equation}
+  \boxed{\bm{v}_R + \bm{v}_{\nabla B} = \frac{m}{q} \frac{\bm{R}_c \times \bm{B}}{R_c ^2 B^2}\left(v_\parallel ^2 + \frac{1}{2}v_\perp ^2\right)}
+\end{equation}
+となる。
+
+
+
+
+
+
+
+
+
+
 
 
 
