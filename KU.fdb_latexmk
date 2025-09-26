@@ -1,6 +1,6 @@
 # Fdb version 4
-["lualatex"] 1758875481.24778 "/Users/naka/Desktop/latex/Chen-note/KU.tex" "KU.pdf" "KU" 1758875484.0301 0
-  "/Users/naka/Desktop/latex/Chen-note/KU.tex" 1758875475.26583 32421 e18f517bd7f65d6a4414df13939b819c ""
+["lualatex"] 1758876911.67854 "/Users/naka/Desktop/latex/Chen-note/KU.tex" "KU.pdf" "KU" 1758876914.49243 0
+  "/Users/naka/Desktop/latex/Chen-note/KU.tex" 1758876897.87366 32418 f64bad8814c548e1d91b08981cb97b64 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1756358818.60447 1924615 00e631720a15f814ed6146121037dccf ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1756358816.80226 2011213 f3ef4f31d2fe078f6ff31258426a4ba7 ""
   "/Users/naka/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1756951596.97749 81837 7091cab214959897276971ec5ae174a1 ""
@@ -366,10 +366,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1756097684 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1756097610 5582628 44ab61309d0590893264e75f759ab203 ""
   "EB_drift.png" 1758853155.09329 532116 e8b53d0329924d01240d24b3515942cc ""
-  "KU.aux" 1758875483.66653 4709 3c74244893efb7615eb7d1163cec08bb "lualatex"
-  "KU.out" 1758875483.66766 1136 a16377f26dbeaa632eac414f3a01b9df "lualatex"
-  "KU.tex" 1758875475.26583 32421 e18f517bd7f65d6a4414df13939b819c ""
-  "KU.toc" 1758875483.66807 1395 77582c79057d14ef8792c13205fc91a5 "lualatex"
+  "KU.aux" 1758876914.12648 4709 3c74244893efb7615eb7d1163cec08bb "lualatex"
+  "KU.out" 1758876914.12801 1136 a16377f26dbeaa632eac414f3a01b9df "lualatex"
+  "KU.tex" 1758876897.87366 32418 f64bad8814c548e1d91b08981cb97b64 ""
+  "KU.toc" 1758876914.12825 1395 77582c79057d14ef8792c13205fc91a5 "lualatex"
   "curvature.png" 1758868402.79891 41847 dc3d2eaa2312d6ebf573d1bcb8980fc1 ""
   "debye.png" 1758853155.10195 79289 aafd2b7996b601536e6086cbe33ec87f ""
   "gradB_drift.png" 1758853155.10227 56597 f6ba4ab9314f8b823f0616101b046d67 ""
