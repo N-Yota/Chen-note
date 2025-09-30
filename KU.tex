@@ -717,8 +717,70 @@ $v_\theta$は$\mp v_\perp$と書ける。$r=r_L$から、平均的な力は
 となる。一般的には、
 
 \begin{equation}
-  \bm{F}_\parallel = -\mu \partial B /\partial
+  \bm{F}_\parallel = -\mu (\partial B /\partial s) = -\mu \nabla_\parallel B \label{F.mag_moment}
 \end{equation}
+と書かれる。\eqref{df.mag_moment}式の定義が、面積$A$、電流$I$の円電流に関する磁気モーメントの定義$\mu= IA$と等価であることに注目してほしい。
+1価に帯電したイオンの場合、電荷$e$が1秒間に$\omega_c/2\pi$回回転することにより電流$I$が発生する。$I=e\omega_c/2\pi$、$A=\pi r_L ^2 = \pi v_\perp ^2/\omega_c ^2$より
+
+\[
+ \mu = \frac{\pi v_\perp ^2}{\omega_c ^2}\frac{e\omega_c}{2\pi} = \frac{1}{2}\frac{mv_\perp ^2}{B}
+\]
+となる。
+
+$\mu$が不変量であることを証明しよう。運動方程式の$\bm{B}$に沿った成分は\eqref{F.mag_moment}式を用いて
+
+\begin{equation}
+  m\frac{dv_\parallel}{dt} = -\mu \frac{\partial B}{\partial s}
+\end{equation}
+左辺に$v_\parallel$を、右辺にそれと同値の$ds/dt$をかけると、
+
+\begin{equation}
+  mv_\parallel \frac{dv_\parallel}{dt} = \frac{d}{dt}\left(\frac{1}{2}mv_\parallel ^2\right) = -\mu \frac{\partial B}{\partial s}\frac{ds}{dt} = -\mu \frac{dB}{dt} \label{time_shift_B}
+\end{equation}
+ここで、$dB/dt$は粒子から見た$B$の変化であり、$B$自身は時間に対して変化していない。粒子のエネルギーは保存しているはずだから、
+
+\begin{equation}
+  \frac{d}{dt}\left(\frac{1}{2}mv_\parallel ^2 + \frac{1}{2}mv_\perp ^2\right) = \frac{d}{dt}\left(\frac{1}{2}mv_\parallel ^2 + \mu B\right) = 0
+\end{equation}
+他にローレンツ力も働いているが仕事をしないので、考えるエネルギーは運動エネルギーのみで良い。\eqref{time_shift_B}式から
+
+\[
+ -\mu \frac{dB}{dt} + \frac{d}{dt}(\mu B) = 0
+\]
+したがって、
+\begin{equation}
+  d\mu/dt = 0
+\end{equation}
+が証明できた。
+
+$\mu$の不変性は、初期のプラズマ閉じ込め計画の1つであった「磁気ミラー」の基礎である。熱運動によって粒子が弱磁場から強磁場へ動いたとき、$B$が増えるため、$\mu$を一定に保つために$v_\perp$も増える。
+全運動エネルギーは一定なので、このとき必然的に$v_\parallel$は減少する。もし$B$がミラーの「のど」の部分で十分に強ければ、$v_\parallel$は最終的に0となり、弱磁場の方へ反射される。
+
+このような状況は2つのコイルさえあれば実現できる（図\refeq{fig.trap}）。2つのコイルによってできる非一様磁場は2つの磁気ミラーを形成し、その間にプラズマを閉じ込めることができる。この効果はイオンにも電子にも働く。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{trapped.png}
+  \caption{磁気ミラー間に閉じ込められたプラズマ}
+  \label{fig.trap}
+\end{figure}
+
+しかし、この閉じ込めは完璧ではない。例えば、$v_\perp=0$の粒子は磁気モーメントを持たず、$\bm{B}$に沿った力を感じない。また、もし最大磁場である$B_m$が十分に大きくなかった場合、$v_\parallel$が0にならず、そのまま通過していくこともあるだろう。
+では、どのような$B_0$ないしは$B_m$であれば粒子は逃げていってしまうのであろうか？中央の面での粒子の速度を$v_{\perp 0}$、$v_{\parallel 0}$、反射点での速度を$v_\perp ^\prime$、（$v_\parallel =0$）とする。
+さらに反射点での磁場を$B^\prime$とすると、$\mu$の不変性により
+
+\begin{equation}
+  \frac{1}{2}mv_{\perp 0} ^2 /B_0 = \frac{1}{2}mv_\perp ^{\prime 2}/B^\prime
+\end{equation}
+
+
+
+
+
+
+
+
+
 
 
 
