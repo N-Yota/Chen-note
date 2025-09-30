@@ -11,11 +11,18 @@
 \usepackage{sepnum} % sepnumパッケージを読み込む
 \usepackage{at}
 \usepackage{bm}
+\usepackage{cancel}
 \usepackage{titlesec}
 \numberwithin{equation}{section} % 数式番号をセクションごとに分ける
 \titleformat{\subsubsection}
   {\normalfont\large\bfseries}
   {\thesubsubsection}{1em}{}
+
+\newcommand{\underlab}[3][.35ex]{%
+  \mathrel{\mathop{#2}\limits_{\mathclap{\lower#1\hbox{\text{\footnotesize\textcircled{\scriptsize #3}}}}}}%
+}
+
+
 
 \usepackage[normalem]{ulem} % \uline, \uwave
 
@@ -130,7 +137,7 @@ f(u) = A \exp\left(-\frac{1}{2}mu^2/KT\right),\hspace{2pc} A = n\left(\frac{m}{2
 \end{equation}
 ここで、
 \begin{equation}
-  v_{th} \coloneqq (2KT/m)^{1/2}, \hspace{1pc} y \coloneqq u/v_{th}
+  v_{th} \coloneqq (2KT/m)^{1/2}, \hspace{1pc} y \coloneqq u/v_{th} \label{df.v_th}
 \end{equation}
 と定義すると、式\eqref{Max}は
 
@@ -151,7 +158,7 @@ f(u) = A \exp\left(-\frac{1}{2}mu^2/KT\right),\hspace{2pc} A = n\left(\frac{m}{2
 となり、積分部分が相殺される。これより、
 
 \begin{equation}
-  E_{av} = \frac{\frac{1}{2}mAv_{th}^3\frac{1}{2}}{Av_{th}} = \frac{1}{4}mv_{th}^2 = \frac{1}{2}KT
+  E_{av} = \frac{\frac{1}{2}mAv_{th}^3\frac{1}{2}}{Av_{th}} = \frac{1}{4}mv_{th}^2 = \frac{1}{2}KT \label{av.kenetic}
 \end{equation}
 が得られる。つまり、平均運動エネルギーは$\frac{1}{2}KT$である。
 
@@ -212,12 +219,12 @@ $KT/e$オーダーのポテンシャルがプラズマに漏れ込み、そこ�
 
 ポテンシャルエネルギー$q\phi$の存在下において、電子の分布関数（ボルツマン分布）は、
 \begin{equation}
-  f(u) = A\exp[-(\frac{1}{2}mv^2 + q\phi)/KT_e]
+  f(u) = A\exp[-\left(\frac{1}{2}mv^2 + q\phi\right)/KT_e]
 \end{equation}
 $q=-e$として、$u$で積分すると、
 
 \begin{align}
-  n_e &= \iiint A\exp[-(\frac{1}{2}mv^2 - e\phi)/KT_e]du^3 = \underline{A}e^{\frac{e\phi}{K T_e}} 
+  n_e &= \iiint A\exp[-\left(\frac{1}{2}mv^2 - e\phi\right)/KT_e]du^3 = \underline{A}e^{\frac{e\phi}{K T_e}} 
 \underset{\equiv n_0}{\underline{\iiint e^{-\frac{m u^2}{2 K T_e}} \, du^3}}\\
        &= n_0 \exp(e\phi/KT_e)
 \end{align}
@@ -239,23 +246,33 @@ $q=-e$として、$u$で積分すると、
 \[
  \epsilon_0 \frac{d^2\phi}{dx^2} = en_\infty\left[\frac{e\phi}{KT_e}+ \frac{1}{2}(\frac{e\phi}{KT_e})^2 + \cdots \right] \label{telor.1}
 \]
-さらに、デバイ長を次のように定義する。
+となる。1次の項だけを考えると、
+
+\begin{equation}
+  \frac{d^2 \phi}{dx^2} = \frac{4\pi n_\infty e^2}{k_B T_e}\phi \label{debye.eq}
+\end{equation}
+を得る。ここでデバイ長を次のように定義する。
+
 \begin{eqbox}{デバイ長}
 \begin{equation}
  \lambda_D = \left(\dfrac{\epsilon_0 KT_e}{ne^2}\right)^{1/2} \label{debye}
 \end{equation}
 \end{eqbox}
-これにより、式\eqref{telor.1}の解は、
+これにより、式\eqref{debye.eq}の解は、
 \begin{equation}
   \phi = \phi_0 \exp(-|x|/\lambda_D) \label{debye.poten}
 \end{equation}
-となる。デバイ長は遮蔽の距離を決める。密度が増えると$\lambda_D$が減るのは、より電子が集まり、雲が濃くなるからである。$\lambda_D$の定義に使われているのは電子の温度である。なぜなら、電子はイオンに比べはるかに軽く、動きやすいため、電子が動くことにより遮蔽が生じるからである。
+となる。\eqref{debye.poten}の表す意味は、試験電荷などといった外乱で生じた静電ポテンシャルが、距離とともに指数関数的に減衰し、その減衰の速さを決める長さが デバイ長 
+$\lambda_D$\eqref{debye}ということである。具体的に、$1\lambda_D$離れると$\phi$は元の3\%、$3\lambda_D$で約5\%、$5\lambda_D$で1\%未満となる。それより十分大きなスケールではプラズマはほぼ中性に見える。
+ゆえに、デバイ長は遮蔽の距離を決める尺度となる。
+
+密度が増えると$\lambda_D$が減るのは、より電子が集まり、雲が濃くなるからである。$\lambda_D$の定義に使われているのは電子の温度である。なぜなら、電子はイオンに比べはるかに軽く、動きやすいため、電子が動くことにより遮蔽が生じるからである。
 
 式\eqref{debye}の便利な式として、
 \begin{align}
   \begin{split}
-    \lambda_D &= 69(T_e/n)^{1/2}\si{\metre}, \hspace{2pc}  T_e\, \text{in} \, \si{\kelvin}\\
-    \lambda_D &= 7430(KT_e/n)^{1/2}\si{\metre}, \hspace{2pc} KT_e\, \text{in} \, \si{\electronvolt}
+    \lambda_D &= 69(T_e/n)^{1/2}\si{\metre}, \hspace{2pc}  T_e \; \text{in} \; \si{\kelvin}\\
+    \lambda_D &= 7430(KT_e/n)^{1/2}\si{\metre}, \hspace{2pc} KT_e \; \text{in} \; \si{\electronvolt}
   \end{split}
 \end{align}
 を与えておく。
@@ -302,7 +319,7 @@ $q=-e$として、$u$で積分すると、
 \begin{equation}
   m\frac{d\bm{v}}{dt} = q\bm{v}\times \bm{B} \label{E=0}
 \end{equation}
-ここで、\bm{B}はz方向を向き、$\bm{B}=B\bm{\hat{z}}$である。\eqref{E=0}式から、
+ここで、$\bm{B}$はz方向を向き、$\bm{B}=B\bm{\hat{z}}$である。\eqref{E=0}式から、
 \begin{equation}
 \begin{gathered}
   m\dot{v}_x = qB v_y, \quad
@@ -536,7 +553,7 @@ $r_L/L\ll 1$を満たす任意の場所において$\bm{B}$は1次までのテ�
 この$\bm{v}_{\nabla B}$は\textcolor{red}{grad B ドリフト}と呼ばれる。$\pm$が表すようにイオンと電子で方向が反対になり、$\bm{B}$に垂直な方向に電流が生じる。
 $\bm{v}_{\nabla B}$の正確な計算には、平均化プロセスにおいてドリフトを含む正確な軌道の使用が必要となる。
 
-\subsubsection{湾曲磁場：湾曲ドリフト}
+\subsubsection{湾曲磁場：曲率ドリフト}
 磁力線が一定の曲率半径$R_c$で湾曲しており、|B|は一定である場合を考える（図\refeq{fig.curvature}）。
 粒子が熱運動で磁力線に沿って移動する際に、粒子が受ける遠心力により案内中心のドリフトが起きる。ランダムな速度の$\bm{B}$方向の2乗平均を$v_\parallel ^2$と表すと、
 平均的な遠心力は
@@ -549,7 +566,7 @@ $\bm{v}_{\nabla B}$の正確な計算には、平均化プロセスにおいて�
 \begin{equation}
   \boxed{\bm{v}_R = \frac{1}{q}\frac{\bm{F}_{cf} \times \bm{B}}{B^2} = \frac{mv_\parallel ^2 }{qB^2} \frac{\bm{R}_c \times \bm{B}}{R_c ^2}}
 \end{equation}
-このドリフト$\bm{v}_R$は\textcolor{red}{湾曲ドリフト}と呼ばれる。
+このドリフト$\bm{v}_R$は\textcolor{red}{曲率ドリフト}と呼ばれる。
 
 \begin{figure}[htbp]
   \centering
@@ -558,7 +575,7 @@ $\bm{v}_{\nabla B}$の正確な計算には、平均化プロセスにおいて�
   \label{fig.curvature}
 \end{figure}
 
-湾曲磁場では、湾曲ドリフトに加えてgrad B ドリフトも生じる。次にgrad B ドリフトを曲率半径方向の|B|の減少を考慮して計算してみよう。真空中ではマクスウェル方程式より、$\nabla \times \bm{B} = 0$が成り立っている。
+湾曲磁場では、曲率ドリフトに加えてgrad B ドリフトも生じる。次にgrad B ドリフトを曲率半径方向の|B|の減少を考慮して計算してみよう。真空中ではマクスウェル方程式より、$\nabla \times \bm{B} = 0$が成り立っている。
 図\refeq{fig.curvature} の円柱座標において、$\bm{B}$は$\theta$方向の成分のみ、$\nabla B$はr方向の成分のみであるため、$\nabla \times \bm{B}$はz成分のみとなる。
 円柱座標系で表されたベクトル場$\bm{A}$の回転$\nabla \times \bm{A}$は、
 \[
@@ -588,6 +605,121 @@ $\bm{v}_{\nabla B}$の正確な計算には、平均化プロセスにおいて�
   \boxed{\bm{v}_R + \bm{v}_{\nabla B} = \frac{m}{q} \frac{\bm{R}_c \times \bm{B}}{R_c ^2 B^2}\left(v_\parallel ^2 + \frac{1}{2}v_\perp ^2\right)}
 \end{equation}
 となる。
+
+このようなドリフトが加わるのは望ましくない。なぜなら、曲率ドリフト$\bm{v}_R$とgrad B ドリフト$\bm{v}_{\nabla B}$が 同じ垂直方向（イオンの場合、図\refeq{fig.curvature}では上向き）に出て加算されるため、案内中心は一方向に単調にずれていき、
+最終的に外に出てしまう。核融合プラズマを閉じ込める目的で磁場をトーラス状にしても閉じ込められないのである。
+
+ マクスウェル分布の場合、\eqref{av.kenetic}から、$v_\perp$が2自由度を含むことに注意すると、$\bar{v_\parallel ^2}$、$\frac{1}{2}\bar{v_\perp ^2}$は
+ \begin{align*}
+  \frac{1}{2}m\bar{v_\parallel ^2} &= \frac{1}{2}KT \hspace{2pc} \bar{v_\parallel ^2} = \frac{KT}{m}\\
+  \frac{1}{2}m\bar{v_\perp ^2} &= KT \hspace{2pc} \frac{1}{2}\bar{v_\perp ^2} = \frac{KT}{m}
+ \end{align*}
+と表される。\eqref{df.v_th}を用いることで、平均曲率場ドリフトを次のように記述できる。
+
+\addtocounter{equation}{-1}% 親番号を 2.30 に合わせる
+\begin{subequations}
+  \begin{equation}\label{eq:230a}
+    \bar{\bm{v}}_{R+\nabla B} = \pm \frac{v_{th}^2}{R_c \omega_c}\hat{\bm{y}} = \pm \frac{\bar{r_L}}{R_c}v_{th} \bar{\bm{y}}
+  \end{equation}
+\end{subequations}
+ここで、$\bar{\bm{y}}$は$\bm{R}_c \times \bm{B}$の向きである。この式から$\bar{\bm{v}}_{R+\nabla B}$は粒子の電荷には依存するが、質量には依存しないことがいえる。
+
+\subsubsection{$\nabla B \parallel \bm{B}$ : 磁気ミラー}
+磁場のだいたいの方向がz方向で、z方向に強さの変化する磁場を考える。磁場は軸対称であるとすると、$B_\theta = 0$、$\partial/\partial \theta = 0$である。（図\refeq{fig.mirror}）
+このような磁場が粒子を捕捉できるような力を生み出すことを以下に示そう。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{magnetic_mirror.png}
+  \caption{ミラー磁場中での粒子のドリフト}
+  \label{fig.mirror}
+\end{figure}
+
+$\nabla \cdot \bm{B} = 0$より、
+
+\begin{equation}
+  \frac{1}{r}\frac{\partial}{\partial r}(rB_r) + \frac{\partial B_z}{\partial z} = 0
+\end{equation}
+ここで、円柱座標系で表されたベクトル場$\bm{A}$の発散が
+\[
+  \nabla \cdot \bm{A} = \frac{1}{r}\frac{\partial}{\partial r}(rA_r) + \frac{1}{r}\frac{\partial A_\theta}{\partial \theta} + \frac{\partial A_z}{\partial z}
+\]
+で表せることを用いた。
+$\frac{\partial B_z}{\partial z}$の値が$r=0$で与えられ、$r$とともにあまり大きく変化しないとすると、近似的に、
+
+\begin{equation}
+  \begin{gathered}
+    rB_r = -\int_{0}^{r} r\frac{\partial B_z}{\partial z}dr \simeq -r^2\left[\frac{\partial B_z}{\partial z}\right]_{r=0}\\
+    B_r = -\frac{1}{2}r\left[\frac{\partial B_z}{\partial z}\right]_{r=0}    
+  \end{gathered} \label{term1234}
+\end{equation}
+となる。$r$による$|\bm{B}|$の変化はgrad B ドリフトを引き起こすが、$\partial B/\partial \theta = 0$なので、半径方向にはgrad B ドリフトは存在しない。
+ローレンツ力の成分は
+
+\begin{align}
+  \begin{split}
+    F_r     &= q(\underlab{v_\theta B_z}{1}-v_z \cancel{B_\theta})\\
+    F_\theta&= q(\underlab{-v_r B_z}{2}+\underlab{v_z B_r}{3})\\
+    F_z     &= q(v_r \cancel{B_\theta}-\underlab{v_\theta B_r}{4})
+  \end{split}
+\end{align}
+
+$B_\theta = 0$より2つの項が消える。➀項と➁項は通常のラーモア運動を引き起こす項である。➂項は軸上では消え、軸から離れたところでは、
+
+\[
+  \bm{F} \times \bm{B} = (F_\theta \hat{\theta}) \times (B_r \hat{r}+B_z \hat{z}) = F_\theta B_z \hat{r} - F_\theta B_r \hat{z}
+\]
+ここで、$B_z \gg B_r$の近似を用いると、
+\[
+ \bm{F} \times \bm{B} = F_\theta B_z \hat{r} = qv_zB_rB_z\hat{r}
+\]
+これをドリフトの一般式に代入すると、
+\begin{equation}
+  \bm{v}_{d} = \frac{\bm{F} \times \bm{B}}{qB^2} = \frac{qv_zB_rB_z}{q(B_z^2+B_r^2)}\hat{r} \simeq v_z \frac{B_r}{B_z}\hat{r} \hspace{2pc} (B_z \gg B_r) \label{v_d,r}
+\end{equation}
+となり、r方向のドリフトを引き起こすことがわかる。
+
+次に、磁力線の幾何から磁力線に沿う運動の必要条件を求めてみる。磁力線に沿った弧長の微小距離を$ds$とすると、$ds$は$\bm{B}$に平行なので、
+
+\[
+ \frac{dr}{ds} = \frac{B_r}{B}, \qquad \frac{dz}{ds} = \frac{B_z}{B} \hspace{1pc} \to \hspace{1pc} \frac{dr}{dz} = \frac{B_r}{B_z} 
+\]
+が成り立つ。これより$r$の変化率は、
+\begin{equation}
+  \frac{dr}{dt} = \frac{dr}{dz}\frac{dz}{dt} = \frac{B_r}{B_z}v_z \label{r_rate}
+\end{equation}
+となる。\eqref{v_d,r}式と\eqref{r_rate}式を比較すると完全に一致していることがわかる。つまり、ドリフト運動で動くr方向の速度と磁力線のr方向の変化率は一致する。
+これはドリフト運動が磁力線に沿って移動していることを表す。長くなったが、以上をまとめると、➂項の力が$r$方向のドリフトを引き起こすが、このドリフトは単に案内中心を磁力線に沿わせるように働く。
+
+結局、注目すべきは➃項である。\eqref{term1234}式より、
+
+\begin{equation}
+  F_z = \frac{1}{2}qv_\theta (\partial B_z/\partial z)
+\end{equation}
+となる。1周にわたって平均をとるが、簡単のため、案内中心が軸上にあるような粒子を考える。このとき、$v_\theta$は回転の間、一定であり、qが+のときは時計回り、-のときは反時計回りであることを考えると、
+$v_\theta$は$\mp v_\perp$と書ける。$r=r_L$から、平均的な力は
+
+\begin{equation}
+  \bar{F_z} = \mp \frac{1}{2}qv_\perp r_L\frac{\partial B_z}{\partial z} = \mp \frac{1}{2}q\frac{v_perp ^2}{\omega_c}\frac{\partial B_z}{\partial z} = -\frac{1}{2}\frac{mv_\perp ^2}{B}\frac{\partial B_z}{\partial z}
+\end{equation}
+となる。
+回転粒子の磁気モーメントを
+\begin{eqbox}{磁気モーメント}
+\begin{equation}
+ \mu \equiv \dfrac{\frac{1}{2}mv_\perp ^2 }{B}  \label{df.mag_moment}
+\end{equation}
+\end{eqbox}
+で定義すると
+
+\begin{equation}
+  \bar{F_z} = -\mu (\partial B_z / \partial z)
+\end{equation}
+となる。一般的には、
+
+\begin{equation}
+  \bm{F}_\parallel = -\mu \partial B /\partial
+\end{equation}
+
 
 
 
