@@ -9,7 +9,7 @@
       "name": "Latexmk (LuaLaTeX)",
       "command": "latexmk",
       "args": [
-        "-f", "-gg", "-pv", "-lualatex",
+        "-f", "-gg", "-lualatex",
         "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
       ]
     },
@@ -17,7 +17,7 @@
       "name": "Latexmk (XeLaTeX)",
       "command": "latexmk",
       "args": [
-        "-f", "-gg", "-pv", "-xelatex",
+        "-f", "-gg", "-xelatex",
         "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
       ]
     },
@@ -25,7 +25,7 @@
       "name": "Latexmk (upLaTeX)",
       "command": "latexmk",
       "args": [
-        "-f", "-gg", "-pv",
+        "-f", "-gg",
         "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"
       ]
     },
@@ -74,6 +74,7 @@
 
   // PDF を VS Code 内で横に表示
   "latex-workshop.view.pdf.viewer": "tab",
+
 
   // 保存時の自動ビルドは無効（手動で実行）
   "latex-workshop.latex.autoBuild.run": "never",

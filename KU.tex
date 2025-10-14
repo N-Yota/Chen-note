@@ -649,11 +649,11 @@ $\frac{\partial B_z}{\partial z}$の値が$r=0$で与えられ、$r$とともに
 
 \begin{equation}
   \begin{gathered}
-    rB_r = -\int_{0}^{r} r\frac{\partial B_z}{\partial z}dr \simeq -r^2\left[\frac{\partial B_z}{\partial z}\right]_{r=0}\\
+    rB_r = -\int_{0}^{r} r\frac{\partial B_z}{\partial z}dr \simeq -\frac{1}{2}r^2\left[\frac{\partial B_z}{\partial z}\right]_{r=0}\\
     B_r = -\frac{1}{2}r\left[\frac{\partial B_z}{\partial z}\right]_{r=0}    
   \end{gathered} \label{term1234}
 \end{equation}
-となる。$r$による$|\bm{B}|$の変化はgrad B ドリフトを引き起こすが、$\partial B/\partial \theta = 0$なので、半径方向にはgrad B ドリフトは存在しない。
+となる。$r$による$|\bm{B}|$の変化はgrad B ドリフトを引き起こすが、$\partial B/\partial \theta = 0$なので、$\nabla B$に$\theta$方向の成分は存在しない。よって、$\bm{B}\times \nabla B$のr方向成分は0であるから、半径方向にはgrad B ドリフトは存在しない。
 ローレンツ力の成分は
 
 \begin{align}
@@ -694,7 +694,7 @@ $B_\theta = 0$より2つの項が消える。➀項と➁項は通常のラー�
 結局、注目すべきは➃項である。\eqref{term1234}式より、
 
 \begin{equation}
-  F_z = \frac{1}{2}qv_\theta (\partial B_z/\partial z)
+  F_z = \frac{1}{2}qv_\theta r(\partial B_z/\partial z)
 \end{equation}
 となる。1周にわたって平均をとるが、簡単のため、案内中心が軸上にあるような粒子を考える。このとき、$v_\theta$は回転の間、一定であり、qが+のときは時計回り、-のときは反時計回りであることを考えると、
 $v_\theta$は$\mp v_\perp$と書ける。$r=r_L$から、平均的な力は
@@ -770,10 +770,37 @@ $\mu$の不変性は、初期のプラズマ閉じ込め計画の1つであっ�
 さらに反射点での磁場を$B^\prime$とすると、$\mu$の不変性により
 
 \begin{equation}
-  \frac{1}{2}mv_{\perp 0} ^2 /B_0 = \frac{1}{2}mv_\perp ^{\prime 2}/B^\prime
+  \frac{1}{2}mv_{\perp 0} ^2 /B_0 = \frac{1}{2}mv_\perp ^{\prime 2}/B^\prime \label{mu.eq}
 \end{equation}
+また、エネルギー保存則から、
 
+\begin{equation}
+  v_\perp ^{\prime 2} = v_{\perp 0}^2 + v_{\parallel 0}^2 \equiv v_0 ^2 \label{v_parallel.eq}
+\end{equation}
+が成り立っている。\eqref{mu.eq}、\eqref{v_parallel.eq}式から、
 
+\begin{equation}
+  \frac{B_0}{B^\prime} = \frac{v_{\perp 0 ^2}}{v_\perp ^\prime 2} = \frac{v_{\perp0}^2}{v_0 ^2} \equiv \sin^2\theta \label{loss_cone.eq}
+\end{equation}
+となる。ここで定義した$\theta$は図\refeq{loss_cone}で表されるような$\bm{v}$と$v_\perp$からなる角度である。もし$\theta$が小さすぎると、$B^\prime$は$B_m$を超え、粒子は全くミラー効果を示さない。
+\eqref{loss_cone.eq}式において$B_0$を$B_m$で置換すると、閉じ込められた粒子の最小$\theta$は次式で与えられる。
+
+\begin{equation}
+  \sin^2 \theta_m = B_0/B_m \equiv 1/R_m \label{mirror_ratio}
+\end{equation}
+$R_m$はミラー比率と呼ばれる。\eqref{mirror_ratio}式は速度空間における領域の境界を定義し、その形状は円錐状で、ロスコーンと呼ばれる（図\refeq{loss_cone}）。
+ロスコーン内に存在する粒子は閉じ込められていない。ロスコーンは$q$や$m$に依存しないことに注意してほしい。衝突がなければ、イオンも電子も等しくに閉じ込められる。衝突が発生すると、粒子は衝突でピッチ角を変えロスコーン内に散乱されることで失われる。
+一般に、電子は衝突頻度が高いためより容易に損失する。
+
+磁気ミラーは、宇宙線の加速メカニズムとしてFermiによって最初に提唱された。ミラー効果の例として、ヴァン・アレン帯における粒子の閉じ込めが挙げられる。
+地球の磁場は極域で強く、赤道域で弱いため、かなり大きな半径$R_m$を持つ天然のミラーを形成する。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{loss_cone.png}
+  \caption{ロスコーン}
+  \label{loss_cone}
+\end{figure}
 
 
 
