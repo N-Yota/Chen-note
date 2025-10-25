@@ -12,6 +12,7 @@
 \usepackage{at}
 \usepackage{bm}
 \usepackage{cancel}
+\usepackage{float} % ← プリアンブルに追加
 \usepackage{titlesec}
 \numberwithin{equation}{section} % 数式番号をセクションごとに分ける
 \titleformat{\subsubsection}
@@ -370,7 +371,7 @@ v_{x,y} = v_\perp \exp(\pm i\omega_ct + i\delta_{x,y})
 を定義すると、\eqref{larmor.eq}式は、
 
 \begin{equation}
-  x - x_0 = r_L \sin \omega_c t, \hspace{2pc} y -y_0 = \pm r_L \cos \omega_c t
+  x - x_0 = r_L \sin \omega_c t, \hspace{2pc} y -y_0 = \pm r_L \cos \omega_c t \label{guiding_center_eq}
 \end{equation}
 となる。これは案内中心$(x_0, y_0)$を中心とした円軌道を表す。
 
@@ -795,12 +796,120 @@ $R_m$はミラー比率と呼ばれる。\eqref{mirror_ratio}式は速度空間�
 磁気ミラーは、宇宙線の加速メカニズムとしてFermiによって最初に提唱された。ミラー効果の例として、ヴァン・アレン帯における粒子の閉じ込めが挙げられる。
 地球の磁場は極域で強く、赤道域で弱いため、かなり大きな半径$R_m$を持つ天然のミラーを形成する。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.7\linewidth]{loss_cone.png}
   \caption{ロスコーン}
   \label{loss_cone}
 \end{figure}
+
+
+\subsection{非一様電場}
+ここでは、磁場は一様であるが、電場は非一様であるような場を考える。簡単のため、$\bm{E}$はx方向を向き、x方向に正弦状に変化すると仮定する（図\refeq{nonuniform_E}）：
+
+\begin{equation}
+  \bm{E} \equiv E_0(\cos kx)\hat{\bm{x}} \label{df.non}
+\end{equation}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{nonuniform_E.png}
+  \caption{不均一電場中における回転粒子のドリフト}
+  \label{nonuniform_E}
+\end{figure}
+
+ この電界分布は正弦波状の電荷分布により生じる。簡単のために設定した状況だが、実際、このような電荷分布は波動運動中のプラズマ内で生じうる。運動方程式は次の通りである。
+
+ \begin{equation}
+  m(d\bm{v}/dt) = q[\bm{E}(x) + \bm{v} \times \bm{B}] 
+ \end{equation}
+各成分は、
+
+\begin{equation}
+  \dot{v}_x = \frac{qB}{m}v_y + \frac{q}{m}E_x(x) \hspace{2pc} \dot{v}_y = -\frac{qB}{m}v_x 
+\end{equation}
+\begin{equation}
+  \ddot{v}_x = -\omega_c ^2 v_x \pm \omega_c \frac{\dot{E}_x}{B} \label{ddot_v_x}
+\end{equation}
+\begin{equation}
+  \ddot{v}_y = -\omega_c ^2 v_y - \omega_c ^2 \frac{E_x(x)}{B} \label{ddot_v_y}
+\end{equation}
+これを解くために、もし電場が弱ければ、近似として、擾乱されていない軌道を$E_x(x)$の評価に使用できる。電場が存在しない場合の軌道は\eqref{guiding_center_eq}で与えられていた：
+
+\begin{equation}
+  x = x_0 +r_L \sin \omega_c t
+\end{equation}
+\eqref{df.non}、\eqref{ddot_v_y}式から、
+
+\begin{equation}
+  \ddot{v}_y = -\omega_c ^2 v_y - \omega_c ^2 \frac{E_0}{B} \cos k(x_0 + r_L \sin \omega_c t)
+\end{equation}
+このときの$v_y$は周波数$\omega_c$で起こる高速なサイクロトロン運動とゆっくりとしたドリフト運動の2つが含まれていると予想できる。我々の目標はドリフト速度$v_E$を求めることであるから、
+サイクロトロン運動の振動成分を除去したい。そのため、1サイクルで平均を取る。
+
+まず、$\bar{v}_x$について、\eqref{ddot_v_x}式において平均をとることで、$\overline{\ddot{v}}_x = 0$、$\bar{\dot{E}}_x = 0$から$\bar{v}_x = 0$がいえる。
+$\overline{\ddot{v}}_x = 0$としたことに疑問に思うかもしれない。確かに、$v_x$はサイクロトロン運動に加えて、ドリフト運動にあたる速度を持つ。しかし、時間変化を考えたとき、ドリフト運動はサイクロトロン運動に比べて極めてゆっくりであるから無視できる。
+それゆえ$\overline{\ddot{v}}_x$はサイクロトロン運動のみを考えてよく、もちろんその1サイクルの平均は0になる。同様に、$\overline{\ddot{v}}_y = 0$であるから、
+\eqref{ddot_v_y}式において平均をとると、
+
+\begin{equation}
+  \overline{\ddot{v}}_y = 0 = -\omega_c ^2 \bar{v}_y - \omega_c^2\frac{E_0}{B}\overline{\cos k(x_0 + r_L \sin \omega_c t)}
+\end{equation}
+ラーモア半径は小さいので、$kr_L \ll 1$より、$\cos$及び$\sin$についてテーラー展開すると、
+
+\begin{align}
+  \cos k(x_0 +r_L \sin \omega_c t) &= \cos (kx_0) \cos (k_L \sin \omega_c t) - \sin (kx_0) \sin (kr_L \sin \omega_c t) \notag \\ 
+                                   &\approx (\cos kx_0)(1-\frac{1}{2} k^2 r_L^2 \sin^2 \omega_c t) - (\sin kx_0)kr_L \sin \omega_c t
+\end{align}
+これに時間平均をとれば、最後の項は消え、
+
+\begin{equation}
+  \bar{v}_y = -\frac{E_0}{B}(\cos kx_0)\left(1-\frac{1}{4}k^2r_L ^2\right) = -\frac{E_x(x_0)}{B}\left(1-\frac{1}{4}k^2 r_L ^2\right)
+\end{equation}
+ したがって、通常の$\bm{E} \times \bm{B}$ドリフトは不均一性によって修正され、次のように表される。
+
+ \begin{equation}
+  \bm{v}_E = \frac{\bm{E} \times \bm{B}}{B^2}\left(1-\frac{1}{4}k^2r_L^2\right) \label{time_vary_E_cos}
+ \end{equation}
+
+ この物理的理由は容易に理解できる。通常の$\bm{E}\times \bm{B}$ドリフトではすべて$E_0$で一様であるのに対し、こちらのドリフトでは、正弦波分布において案内中心で$\bm{E}$が最大となるように仮定した。そのため、イオンは必ず$E_0$より弱い電場領域を通る。したがって、その平均ドリフトは案内中心で評価される$E/B$よりも小さくなる。
+ 線形に変化する電場中では、イオンは軌道の片側でより強い電場中におり、反対側では同量だけ弱い電場中にある。この場合、平均をとった際に$v_E$への補正項は打ち消し合う。ここから、補正項が$E$の2階微分関数に依存することが明らかである（$\frac{1}{4}k^2r_L^2$項）。
+正弦波分布の仮定から離れて、任意の$\bm{E}$の変動に対しては、$ik$を$\nabla$で置き換え、\eqref{time_vary_E_cos}式を次のように書けばよい。
+
+\begin{equation}
+  \bm{v}_E = \left(1+\frac{1}{4}r_L^2\nabla^2\right)\frac{\bm{E}\times \bm{B}}{B^2} \label{time_vary_general}
+\end{equation}
+
+イオンが感じる電場を考えると、ドリフト速度はラーモア半径$r_L=v_\perp/\omega_c$と電場変化スケール$k$に依存することは明らかである。\eqref{time_vary_general}式において、第2項は\textcolor{red}{有限ラーモア半径効果}と呼ばれる。 
+この補正の意義を考えてみよう。$r_L$が電子よりもイオンの方がはるかに大きいため、イオンと電子のドリフト速度は異なる。この結果、電荷分離が起こり、新たな電場$E^\prime$を誘起する。もし、この$E^\prime$が元の電場を強める（正のフィードバック）ように働くと、$\bm{E}$は無限に増大し、プラズマは不安定になる。
+この\textcolor{red}{ドリフト不安定}と呼ばれる現象については後述する。なお、grad B ドリフトも有限ラーモア半径効果であり、同様に電荷分離を引き起こす。しかし\eqref{df.grad_B_drift}式によれば、$v_{\nabla B}$は$kr_L$に比例するのに対し、\eqref{time_vary_general}式の補正項は$k^2r_L^2$に比例する。
+したがって、grad B ドリフトは小さい$k$、すなわち比較的大きなスケール（長波長）で重要であるのに対し、非一様電場効果は、比較的大きな$k$、すなわち不均一性の小スケール長において重要となる。この理由から、ドリフト不安定性は\textcolor{red}{微小不安定性}と呼ばれるより一般的な分類に属する。
+
+\subsection{時間変動する電場}
+$\bm{E}$、$\bm{B}$が空間的には一様であるが、時間的に変化する場合を考える。まず初めに、$\bm{E}$のみが時間に関して正弦的に変化する場合を考える。x軸を$\bm{E}$に沿ってとり、
+
+\begin{equation}
+  \bm{E} = E_0 e^{i\omega t}\hat{\bm{x}}
+\end{equation}
+とする。$\dot{E}_x = i\omega E_x$から、\eqref{ddot_v_x}式は次のように書き換えられる。
+
+\begin{equation}
+  \ddot{v}_x =-\omega_c ^2\left(v_x \mp \frac{i\omega}{\omega_c}\frac{\tilde{E}_x}{B}\right)
+\end{equation}
+ここで、次のような量を定義する。
+
+\begin{align}
+  \begin{split}
+    \tilde{v}_p &\equiv \pm \frac{i\omega}{\omega_c}\frac{\tilde{E}_x}{B}\\
+    \tilde{v}_E &\equiv -\frac{\tilde{E}_x}{B}  
+  \end{split}
+\end{align}
+
+
+
+
+
+
 
 
 
