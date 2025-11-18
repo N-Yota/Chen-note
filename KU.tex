@@ -834,7 +834,7 @@ $R_m$はミラー比率と呼ばれる。\eqref{mirror_ratio}式は速度空間�
 \begin{equation}
   \ddot{v}_y = -\omega_c ^2 v_y - \omega_c ^2 \frac{E_x(x)}{B} \label{ddot_v_y}
 \end{equation}
-これを解くために、もし電場が弱ければ、近似として、擾乱されていない軌道を$E_x(x)$の評価に使用できる。電場が存在しない場合の軌道は\eqref{guiding_center_eq}で与えられていた：
+これを解くために、もし電場が弱ければ、近似として、擾乱されていない軌道を$E_x(x)$の評価に使用できる。電場が存在しない場合の軌道は\eqref{guiding_center_eq}式で与えられていた：
 
 \begin{equation}
   x = x_0 +r_L \sin \omega_c t
@@ -983,10 +983,131 @@ $\bm{v}_p$はイオンと電子で異なる方向を向くため、プラズマ�
 \]
 もし場が1周期の間にほとんど変わらないのであれば、軌道を「摂動されていない円軌道（半径$r_L$の円）」として扱える。よって粒子は閉じた軌道を回るので、時間積分は軌道に沿った線積分（周回積分）に置き換えられる。
 
+\begin{align}
+  \delta\left(\frac{1}{2}mv^2_\perp\right) = \oint_c q\bm{E}\cdot d\bm{l} = q\int_{S}(\nabla\times\bm{E})\cdot d\bm{S} &= -q\int_{S}\dot{\bm{B}}\cdot d\bm{S} \nonumber \\
+                                                                                                                       &= \mp q\int_{S}\dot{\bm{B}}\cdot d\bm{S}
+\end{align}
+ここで、$\bm{S}$は$\bm{v}$に対して右ねじの方向を正とすると、プラズマは反磁性であるから、イオンで$\dot{\bm{B}}\cdot d\bm{S} < 0$ 、電子で$ <0$となることから、
+
 \begin{equation}
-  \delta\left(\frac{1}{2}mv^2_\perp\right) = \oint_c q\bm{E}\cdot d\bm{l} = q\int_{S}(\nabla\times\bm{E})\cdot d\bm{S} = -q\int_{S}\dot{\bm{B}}\cdot d\bm{S}
+  \delta\left(\frac{1}{2}mv^2_\perp\right) = \pm q\dot{B}\pi r_L ^2 = \pm q\pi \dot{B} \frac{v^2_\perp}{\omega_c}\frac{m}{\pm qB} = \frac{\frac{1}{2}mv^2_\perp}{B}\cdot \frac{2\pi \dot{B}}{\omega_c}
 \end{equation}
-ここで、$\bm{S}$は$\bm{v}$に対して右ねじの方向を正とすると、プラズマは
+さらに、$2\pi \dot{B}/\omega_c = \dot{B}/f_c = \dot{B}T$は1回転での$\delta B$の変化量であるから、
+
+\begin{equation}
+  \delta\left(\frac{1}{2}mv^2_\perp\right) = \mu \delta B
+\end{equation}
+となり、左辺は$\delta(\mu B)$であるから、
+
+\[
+  \delta(\mu B) =  \mu (\delta B) + (\delta \mu)B  =  \delta(\mu B) - (\delta \mu)B
+\]
+から、最終的に、
+
+\begin{equation}
+  \delta \mu = 0 \label{2.73}
+\end{equation}
+が得られる。これが示すことは、「ゆっくり変化する磁場中の磁気モーメントは不変である。」
+
+磁場の強さが変化する場合では、ラーモア半径は広がったり、縮んだりし、粒子は磁場に垂直な方向のエネルギーを失ったり獲得したりする。この粒子と場との間のエネルギーの交換関係が\eqref{2.73}式によって簡単に表されている。$\mu$の不変性により、次のよく知られた定理：
+\begin{center}
+  Larmor 軌道に囲まれた磁束は一定である。
+\end{center}
+を簡単に証明することができる。
+
+磁束$\Phi$は、$\Phi = BS$及び$S = \pi r^2_L$から、
+
+\begin{equation}
+  \Phi = B\pi \frac{v^2_\perp}{\omega^2_c} = B\pi \frac{v^2_\perp m^2}{q^2B^2} = \frac{2\pi m}{q^2}\frac{\frac{1}{2}mv^2_\perp}{B} = \frac{2\pi m}{q^2}\mu
+\end{equation}
+よって、$\mu$が一定であれば$\Phi$も一定になる。
+
+この性質は、プラズマの加熱法の1つとして知られる断熱圧縮に用いられている。図\refeq{fig2.13}はこれがどのようにして行われるかを示した図である。まず、ミラーAとBの間の領域にプラズマを入射する。
+コイルAとBの電流を増加させ、$\bm{B}$を増やす。すると、$\mu$は不変であるから$v^2_\perp$も増えることになる。コイルAの電流をさらに強めることでBの方が相対的に弱くなり、C-D側に押し出される形でプラズマを移動させることができる。
+その上コイルCとDの電流を増やすことによって、プラズマをさらに圧縮加熱するわけである。 初期の磁気ミラー核融合装置はこの種の加熱方式を採用していた。断熱圧縮はトロイダルプラズマにおいても用いられており、磁気閉じ込めまたは慣性閉じ込めのいずれを用いるレーザー駆動核融合において不可欠な要素である。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fig2.13.png}
+  \caption{プラズマの2段階断熱圧縮}
+  \label{fig2.13}
+\end{figure}
+
+
+\subsection{案内中心のドリフトのまとめ}
+これまで扱ったドリフトを以下にまとめる。
+
+\begin{align}
+\text{一般的な力 } &: \quad 
+    \bm{v}_f = \frac{1}{q} \frac{\bm{F} \times \bm{B}}{B^2} \\
+\text{電場} &: \quad 
+    \bm{v}_E = \frac{\bm{E} \times \bm{B}}{B^2} \\
+\text{重力場} &: \quad 
+    \bm{v}_g = \frac{m}{q} \frac{\bm{g} \times \bm{B}}{B^2} \\
+\text{非一様電場} \bm{E} &: \quad 
+    \bm{v}_E = \left( 1 + \frac{1}{4}r_L^2\nabla^2 \right)\frac{\bm{E} \times \bm{B}}{B^2} \\
+\end{align}
+非一様磁場
+
+\begin{align}
+\text{grad B ドリフト} &: \quad 
+  \bm{v}_{\nabla B} = \pm \frac{1}{2} v_\perp r_L \frac{\bm{B} \times \nabla B}{B^2}\\
+\text{湾曲ドリフト} &: \quad 
+  \bm{v}_R = \frac{m v_\parallel^2}{q}\frac{\bm{R}_c \times \bm{B}}{R_c^2 B^2}\\
+\text{湾曲真空磁場} &: \quad 
+  \bm{v}_R + \bm{v}_{\nabla B} = \frac{m}{q} \left( v_\parallel^2 + \frac{1}{2}v_\perp^2 \right)\frac{\bm{R}_c \times \bm{B}}{R_c^2 B^2}\\
+\text{分極ドリフト} &: \quad 
+  \bm{v}_p = \pm \frac{1}{\omega_c B} \frac{d\bm{E}}{dt}
+\end{align}
+
+
+\subsection{断熱不変量}
+古典力学でよく知られているように、ある系が周期的運動する場合に、一回りにわたっての作用積分$\oint pdq$は常に一定となる。ここで、p,qは一般運動量と一般座標である。系の変化がゆっくりとしている場合には厳密には周期運動とはいえないが、作用積分は変化しない。したがって、この恒量は断熱不変量と呼ばれる。
+
+\begin{eqbox}{断熱不変量}
+\begin{equation}
+  J = \oint pdq
+\end{equation}
+\text{という作用積分は、パラメータがゆっくり変化する系において不変である。}
+\end{eqbox}
+ここでいう、ゆっくりというのは、運動の周期に比べてゆっくりということであり、作用積分$\oint pdq$は厳密には閉じた経路にわたる積分でないが、定義される断熱不変量は、プラズマ物理において重要な役割を果たす。
+つまり、これを用いることにより、複雑な運動を含んだ様々な場合について簡単な答えを得ることができる。異なったタイプの周期運動に対応して、3つの断熱不変量が存在する。
+
+\subsubsection{第1断熱不変量, $\mu$}
+すでに
+\[
+  \mu = mv^2_\perp / 2B
+\]
+という量を導入し、空間的および時間的に変化する磁場においてその不変性を証明した。その周回運動はもちろんラーモア回転である。$p$を$mv_\perp r$、$dq$を$d\theta$とすると、作用積分は、
+
+\begin{equation}
+  \oint pdq = \oint mv_\perp r_L d\theta = 2\pi r_L mv_\perp = 2\pi \frac{mv^2_\perp}{\omega_c} = 4\pi \frac{m}{|q|}\mu
+\end{equation}
+したがって、$\mu$は断熱不変量といえる。$\mu$の不変性は$\omega/\omega_c ll 1$を仮定して証明した。しかし、$\omega \leq \omega_c$のときでも$\mu$の不変性を証明することができる。回転の1周期の間における$\bm{B}$の変化に比べて$\mu$はほとんど定数であることを意味する。
+
+断熱不変量が存在しない場合を知ることも重要である。$\omega$が$\omega_c$に比べて小さくない場合、$\mu$の断熱不変性は破られる。これに関する三つの例を示す。
+
+(A) 磁気ポンプ\\
+磁気ミラー装置の中で、磁場の強さを正弦的に変化させると、粒子の$v_\perp$が振動することになるが、エネルギーの利得はない。しかし、粒子が衝突を起こすと$\mu$の不変性が壊られる。圧縮段階で衝突した粒子は、回転運動のエネルギー($v_\perp$)の一部を並進運動($v_\parallel$)に変換する。
+このエネルギーは膨張段階で戻らないため、プラズマが加熱される。
+
+(B) サイクロトロン加熱\\
+磁場を$\omega_c$で振動させると、誘起された電場も同じ周波数で回転する。この電場がいくつかの粒子と一緒にまわり、粒子の運動エネルギーを継続的に増やす。このとき$\omega \approx \omega_c$であり、条件$\omega \ll \omega_c$が破れるため、$\mu$は保存されず、プラズマは加熱される。
+
+(C) 磁気カスプ\\
+磁気カスプとは、磁場線（磁力線）が空間の一点から放射状に広がる構造のことを指す。磁気ミラー装置のコイルのうち1つの電流を逆にすると、中心に磁気カスプができる（図\refeq{fig2.14}）。
+カスプ装置に閉じ込められたプラズマは、普通のミラー装置に比べて良い安定性を持つ。しかし、ロスコーン損失ははるかに大きくなる。その理由の1つとして、装置の中心（カスプ点）では磁場が0であり、$\mu$は無限大に発散するかのように見え、保存されない。
+また、カスプ点では、磁場が急激に弱まるため、$r_L$が急に大きくなり、ロスコーンの外側に存在した粒子がロスコーンの中に入ってくるかもしれない。結果として、プラズマ閉じ込め性能が低下する。
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1092,8 +1213,22 @@ S
 
 
 
+\[
+  e_x = (1, 0, 0)
+\]
 
+\[
+  e'_x = (\cos \psi\cos \theta, \, \cos \psi \sin \theta, \, \sin \psi) 
+\]
 
+\[
+\hat{R} =
+\begin{pmatrix}
+ \cos \psi \cos \theta & -\sin \theta & -\sin \psi \cos \theta \\[6pt]
+ \cos \psi \sin \theta &  \cos \theta & -\sin \psi \sin \theta \\[6pt]
+ \sin \psi & 0                    &  \cos \psi
+\end{pmatrix}
+\]
 
 
 
