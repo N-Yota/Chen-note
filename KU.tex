@@ -78,7 +78,7 @@
 
 
 
-\section{プラズマとは}
+\section{プラズマとは} \label{section1}
 \subsection{自然界でのプラズマ}
  物質の温度を上げていくと、固体、液体、気体と相変化し、さらに温度を上げると、気体分子は原子から電子が剥ぎ取られ、プラスの電荷を持ったイオンと負の電荷を持った電子とが混じった気体になる。このような高温の電離ガス状態を\textcolor{red}{プラズマ}という。
 固体、液体、気体と並んで、「第四の状態」と呼ばれることもある。
@@ -120,7 +120,7 @@ $n_i \sim 1 cm^{-3}$と非常に低密度のため、再結合が遅く、高温
 \end{figure}
 
 
-\subsection{温度の概念}
+\subsection{温度の概念} \label{section1.3}
 先に進む前に、温度の物理的な概念を見直そう。熱平衡状態の気体の速度分布はマクスウェル分布に従う。
 
 \begin{eqbox}{一次元のマクスウェル分布}
@@ -1026,7 +1026,7 @@ $\bm{v}_p$はイオンと電子で異なる方向を向くため、プラズマ�
 コイルAとBの電流を増加させ、$\bm{B}$を増やす。すると、$\mu$は不変であるから$v^2_\perp$も増えることになる。コイルAの電流をさらに強めることでBの方が相対的に弱くなり、C-D側に押し出される形でプラズマを移動させることができる。
 その上コイルCとDの電流を増やすことによって、プラズマをさらに圧縮加熱するわけである。 初期の磁気ミラー核融合装置はこの種の加熱方式を採用していた。断熱圧縮はトロイダルプラズマにおいても用いられており、磁気閉じ込めまたは慣性閉じ込めのいずれを用いるレーザー駆動核融合において不可欠な要素である。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.7\linewidth]{fig2.13.png}
   \caption{プラズマの2段階断熱圧縮}
@@ -1047,13 +1047,13 @@ $\bm{v}_p$はイオンと電子で異なる方向を向くため、プラズマ�
 \text{非一様電場} \bm{E} &: \quad 
     \bm{v}_E = \left( 1 + \frac{1}{4}r_L^2\nabla^2 \right)\frac{\bm{E} \times \bm{B}}{B^2} \\
 \end{align}
-非一様磁場
+非一様磁場、電場
 
 \begin{align}
 \text{grad B ドリフト} &: \quad 
-  \bm{v}_{\nabla B} = \pm \frac{1}{2} v_\perp r_L \frac{\bm{B} \times \nabla B}{B^2}\\
+  \bm{v}_{\nabla B} = \pm \frac{1}{2} v_\perp r_L \frac{\bm{B} \times \nabla B}{B^2} \label{2.24}\\
 \text{湾曲ドリフト} &: \quad 
-  \bm{v}_R = \frac{m v_\parallel^2}{q}\frac{\bm{R}_c \times \bm{B}}{R_c^2 B^2}\\
+  \bm{v}_R = \frac{m v_\parallel^2}{q}\frac{\bm{R}_c \times \bm{B}}{R_c^2 B^2} \label{2.26}\\
 \text{湾曲真空磁場} &: \quad 
   \bm{v}_R + \bm{v}_{\nabla B} = \frac{m}{q} \left( v_\parallel^2 + \frac{1}{2}v_\perp^2 \right)\frac{\bm{R}_c \times \bm{B}}{R_c^2 B^2}\\
 \text{分極ドリフト} &: \quad 
@@ -1083,7 +1083,7 @@ $\bm{v}_p$はイオンと電子で異なる方向を向くため、プラズマ�
 \begin{equation}
   \oint pdq = \oint mv_\perp r_L d\theta = 2\pi r_L mv_\perp = 2\pi \frac{mv^2_\perp}{\omega_c} = 4\pi \frac{m}{|q|}\mu
 \end{equation}
-したがって、$\mu$は断熱不変量といえる。$\mu$の不変性は$\omega/\omega_c ll 1$を仮定して証明した。しかし、$\omega \leq \omega_c$のときでも$\mu$の不変性を証明することができる。回転の1周期の間における$\bm{B}$の変化に比べて$\mu$はほとんど定数であることを意味する。
+したがって、$\mu$は断熱不変量といえる。$\mu$の不変性は$\omega/\omega_c \ll 1$を仮定して証明した。しかし、$\omega \leq \omega_c$のときでも$\mu$の不変性を証明することができる。回転の1周期の間における$\bm{B}$の変化に比べて$\mu$はほとんど定数であることを意味する。
 
 断熱不変量が存在しない場合を知ることも重要である。$\omega$が$\omega_c$に比べて小さくない場合、$\mu$の断熱不変性は破られる。これに関する三つの例を示す。
 
@@ -1100,7 +1100,7 @@ $\bm{v}_p$はイオンと電子で異なる方向を向くため、プラズマ�
 また、カスプ点では、磁場が急激に弱まるため、$r_L$が急に大きくなり、ロスコーンの外側に存在した粒子がロスコーンの中に入ってくるかもしれない。結果として、プラズマ閉じ込め性能が低下する。
 幸いなことに、この場合には、別の不変量が存在する；正準角運動量 $p_\theta = mrv_\theta - erA_\theta$である。これは、衝突を起こすまで粒子集団が無期限に閉じ込められることを保証している。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.6\linewidth]{fig2.14.png}
   \caption{磁気カスプ中のプラズマ閉じ込め}
@@ -1108,26 +1108,145 @@ $\bm{v}_p$はイオンと電子で異なる方向を向くため、プラズマ�
 \end{figure}
 
 
-\subsubsection{第2断熱不変量, $\bm{J}$}
+\subsubsection{第2断熱不変量, $J$}
 2つの磁気ミラーの間に捕捉された粒子を考える。粒子はミラー間を往復し、その『往復周波数』で周期運動する。$ds$を磁力線に沿っての案内中心の軌道の線素として、$\oint mv_\parallel ds$を考える。
-案内中心は磁力線を横切ってドリフトするため、正確には周期運動ではないが、実はこの量が断熱不変量となる。これは縦の不変量と呼ばれ、2つの反射点の間の半周期の積分で定義される。厳密には周期的ではないこと、さらに1回りにわたる積分ではないことに注意してほしい。
+案内中心は磁力線を横切ってドリフトするため、正確には周期運動ではないが、実はこの量が断熱不変量となる。これは縦の不変量と呼ばれ、2つの反射点の間の半周期の積分で定義される（図\refeq{fig2.14}）：
+
+\begin{equation}
+  \boxed{J = \int_{a}^{b}v_\parallel ds} \label{2.76}
+\end{equation}
+厳密には周期的ではないこと、さらに1回りにわたる積分ではないことに注意してほしい。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig2.15.png}
+  \caption{ミラー磁場中をa-b間を往復する粒子}
+  \label{fig2.15}
+\end{figure}
+
+$J$が断熱不変量であることを証明する前に、$J$が断熱不変量であると言えた場合のメリットを紹介しよう。すでに述べたように、地磁気はミラーを形成しており荷電粒子を捕捉するが、grad B ドリフトなどにより、その荷電粒子は地球の周りをゆっくりとドリフトする。
+もし磁場が完全に対称であれば、粒子は同じ磁力線に戻ってくるが、実際には、太陽風などのためにひずみがあるので、このような場合には粒子は同一の磁力線に戻ってくるか問題である。
+つまり、ドリフトで粒子が元の位置に戻ってきたときには、高度の異なる磁力線にいるかもしれない。もし$J$が保存されるのなら、このようなことは起こりえない。$J$は反射点の間の磁力線の長さを決めるため、$J$が保存するのであれば粒子は違う高さの磁力線へ行くことはないのである。
+結果として、粒子は微妙に磁場が変化していても、同じ磁力線に戻ってくる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fig2.16.png}
+  \caption{地球磁場中の荷電粒子の運動}
+  \label{fig2.16}
+\end{figure}
+
+$J$の不変性を証明するために、まず$v_\parallel\delta s$の不変性を証明する。ここで、$\delta s$は$\bm{B}$に沿った微小区間である（図\refeq{fig2.17}）。
+ドリフトにより、s上の粒子は$\Delta t$後に他の磁力線$\delta s'$上に存在する。図\refeq{fig2.17}より、それぞれの長さの関係は、
+
+\[
+  \delta s = R_c \delta \theta \hspace{1pc},\hspace{1pc} \delta s' = R'_c \delta \theta
+\]
+から、
+\[
+  \frac{\delta s}{R_c} = \frac{\delta s'}{R'_c}
+\]
+となる。この関係を用いて、
+
+\[
+  \delta s' - \delta s = \frac{R'_c}{R_c}\delta s - \delta s = \delta s \frac{R'_c - R_c}{R_c}
+\]
+両辺を$\Delta t$で割ることにより
+
+\begin{equation}
+  \frac{\delta s' - \delta s}{\Delta t \delta s} = \frac{R'_c - R_c}{\Delta t R_c} \label{2.77}
+\end{equation}
+を得る。曲率半径方向の変化を考えると、
+
+\begin{equation}
+  R'_c - R_c = \bm{e}_r \cdot \Delta r \label{pre2.78}
+\end{equation}
+ここで、$\bm{e}_r$は曲率半径方向の単位ベクトルで、$\bm{R_c}/R_c$と表せる。また、$\Delta r$は案内中心が進んだ距離で、$\bm{v}_{gc}\Delta t$と表せる。したがって、\eqref{pre2.78}式は、
+
+\[
+  R'_c - R_c = \frac{\bm{R}_c}{R_c}\cdot \bm{v}_{gc}\Delta t
+\]
+$\Delta t$で割ることで、
+
+\begin{equation}
+  \bm{v}_{gc} \cdot \frac{\bm{R}_c}{R_c} = \frac{R'_c - R_c}{\Delta t} \label{2.78}
+\end{equation}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig2.17.png}
+  \caption{$J$の不変性の証明}
+  \label{fig2.17}
+\end{figure}
+
+非一様磁場でのドリフトはgrad B ドリフトと湾曲ドリフトで表せるのであった。\eqref{2.24}、\eqref{2.26}式より、
+
+\begin{equation}
+  \bm{v}_{gc} = \bm{v}_{\nabla B} + \bm{v}_R = \pm \frac{1}{2}v_\perp r_L \frac{\bm{B}\times \nabla B}{B^2} + \frac{mv^2_\parallel}{q}\frac{\bm{R}_c \times \bm{B}}{R^2_cB^2} \label{2.79}
+\end{equation}
+\eqref{2.78}、\eqref{2.79}式を用いて\eqref{2.77}式を書き直すと、
+
+\[
+  \bm{v}_{gc}\cdot \frac{\bm{R}_c}{R^2_c} = \frac{\delta s' - \delta s}{\Delta t \delta s}
+\]
+さらに右辺を書き換えることで、
+
+\begin{equation}
+  \frac{1}{\delta s}\frac{d}{dt}\delta s = \bm{v}_{gc}\cdot \frac{\bm{R}_c}{R^2_c} = \frac{1}{2}\frac{m}{q}\frac{v^2_\parallel}{B^3}(\bm{B}\times \nabla B)\cdot \frac{\bm{R}_c}{R^2_c} \label{2.80}
+\end{equation}
+ここで、$\bm{v}_R$の項は内積をとったときに落ちていることに注意してほしい。
+
+$J$の不変性の証明には$v_\parallel$を求めないといけない。水平・垂直両成分のエネルギーは、
+
+\begin{equation}
+  W = \frac{1}{2}mv^2_\parallel + \frac{1}{2}mv^2_\perp = \frac{1}{2}mv^2_\parallel + \mu B \equiv W_\parallel + W_\perp \label{2.81}
+\end{equation}
+これから、
+
+\begin{equation}
+  v_\parallel = \left[\frac{2(W-\mu B)}{m}\right]^{1/2} \label{2.82}
+\end{equation}
+と書ける。ここで、$W$と$\mu$は定数なので、変数は$B$のみである。
+\[
+  \dot{v}_\parallel = \left(\frac{2}{m}\right)^{1/2}\cdot \frac{1}{2}(W-\mu B)^{-1/2}\cdot (-\mu \dot{B}) = -\frac{\mu B}{2}\left[\frac{2}{m(W-\mu B)}\right]^{1/2}
+\]
+から、
+
+\begin{equation}
+  \frac{\dot{v}_\parallel}{v_\parallel} = -\frac{1}{2}\frac{\mu \dot{B}}{W-\mu B} = \frac{\mu \dot{B}}{mv^2_\parallel} \label{2.83}
+\end{equation}
+また、$\dot{\bm{B}}$を書きなおすと、
+
+\begin{equation}
+  \dot{\bm{B}} = \frac{dB}{d\bm{r}}\cdot \frac{d\bm{r}}{dt} = \nabla B\cdot \bm{v}_{gc} = \frac{mv^2_\parallel}{q}\frac{\bm{R}_c\times \bm{B}}{R^2_cB^2}\cdot \nabla B \label{2.84}
+\end{equation}
+ここでは$\bm{v}_{\nabla B}$の項を内積をとったときに落としている。これを用いて\eqref{2.83}式を書きなおすと、
+
+\begin{equation}
+  \frac{\dot{v}_\parallel}{v_\parallel} = -\frac{\mu}{q}\frac{(\bm{R}_c \times \bm{B})\cdot \nabla B}{R^2_cB^2} = -\frac{1}{2}\frac{m}{q}\frac{v^2_\perp}{B}\frac{(\bm{B}\times \nabla B)\cdot \bm{R}_c}{R^2_cB^2} \label{2.85}
+\end{equation}
+ここで、$(\bm{A}\times \bm{B})\cdot \bm{C}$の形はサイクリックに順番を変えるのであれば等しくなるという性質を用いている。
+
+$v_\parallel \delta s$の変化率は
+
+\begin{equation}
+  \frac{1}{v_\parallel \delta s}\frac{d}{dt}(v_\parallel \delta s) = \frac{1}{\delta s}\frac{d\delta s}{dt} + \frac{1}{v_\parallel}\frac{dv_\parallel}{dt} \label{2.86}
+\end{equation}
+\eqref{2.80}、\eqref{2.85}式から、2つの項は打ち消し合い、
+
+\begin{equation}
+  v_\parallel \delta s = \text{constant} \label{2.87}
+\end{equation}
+が得られる。
+
+$J$の不変性が壊られる例として、 遷移時間磁気ポンプと呼ばれるプラズマ加熱法を挙げる。その装置では磁気ミラーのコイルの電流を時間的に変化させる。すると、磁場の大小の変化に伴いミラー位置が周期的に近づいたり、離れたりする。
+図\refeq{fig.mirror}において、磁場が強くなると元のすぼめ口が左にシフトし、もともとの位置にはよりすぼんだ口ができることをイメージすればいい。粒子の往復振動数に近い周波数で振動電流を加えると、ちょうどその往復周波数を持つ粒子は、ミラーに向かって進むたびにミラーの方からも近づいてくるように見える。
+その結果、粒子は毎回$v_\parallel$が増加することになる。これも動いてくる壁にボールをぶつけると、ボールは速度を増して跳ね返ってくることをイメージすればよい。この場合、磁場が粒子の往復運動に対して十分ゆっくりではないため、$J$は保存されない。
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsubsection{第3断熱不変量, $\Phi$}
+図\refeq{fig2.16}を再び参照すると、地球まわりを動く案内中心のゆっくりとしたドリフトが第3の周期運動を構成することがわかる。これに対応する断熱不変量は、ドリフト表面により囲まれた磁束$\Phi$の総和である。磁場の変化が「十分ゆっくり」である場合、系は連続的に準静的に変形し、粒子は囲んだ磁力線の総和が一定であるような面上にとどまるように動く。
+しかし、この不変量$\Phi$はあまり応用例がない。というのも、太陽風やMHD波などにより引き起こされる$\bm{B}$の時間変動はドリフトの周期に比べて短い時間尺度で起こることが多い。そのため、$\Phi$は保存されない。
 
 
 
@@ -1161,81 +1280,412 @@ $\bm{v}_p$はイオンと電子で異なる方向を向くため、プラズマ�
 \end{equation}
 で表される。これの導出は\url{https://eman-physics.net/fluid/lagrange_derivative.html}を見てほしい。この関係式は対流微分もしくはラグランジュ微分と呼ばれる。
 左辺は「流体要素（粒子）と一緒に動く立場」で見たときの時間変化であり、右辺第1項は「固定した位置」での時間の変化である。右辺第2項は移動による変化の寄与であり、対流項と呼ばれる。
+次に示すのは、この対流微分を直感的に理解する例である。図\refeq{fig3.1}のような電気ケトルの中では、温められた水は上に上がり、冷たい水は下に沈む。左辺：流体要素（粒子）と一緒に動く立場は、もちろん流体要素の温度変化を表す。
+右辺第2項：移動による変化の寄与は、対流で生じた熱の流れが加わることを意味している。つまり、
+\begin{center}
+  （流体要素の温度変化） = （その場での温度変化） + （流れてくる温度）
+\end{center}
+を表している。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{fig3.1.png}
+  \caption{電子ケトル中での流体要素の運動}
+  \label{fig3.1}
+\end{figure}
 
 
+\subsubsection{応用テンソル}
+単一の粒子を考えていたときと異なる点は、流体要素の中や外の粒子のランダムな運動によって生じる圧力項が加わることである。流体要素$\Delta x \Delta y \Delta z$を考える(図\eqref{fig3.3})。簡単のため、面AとBとを通る運動のx成分のみを考える。
+速度が$v_x$である粒子数は、固定した$v_x$に対して、
+\[
+  \iint f(v_x, v_y, v_z)dv_y dv_z
+\]
+完全に$v_x$を持つ粒子は存在しないので、粒子数を数えるには幅 $\Delta v_x$を考える必要がある。したがって、速度$v_x$を持つ粒子の単位体積あたりの数は
+\[
+  \Delta n_v = \Delta v_x \iint f(v_x, v_y, v_z)dv_y dv_z
+\]
+となる。
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{fig3.3.png}
+  \caption{応用テンソルの各成分}
+  \label{fig3.3}
+\end{figure}
 
+面Aを通って、流体要素の中に流れ込んでくるx方向の運動量は、（面Aを通過する粒子の数）$\times$ （各粒子が持つ運動量$mv_x$）で求められる。
+面Aを通る粒子数は前式で求めた$\Delta n_v$を用いて、
+\[
+  \Delta n_v v_x \Delta y \Delta z
+\]
+と表せるから、速度$v_x$を持つ粒子の流れ込んでくるx方向の運動量は
+\[
+  \Delta n_v mv^2_x \Delta y \Delta z
+\]
+となる。求めたいのは、面Aを通って、流体要素の中に流れ込んでくるすべての粒子のx方向の運動量である。そのためには、粒子が持つ速度のバラエティーをすべて足し合わせればよい。
+よって、$x_0$においてAを通して要素内に運ばれる運動量$P_{A+}$は
+\begin{equation}
+  P_A = \sum \Delta n_v mv^2_x \Delta y \Delta z = \Delta y \Delta z\left[m\overline{v^2_x}\frac{1}{2}n\right]_{x_0 - \Delta x} 
+\end{equation}
+ここで最後の変形には、平均速度の2乗が
+\[
+  \overline{v^2_x} = \frac{1}{n}\sim \Delta n_v v^2_x
+\]
+と表せることを用いた。また、ちょうど面Aに流れ込む粒子は$x_0- \Delta x$の位置にいた粒子であり、そのうち半分が右方向に進むことを用いている。
+同様に、面Bを通って要素内から出ていく運動量は
 
-
-
-
-
+\[
+  P_B = \Delta y \Delta z \left[m\bar{v^2_x}\frac{1}{2}n\right]_{x_0}
+\]
+よって、要素内が得る正味の運動量は
 
 \begin{equation}
-  \hat{\rho} = \left((\hat{\mu}_1^{-1} + \hat{B})^{-1} + (\hat{\mu}_2^{-1} + \hat{B})^{-1}\right)^{-1} = \left(A_1^{-1} + A_2^{-1}\right)^{-1} = (\hat{\sigma}_1 + \hat{\sigma}_2)^{-1}
+  P_A - P_B = \Delta y \Delta z\frac{1}{2}m\left([n\bar{v^2_x}]_{x_0 - \Delta x} - [n\bar{v^2_x}]_{x_0}\right) = \Delta y \Delta z \frac{1}{2}m (-\Delta x)\frac{\partial}{\partial x}(n\bar{v^2_x}) \label{3.37}
 \end{equation}
 
+巨視的な流体の速度を$u_x$とすると、ここまでの議論から$x_0$にある流体要素の運動量の時間変化は
 
 \begin{equation}
-  \hat{A}_1 = \hat{\sigma}_1^{-1} \hspace{0.5pc},\hspace{0.5pc}\hat{A}_2 = \hat{\sigma}_2^{-1}
+  \frac{\partial}{\partial t}(nmu_x)\Delta x \Delta y \Delta z = -m\frac{\partial}{\partial x}(n\overline{v^2_x})\Delta x \Delta y \Delta z \label{3.38}
 \end{equation}
+
+$v_x$を次の2つに分けて考える。
+\[
+ v_x = u_x + v_{xr} \hspace{2pc} u_x = \bar{v}_x
+\]
+2つ目の仮定から、$v_{xr}$は粒子のランダムな熱速度を表す。このランダムな熱速度がMaxwell分布に従うとすると、1次元では
 
 \begin{equation}
-  \hat{\rho} = A_1(A_1 + A_2)^{-1}A_2 = A_1M^{-1}A_2 \hspace{0.5pc}=\hspace{0.5pc} \hat{\sigma}_1^{-1}(\hat{\sigma}_1^{-1}+\hat{\sigma}_2^{-1})^{-1}\hat{\sigma}_2^{-1} 
+  \frac{1}{2}m\overline{v^2_{xr}} = \frac{1}{2}KT \label{3.39}
 \end{equation}
+であったことから、\eqref{3.38}式は
 
 \[
-\bm{e}_x =
-\begin{pmatrix}
-1 \\
-0 \\
-0
-\end{pmatrix}
+  \frac{\partial}{\partial t}(nmu_x) = -m\frac{\partial}{\partial x}\left[n(\overline{u^2_x} + 2\overline{uv_{xr}} + \overline{v^2_{xr}})\right] = -m\frac{\partial}{\partial x}\left[n\left(u^2_x + \frac{KT}{m}\right)\right]
 \]
+となる。最後の式変形には$\overline{v_{xr}} = 0$を用いた。両辺微分を進めると
 
 \begin{equation}
-  \hat{\rho}_{xx} = \bm{e}^T_x \hat{\rho}\bm{e}_x = \bm{e}^T_x A_1M^{-1}A_2\bm{e}_x
+  mn\frac{\partial u_x}{\partial t} + mu_x\frac{\partial n}{\partial t} = -mu_x\frac{\partial (nu_x)}{\partial x} - mnu_x\frac{\partial u_x}{\partial x} - \frac{\partial}{\partial x}(nKT) \label{3.40}
 \end{equation}
+これに連続の式（\ref{section3.3.5}節で扱う）：
 
 \begin{equation}
-  \hat{\rho}_{xx} = a_1^TM^{-1}a_2
+  \frac{\partial n}{\partial t} + \frac{\partial}{\partial x}(nu_x) = 0 \label{3.41}
+\end{equation}
+を加えることで、2つの項が消去され
+\[
+  mn\frac{\partial u_x}{\partial t} = - mnu_x\frac{\partial u_x}{\partial x} - \frac{\partial}{\partial x}(nKT) 
+\]
+となる。圧力を
+\begin{equation}
+  \boxed{p \equiv nKT} \label{3.42}
+\end{equation}
+と定義することで、最終的に
+
+\begin{equation}
+  mn\left(\frac{\partial u_x}{\partial t} + u_x \frac{\partial u_x}{\partial x}\right) = -\frac{\partial p}{\partial x} \label{3.43}
+\end{equation}
+が得られる。これが通常の圧力勾配による力である。電磁力を加え、3次元へ拡張することで次の流体方程式が得られる。
+
+\begin{equation}
+  mn\left[\frac{\partial \bm{u}}{\partial t} + (\bm{u}\cdot \nabla)\bm{u}\right] = qn(\bm{E} + \bm{u}\times \bm{B}) - \nabla p \label{3.44}
 \end{equation}
 
+ここに導いた式はx方向の運動量の輸送がx方向の運動のみ起因する（x,y方向も同様）といった特殊な場合にすぎない。もっと一般的には、y方向の運動によりx方向の運動量の輸送が起こるなど他の方向の寄与も考えないといけない。
+このずれ応力はスカラー$p$で表すことはできず、テンソル$\bm{P}$で表さなければならない。これを\textcolor{red}{応用テンソル}と呼ぶ。$-\nabla p$の項は$-\nabla \cdot \bm{P}$で置き換えられる。
+
+2つの極めて簡単な場合の応用テンソルを紹介しよう。分布関数が等方的なMaxwell型であるときには、$\bm{P}$は次のようになる。
+
+\begin{equation}
+  \begin{pmatrix}
+    p & 0 & 0\\
+    0 & p & 0\\
+    0 & 0 & p
+  \end{pmatrix} \label{3.45}
+\end{equation}
+この場合、$\nabla \cdot \bm{P}$は$\nabla p$と等しくなる。\ref{section1.3}節で、磁場があるときにはプラズマは2つの温度$T_\perp$と$T_\parallel$を持ちうることを述べた。この場合、2つの圧力$p_\perp = nk_BT_\perp$と$p_\parallel = nk_BT_\parallel$が存在し、
+応用テンソルは
+
+\begin{equation}
+  \begin{pmatrix}
+    p_\perp & 0 & 0\\
+    0 & p_\perp & 0\\
+    0 & 0 & p_\parallel
+  \end{pmatrix} \label{3.46}
+\end{equation}
+となる。3行目あるいは3列目の座標は$\bm{B}$の方向を指す。なお$\bm{B}$に垂直な平面では等方であることを示す。
+
+通常の流体では、$\bm{P}$の非対角成分は粘性に関連する量を表す。粒子が衝突のたびにその場の流体速度を運び去るため、速度が場所によって均され、速度の違いに対する抵抗が生じる。これが我々が通常理解している粘性である。
+平均自由行程が長ければ長いほど、粒子は衝突までにより遠くへ運動量を運ぶため、速度を均す作用が強まり、粘性係数は大きくなる。直感的には粘性が大きければ平均自由行程が短くなると感じるかもしれないが、日常で粘性が大きい流体（液体）は分子間力や構造の拘束によるものが多い。
+粘性の本質は速度勾配に対して運動量がどれだけ輸送されるかである。一方、プラズマでは衝突がほとんどなくても、ラーモア運動によって粒子が異なる位置へ運動量を運ぶため、同様の「粘性のような効果」が生じる。この場合にスケールを決めるのは平均自由行程ではなくラーモア半径である。
+これは有限ラーモア半径効果と呼ばれ、不均一な電場中でのドリフト$v_E$とも密接に関連している。
+
+
+\subsubsection{衝突} \label{section3.3.3}
+中性気体がある場合には、荷電粒子はそれらと衝突を通して運動量を交換する。1回の衝突で失われる運動量は、$\bm{u}_0$を中性流体の速度として、相対速度$\bm{u}-\bm{u}_0$に比例する。
+もし衝突と衝突の間の平均自由時間$\tau$が近似的に定数であれば、生じる力の項は$-mn(\bm{u}- \bm{u}=0)/\tau$と書ける。この項も含めると、運動方程式\eqref{3.44}は次のように一般化される。
+
+\begin{equation}
+  mn\left[\frac{\partial \bm{u}}{\partial t} + (\bm{u}\cdot \nabla)\bm{u}\right] = qn(\bm{E} + \bm{u}\times \bm{B}) - \nabla \cdot \bm{P} - \frac{mn(\bm{u}-\bm{u}_0)}{\tau} \label{3.47}
+\end{equation}
+この方程式では荷電粒子間の衝突は含めていない。それは\ref{section5}章で扱う。
+
+
+\subsubsection{流体力学との比較} \label{section3.3.4}
+通常の流体はナビエ・ストークス方程式：
+
+\begin{equation}
+  \rho \left[ \frac{\partial \bm{u}}{\partial t} + (\bm{u}\cdot \nabla)\bm{u}\right] = -\nabla p + \rho \nu \nabla^2 \bm{u} \label{3.48}
+\end{equation}
+に従う。電磁力や何種類かの粒子間の衝突を除けば、これはプラズマの式\eqref{3.47}と同じである。$\nu$は動粘性係数であり、この粘性項$\rho \nu \nabla^2 \bm{u}$は$\nabla \cdot \bm{P}$に該当する。では、\eqref{3.47}式は本当にプラズマを表すといってもいいのだろうか。答えはYesであり、この理由が流体理論の限界を教えてくれる。
+
+\eqref{3.48}式は粒子間の衝突の多い流体を記述するが、\eqref{3.47}式は特に衝突率を気にすることなく導いたように思われる。しかし、導いた過程を振り返ってみると、速度分布をMaxwell型としていた。この時点で衝突を暗に仮定していることになる。
+この仮定は$v^2_{xr}$の平均をとるときのみ使われただけであるので、もし他の分布でも同じ平均値をとれば同じ答えになってしまう。つまり、流体理論は、Maxwell分布からのずれを無視してしまう可能性がある。
+そのずれが重要となる例については\ref{section7}章で扱う。そこでは流体理論に変わって運動論が用いられる。
+
+先に述べたように、大部分のプラズマは流体理論で扱うことができる。それを裏付ける実験として、Langmuirの実験がある。Langmuirは、衝突が少なくても電子速度分布がマクスウェルに近いことを発見した。このLangmuirのパラドックスと呼ばれる現象は、しばしば高周波振動のためとされているが、明確な理由は未解決のままである。
+この現象は、プラズマ物理における「自然が味方している」数少ない例である。
+流体モデルがプラズマに当てはまるもう一つの例としては、磁場がある意味で衝突の役割を果たすということである。例えば、電場$\bm{E}$によって粒子が加速される場合、本来なら速度は無限に増加するが、衝突が多ければ粒子の速度は$\bm{E}$に比例したある限界値に達する。
+例えば、銅線中の電子は速度$\bm{v} = \mu \bm{E}$でドリフトする。$\mu$は易動度である。これが通常の衝突の効果である。
+プラズマの場合には、磁場が、粒子が自由に動くことを制限し、Larmor軌道に沿って回転させる性質がある。プラズマ中の電子も、$\bm{E}$に比例した速度$\bm{v}_E = \bm{E}\times \bm{B}/B^2$でドリフトする。このような意味で、無衝突プラズマも衝突のある流体のようにふるまうといえる。
+ただし注意すべき点は、これは主に磁場に垂直な方向の運動についての話であり、磁場に平行な方向への運動については、粒子は自由に飛んでしまうため流体理論は適用しにくい。逆に言えば、磁場に垂直な方向の物理に関しては流体理論が良い近似となる。
+
+
+\subsubsection{連続の方程式} \label{section3.3.5}
+物質の保存により、体積$V$中の粒子の総数$N$の変化は、$V$を囲む表面$S$から出ていく粒子数と等しいから、
+
+\begin{equation}
+  \frac{\partial N}{\partial t} = \int_{V}\frac{\partial n}{\partial t}dV = -\int_{S} n\bm{u}\cdot d\bm{S} = -\int_{V}\nabla \cdot (n\bm{u})dV \label{3.49} 
+\end{equation}
+最後の変形にはガウスの法則を用いた。これより、粒子数に対する連続の方程式：
+
+\begin{equation}
+  \frac{\partial n}{\partial t} + \nabla \cdot (n\bm{u}) = 0 \label{3.50}
+\end{equation}
+が得られる。
+
+
+\subsubsection{状態方程式} \label{section3.3.6}
+プラズマの流体方程式での未知量は、密度$n$、流速$\bm{u}$、圧力$p$の3つに対し、ここまでに得た方程式は、流体方程式と連続の方程式の2つ。よって、方程式群をひとまとめにするには、もう一つの関係式が必要となる。
+それは$p$と$n$とを関係づける熱力学の状態方程式（ポアソンの法則）：
+\begin{equation}
+  pV^\gamma = C\hspace{1pc}, \hspace{1pc} \frac{n'RT}{v}V^\gamma = C\hspace{1pc} \to \hspace{1pc} p = Cn^\gamma \label{3.51}
+\end{equation}
+である。ここで、$C$は定数、$\gamma$は比熱比$C_p/C_v$である。欲しいのは$\nabla p$であるから、両対数をとり、微分することで
+
+\begin{equation}
+  \frac{\nabla p}{p} = \gamma \frac{\nabla n}{n} \label{3.52}
+\end{equation}
+が得られる。等温圧縮では、
 \[
-  \frac{\Delta \rho_{\perp,\parallel}}{\rho_0}(\beta, \mu_0, B, \phi)
+  \nabla p = \nabla (nKT) = KT\nabla n
 \]
+であるため、$\gamma = 1$となる。断熱圧縮では、$KT$が変化し、$\gamma$は1より大きくなる。$N$を自由度とすれば、$\gamma$は次式で与えられる。
+
+\begin{equation}
+  \gamma = (2+N)/N \label{3.53}
+\end{equation}
+
+状態方程式が適用できるには、熱流が無視できること、すなわち熱伝導率が小さいことが求められる。これもまた、$\bm{B}$に平行な方向よりも$\bm{B}$に垂直な方向で成り立ちやすい。
+幸いなことに、ほとんどの基礎的な現象は\eqref{3.51}式のような粗い近似によって十分に記述できる。
 
 
+\subsubsection{流体方程式の完全なセット} \label{section3.3.7}
+簡単のために、プラズマはイオンと電子の2種の粒子のみからなるとする。多種類の場合への拡張はそれほど意味はない。電荷密度と電流密度は次式で与えられる。
+
+\begin{align}
+  \begin{split}
+    \sigma = n_iq_i + n_eq_e\\
+    \bm{j} = n_iq_i\bm{v}_i + n_eq_e\bm{v}_e
+  \end{split} \label{3.54}
+\end{align}
+もはや単一粒子の運動は考えないので、流体速度として$\bm{v}$の代わりに$\bm{u}$を用いる。衝突と粘性は無視する。これを踏まえて、Maxwell方程式および\eqref{3.44},\eqref{3.50},\eqref{3.51}式は次のようになる。
+
+\begin{equation}
+  \epsilon_0\nabla \cdot \bm{E} = n_iq_i + n_eq_e \label{3.55}
+\end{equation}
+\begin{equation}
+  \nabla \times \bm{E} = -\dot{\bm{B}} \label{3.56}
+\end{equation}
+\begin{equation}
+  \nabla \cdot \bm{B} = 0 \label{3.57}
+\end{equation}
+\begin{equation}
+  \mu^{-1}_0 \nabla \times \bm{B} = n_iq_i\bm{v}_i + n_eq_e\bm{v}_e + \epsilon_0\dot{\bm{E}} \label{3.58}
+\end{equation}
+\begin{equation}
+  m_jn_j\left[\frac{\partial \bm{v}_j}{\partial t} + (\bm{v}_j \cdot \nabla)\bm{v}_j\right] = q_jn_j(\bm{E} + \bm{v}_j \times \bm{B}) - \nabla p_j \hspace{2pc} j=i,e \label{3.59}
+\end{equation}
+\begin{equation}
+  \frac{\partial n_j}{\partial t} + \nabla \cdot (n_j\bm{v}_j) = 0 \hspace{2pc} j=i,e \label{3.60}
+\end{equation}
+\begin{equation}
+  p_j = C_jn^{\gamma_j}_j \hspace{2pc} j=i,e \label{3.61} 
+\end{equation}
+これらの方程式を同時に解くことで、流体近似における自己整合的な場と運動の体系が得られる。
 
 
-S
+\subsection{\texorpdfstring{$\bm{B}$}{B}に垂直な流体ドリフト} \label{section3.4}
+流体要素は持つが、粒子は持たないドリフトを考える。$\nabla p$項は流体方程式にのみ現れるため、これに関連するドリフトが存在する。運動方程式は、各粒子群につき
 
+\begin{equation}
+  mn\left[\underline{\frac{\partial \bm{v}}{\partial t}}_{\text{\large ①}} + \underline{(\bm{v}\cdot\nabla)\bm{v}}_{\text{\large ②}}\right] = qn\left(\bm{E} + \underline{\bm{v}\times\bm{B}}_{\text{\large ③}}\right) - \nabla p \label{3.62}
+\end{equation}
+となる。ここでは、$\bm{v}_\perp$のみを考える。➂項はLarmor回転運動を表すため、この項に比べると、➀項（$v_\perp$の時間変化）と➁項（$v_\perp$の二次の項）ははるかに小さく、無視できる。したがって、\eqref{3.62}式は
 \[
-  (\hat{\sigma}_1 + \hat{\sigma}_2)^{-1}
-\]  
-
-\[
-  (\hat{A}_1 + \hat{A}_2)^{-1}
+  0 = qn(\bm{E} + \bm{v}\times \bm{B}) - \nabla p
 \]
+としてもよい。これと$\bm{B}$との外積をとると
+\begin{align*}
+  0 &= qn[\bm{E}\times \bm{B} + (\bm{V}_\perp \times \bm{B})\times \bm{B}] - \nabla p \times \bm{B}\\
+    &= qn[\bm{E}\times \bm{B} + \bm{B}(\bm{v}_\perp \cdot \bm{B}) -\bm{v}_\perp \bm{B}^2] - \nabla p \times \bm{B}
+\end{align*}
+式変形にベクトル解析の公式$\bm{A}\times (\bm{B}\times \bm{C}) = (\bm{A}\cdot \bm{C})\bm{B} - (\bm{A}\times \bm{B})\bm{C}$を用いた。第二項は0になる。これより、
+
+\begin{equation}
+  \bm{v}_\perp = \frac{\bm{E}\times \bm{B}}{B^2} - \frac{\nabla p \times \bm{B}}{qnB^2} \equiv \bm{v}_E + \bm{v}_D \label{3.63}
+\end{equation}
+となる。ここで、
+\begin{equation}
+  \boxed{\bm{v}_E \equiv \frac{\bm{E}\times \bm{B}}{B^2}} \label{3.64}
+\end{equation}
+\begin{equation}
+  \boxed{\bm{v}_D \equiv -\frac{\nabla p \times \bm{B}}{qnB^2}} \label{3.65}
+\end{equation}
+と定義した。$\bm{v}_E$はすでに定義した$\bm{E}\times \bm{B}$ドリフトである。$\bm{v}_D$は\textcolor{red}{反磁性ドリフト}と呼ばれる新しいドリフトである。\eqref{3.52}式を用いると、反磁性ドリフトは
+
+\begin{equation}
+  \bm{v}_D = \pm \frac{\gamma KT}{eB}\frac{\hat{\bm{z}}\times \nabla n}{n} \label{3.66}
+\end{equation}
+と書き換えられる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig3.4.png}
+  \caption{円柱プラズマ内の反磁性ドリフト}
+  \label{fig3.4}
+\end{figure}
+
+このプラズマの物理的説明は図\refeq{fig3.5}に示される。ここには、磁場中を旋回しているイオンの軌道が描かれている。左に向かって密度勾配（あるいはそれを生み出す圧力勾配）があるとすると、任意の固定された体積要素を通り抜けるイオンの数は、上方にいくものより下方にいくものの方が多い。
+それゆえ、旋回中心は止まっていても$\nabla n$と$\bm{B}$に対して垂直方向に流体のドリフトが生じる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig3.5.png}
+  \caption{反磁性ドリフトの説明}
+  \label{fig3.5}
+\end{figure}
+
+イオンと電子は反対方向にドリフトするので、反磁性電流が生じる。$\gamma = Z = 1$とすると
+
+\begin{equation}
+  \bm{j}_D = ne(\bm{v}_{Di} - \bm{v}_{De}) = (KT_i + KT_e)\frac{\bm{B}\times \nabla n}{B^2} \label{3.69}
+\end{equation}
+と書ける。粒子的描像からいえば、もし旋回中心がドリフトしないのであれば電流は測定できないと考えられるが、流体的描像によると、圧力勾配があるといつでも電流$\bm{j}_D$が流れるということである。
+実験室での実験が有限の大きさのプラズマで行われることを考えると、これらの2つの視点は矛盾なく認めることができる。プラズマが図\refeq{fig3.6}のような箱の中にあるとしよう。左方では、右方よりもたくさんの粒子があるために正味の電流は下方に流れることになる。このように考えると流体的描像と一致する。
+この説明には壁が反射的であることを前提としている。もし壁が吸収性なら、イオンは電子よりも重く、Larmor半径が大きくなるために壁により多く到達し、吸収される。その結果、プラズマ内に電荷の偏りが生じ電場を生み出す。このようになると、新たなドリフトが生じ、反磁性ドリフトだけのシンプルな説明はできなくなる。
+実際、反磁性電流は実在する測定可能な電流である。このように、単粒子軌道の描像だけで議論すると、壁の有無などで状況が変わり、とても複雑になる。一方、流体理論では、反磁性ドリフトのような見かけのドリフトでも正しく表現できる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig3.6.png}
+  \caption{限られた形のプラズマ内の粒子のドリフト}
+  \label{fig3.6}
+\end{figure}
+
+単一粒子像に現れたgrad Bドリフトと曲率ドリフトについてはどうであろうか？まず、曲率ドリフトは流体像にも存在する。なぜなら、磁場曲がり角を移動する流体要素内の全粒子が遠心力を受けるからである。
+流体方程式の右辺に、$\bar{F}_{cf} = \overline{nmv^2_\parallel}/R_c = nKT_\parallel/R_c$の項をつけ加えればよい。
+
+一方で、流体においてgrad Bドリフトは存在しない。磁場は粒子に仕事をしないため、いかなる粒子のエネルギーも変化させられないことから、磁場はマクスウェル分布に影響を与えない。したがって、$\bm{B}$が存在する場合においても速度分布$f(\bm{v})$はMaxwell分布のまま変わらない。
+もし、非一様磁場$\bm{B}$中で$f(\bm{v})$がMaxwell分布のままであり、密度勾配がない場合、任意の固定された流体要素中での粒子のドリフトは打ち消し合う。この描像は図\refeq{fig3.8}に示される。個々の粒子を見れば、たしかにgrad Bドリフトをしているが、2つの粒子のドリフトはちょうど逆向きになり、打ち消し合う。
+
+非一様電場$\bm{E}$や密度勾配がある場合には、流体像と粒子像を調和させるのは容易ではない。図\refeq{fig3.6}のような簡単な描像は使えない。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig3.8.png}
+  \caption{非一様磁場では、案内中心はドリフトするが、流体要素はドリフトしない。}
+  \label{fig3.8}
+\end{figure}
 
 
+\subsection{\texorpdfstring{$\bm{B}$}{B}に平行な流体ドリフト} \label{section3.5}
+流体方程式のz成分は
 
+\begin{equation}
+  mn\left[\frac{\partial v_z}{\partial t} + (\bm{v}\cdot \nabla)v_z\right] = qnE_z - \frac{\partial p}{\partial z} \label{3.70}
+\end{equation}
+である。対流項$(\bm{v}\cdot \nabla)v_z$は二次の項なので、しばしば無視することができる。ここでは複雑な議論を避けることにして、単に$v_z$が空間的に一様な場合についてのみ考える。\eqref{3.52}式を用いると、
+
+\begin{equation}
+  \frac{\partial v_z}{\partial t} = \frac{q}{m}E_z - \frac{\gamma KT}{mn}\frac{\partial n}{\partial z} \label{3.71}
+\end{equation}
+となる。この式は、流体が静電的な力と圧力勾配による力を受けて$\bm{B}$に沿って加速されることを示している。\eqref{3.71}式を質量の小さな電子に適用することで、重要な結果が得られる。$m \to 0$,$q=-e$,$\bm{E} = -\nabla \phi$として、
+
+\begin{equation}
+  qE_z = e\frac{\partial \phi}{\partial z} = \frac{\gamma KT_e}{n}\frac{\partial n}{\partial z} \label{3.72}
+\end{equation}
+電子の易動度は非常に大きいので、熱伝導度はほぼ無限大である。それゆえ電子を空間的に等温と仮定すると、$\gamma = 1$。さらに積分を行うことで、
 \[
-  e_x = (1, 0, 0)
+  e\phi = KT_e \in n + C
 \]
+すなわち
 
-\[
-  e'_x = (\cos \psi\cos \theta, \, \cos \psi \sin \theta, \, \sin \psi) 
-\]
+\begin{equation}
+  \boxed{n = n_0\exp(e\phi /KT_e)} \label{3.73}
+\end{equation}
+となる。これはまさしく電子に対するBoltzmanの関係式である。Boltzmanの関係式は平衡状態を表すため、電子が平均的に動かない定常状態であることが必要である。電子に働く静電気力と圧力勾配がつりあうという条件がBoltzmanの関係式を導いたのである。
+\eqref{3.73}式は各磁力線ごとに成り立つことに注意してほしい。磁力線に沿っては電子は自由に動けるため、力のつりあいに従ってBoltzmanの関係式が成り立つからである。
 
-\[
-\hat{R} =
-\begin{pmatrix}
- \cos \psi \cos \theta & -\sin \theta & -\sin \psi \cos \theta \\[6pt]
- \cos \psi \sin \theta &  \cos \theta & -\sin \psi \sin \theta \\[6pt]
- \sin \psi & 0                    &  \cos \psi
-\end{pmatrix}
-\]
+\eqref{3.73}式は図\refeq{fig3.9}を使っても説明できる。この図は、プラズマ中に局所的な密度の集中があるときに何が起きるかを示したものである。密度勾配が図の中心方向へあり、$KT$は定数であるとすると、圧力勾配は中心を向く。プラズマは準中性であるから、その勾配は電子流体にもイオン流体にもできる。
+電子流体に対する圧力勾配による力$\bm{F}_p$を考えると、それは動きやすい電子のみを中心から遠ざけ、イオンを残す。その結果、生じた電場$\bm{E}$が、$\bm{F}_p$とは逆向きの力$\bm{F}_E$を電子に及ぼす。この$\bm{F}_E$と$\bm{F}_p$とが、大きさが等しく逆向きのときのみ定常状態が成り立つ。
+$\bm{B}$が一定であれば、図\refeq{fig3.9}が示すように、$\phi$はnが大きい中心のところで大きくならなければならない。これが\eqref{3.73}式の示すところである。完全な中性からのずれは、自ら調整され、電子にかかる力を均衡させるのに必要な電場を作り出すのにちょうど十分な電荷が生じるようにする。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig3.9.png}
+  \caption{密度とポテンシャル間のBoltzmanの関係に関する物理的説明}
+  \label{fig3.9}
+\end{figure}
+
+
+\subsection{プラズマ近似} \label{section3.6}
+通常の電磁気学では、$\sigma$をPoisson方程式に代入することで電場$\bm{E}$を求める。しかし プラズマでは逆の過程が使われる。$\bm{E}$は運動方程式から求められ、Poisson方程式は$\sigma$を求めるときのみ使われる。
+その理由は、プラズマが常に中性状態を維持しようとする傾向を持つためである。イオンが移動すれば、電子はそれに追随する。$\bm{E}$は、電子とイオンの軌道が中性性を保つように自らを調整する。$\sigma$はPoisson方程式が満たされるように調整されることから、決めるべき主役ではなく、結果として従う量という意味で2次的な重要性しかない。
+もちろん、これらのことは、電子がすぐ動いて中性を回復できる低周波運動においてのみ成立する。高周波であれば、電子が追従できず、電荷分離が起こるため、Poisson方程式が必要である。
+
+プラズマにおいては、通常$n_i = n_e$と$\nabla \cdot \bm{E}\neq 0$を同時に満たされると仮定することができる。これを\textcolor{red}{プラズマ近似}と呼び、プラズマの基本的特性である。必要なとき以外は、$\bm{E}$を求めるのにポアソン方程式を使用してはならないことを心掛けてほしい。
+流体方程式のセット\eqref{3.55}～\eqref{3.61}式において、Poisson方程式を消すとともに$n_i=n_e=n$とおくことで未知数を1つ消せばいい。
+
+プラズマ近似は、\ref{section1}章に論じた準中性とほぼ同じだが、より厳密な意味を持つ。準中性がプラズマの静止状態における中性傾向を指すのに対し、プラズマ近似は波動運動に対しても適用可能な数学的近似法である。
+電子もイオンも十分ゆっくり動ける低周波のときは電荷分離がほぼ起きないので、Poisson方程式を使わなくても$n_i = n_e$と置けばよい。もちろん、高周波電子波のように一方の種のみが移動でき他方が追随できない場合、
+プラズマ近似は成立せず、$\bm{E}$はイオンと電子の運動方程式ではなくPoisson方程式から求めなければならない。プラズマ近似の妥当性については、イオン波の理論を扱う際（\ref{section4.5}節）に改めて検討する。その際、Debye遮蔽の導出にポアソン方程式を用いる必要があった理由が明らかになる。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
