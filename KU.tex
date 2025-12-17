@@ -1664,26 +1664,118 @@ $\bm{B}$が一定であれば、図\refeq{fig3.9}が示すように、$\phi$はn
 プラズマ近似は成立せず、$\bm{E}$はイオンと電子の運動方程式ではなくPoisson方程式から求めなければならない。プラズマ近似の妥当性については、イオン波の理論を扱う際（\ref{section4.5}節）に改めて検討する。その際、Debye遮蔽の導出にポアソン方程式を用いる必要があった理由が明らかになる。
 
 
+\section{プラズマ中の波動} \label{section4}
+\subsection{位相速度・群速度} \label{section4.1}
+任意の正弦振動している量は
+
+\begin{equation}
+  n = \tilde{n}\exp[i(\bm{k}\cdot \bm{r} - \omega t)] \label{4.1}
+\end{equation}
+と表せる。もし波がx方向に伝播するとすれば、\eqref{4.1}式は次のようになる。
+\[
+   n = \tilde{n}e^{i(kx - \omega t)}
+\]
+波の位相が一定となる点は、$(d/dt)(kx-\omega t)=0$となるように動いていく。
+
+\begin{equation}
+  \boxed{\frac{dx}{dt} = \frac{\omega}{k} \equiv v_\phi} \label{4.4}
+\end{equation}
+これを\textcolor{red}{位相速度}という。
+
+プラズマ中の波の位相速度はしばしば光速$c$を超える。しかし、振幅が一定で無限に長い波列は情報を運ぶことができないので相対性理論に反しない。波のうねりが情報を担い、
+
+\begin{equation}
+  \boxed{v_g = \frac{d\omega}{dk}} \label{4.10}
+\end{equation}
+で伝播する。これを\textcolor{red}{群速度}という。群速度は常に$c$より小さい。
 
 
+\subsection{プラズマ振動} \label{section4.3}
+プラズマ中の電子が均一なイオン背景から変位すると、プラズマの中性を回復させる方向に電場が作られる。この電場により電子は元の位置に引き戻されるが、電子は軽いので慣性により行き過ぎてしまう。そしてまた反対方向に引かれる。
+この繰り返しによって、電子は平衡位置のまわりで振動することになる。この振動数は\textcolor{red}{プラズマ振動数}と呼ばれる。プラズマ振動は非常に高速であるため、質量の大きいイオンは振動する電場に反応する時間がなく、固定されていると見なすことができる。
+図\refeq{fig4.2}は電荷密度の変化を模式的に示したものであり、電子が不足して正に帯電した領域（開いた長方形）と電子が過剰な負に帯電した領域（塗りつぶされた長方形）が現れている。先ほどの述べたようにこれが空間的に周期的な電場を引き起こし、電子を中性位置に戻そうとする。
+
+最も単純な場合におけるプラズマ周波数$\omega_p$を求めよう。そのためには以下の仮定を設ける： （1）磁場が存在しない;（2）熱運動がない($KT=0$);（3）イオンが空間内で均一で固定されている;（4）プラズマが無限に広がっている;（5）電子運動がx方向のみに生じる。
+最後の仮定の結果として、次の式が得られる：
+
+\begin{equation}
+  \bm{E} = E\hat{\bm{x}}\hspace{2pc} \nabla \times \bm{E} = 0 \hspace{2pc} \bm{E} = -\frac{d\phi}{dx} \label{4.11}
+\end{equation}
+変動する磁場は存在せず、これは静電振動である。
+
+電子の運動方程式と連続方程式は
+\begin{equation}
+  mn_e\left[\frac{\partial \bm{v}_e}{\partial t} + (\bm{v}_e \cdot \nabla)\bm{v}_e\right] = -en_e\bm{E} \label{4.12}
+\end{equation}
+\begin{equation}
+  \frac{\partial n_e}{\partial t} + \nabla \cdot (n_e\bm{v}_e) = 0 \label{4.13}
+\end{equation}
+となる。
 
 
+\[
+\hat{\mu}_1
+= g\mu_0
+\begin{pmatrix}
+\beta & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\]
 
+\[
+\hat{\mu}_2
+= g\mu_0
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & \beta & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\]
 
+\[
+\hat{\mu}_3
+= g\mu_0
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & \beta
+\end{pmatrix}
+\]
 
+\[
+\hat{\mu}_5
+= \frac{\mu_0}{3}
+\begin{pmatrix}
+\beta+2 & \beta-1 & 1-\beta \\
+\beta-1 & \beta+2 & 1-\beta \\
+1-\beta & 1-\beta & \beta+2
+\end{pmatrix}
+\]
 
+\[
+\hat{\mu}_6
+= \frac{\mu_0}{3}
+\begin{pmatrix}
+\beta+2 & 1-\beta & 1-\beta \\
+1-\beta & \beta+2 & \beta-1 \\
+1-\beta & \beta-1 & \beta+2
+\end{pmatrix}
+\]
 
+\[
+\hat{\mu}_7
+= \frac{\mu_0}{3}
+\begin{pmatrix}
+\beta+2 & 1-\beta & \beta-1 \\
+1-\beta & \beta+2 & 1-\beta \\
+\beta -1 & 1-\beta & \beta+2
+\end{pmatrix}
+\]
 
-
-
-
-
-
-
-
-
-
-
+\[
+  \gamma = \frac{1-\beta}{3}
+\]
 
 
 
