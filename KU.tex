@@ -1710,7 +1710,60 @@ $\bm{B}$が一定であれば、図\refeq{fig3.9}が示すように、$\phi$はn
 \begin{equation}
   \frac{\partial n_e}{\partial t} + \nabla \cdot (n_e\bm{v}_e) = 0 \label{4.13}
 \end{equation}
-となる。
+となる。Maxwell方程式で必要なものは、$\bm{B}$を含まないPoisson方程式である。このケースは、高周波振動であるため、\ref{section3.6}節の一般則（ポアソン方程式を用いて$\bm{E}$を求めることはできない）に対する例外である。その結果、
+
+\begin{equation}
+  \epsilon_0 \nabla \cdot \bm{E} = \epsilon \partial \bm{E}/ \partial x = e(n_i - n_e) \label{4.14}
+\end{equation}
+\eqref{4.12}～\eqref{4.14}式は線形化することで簡単に解ける。まず、それぞれを下付き添字0で示される「平衡」部分と、下付き添字1で示される「摂動」部分の2つに分ける：
+
+\begin{equation}
+  n_e = n_{0} + n_{1} \hspace{2pc} \bm{v}_e = \bm{v}_{0} + \bm{v}_{1} \hspace{2pc} \bm{E} = \bm{E}_0 + \bm{E}_{1} \label{4.15}
+\end{equation}
+添字0平衡部分は振動のないときのプラズマの状態を表すが、ここでは電子が変位する前は静止した均一な中性プラズマであると仮定しているため、
+
+
+\begin{align}
+  \begin{split}
+    \nabla n_0 = \bm{v}_0 = \bm{E}_0 = 0\\
+    \frac{\partial n_0}{\partial t} = \frac{\partial \bm{v}_0}{\partial t} = \frac{\partial \bm{E}_0}{\partial t} = 0
+  \end{split} \label{4.16}
+\end{align}
+となる。\eqref{4.12}式は、これより
+
+\begin{equation}
+  m\left[\frac{\partial \bm{v}_1}{\partial t} + (\bm{v}_1 \cdot \nabla)\bm{v}_1\right] = -e\bm{E}_1 \label{4.17}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \[
