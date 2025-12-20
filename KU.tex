@@ -290,7 +290,7 @@ $\lambda_D$\eqref{debye}ということである。具体的に、$1\lambda_D$�
 上で述べたように、デバイ遮蔽が生じるのは「雲」を作るのに十分な粒子が存在するときである。
 \eqref{debye.poten}式からデバイ領域の粒子数$N_D$を計算できる。
 \begin{equation}
-  N_D = n\cdot \frac{4}{3}\pi \lambda_D ^3 = 1.38 \time 10^6T^{3/2}/n^{1/2} \hspace{1pc}(T\text{in}\, \si{\kelvin})
+  N_D = n\cdot \frac{4}{3}\pi \lambda_D ^3 = 1.38 \time 10^6T^{3/2}/n^{1/2} \hspace{1pc}(\text{T}\, \text{in}\, \si{\kelvin})
 \end{equation}
 
 「集団運動」をするためには、$\lambda_D \ll L$ に加えて、
@@ -1695,6 +1695,13 @@ $\bm{B}$が一定であれば、図\refeq{fig3.9}が示すように、$\phi$はn
 この繰り返しによって、電子は平衡位置のまわりで振動することになる。この振動数は\textcolor{red}{プラズマ振動数}と呼ばれる。プラズマ振動は非常に高速であるため、質量の大きいイオンは振動する電場に反応する時間がなく、固定されていると見なすことができる。
 図\refeq{fig4.2}は電荷密度の変化を模式的に示したものであり、電子が不足して正に帯電した領域（開いた長方形）と電子が過剰な負に帯電した領域（塗りつぶされた長方形）が現れている。先ほどの述べたようにこれが空間的に周期的な電場を引き起こし、電子を中性位置に戻そうとする。
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.2.png}
+  \caption{プラズマ振動の機構}
+  \label{fig4.2}
+\end{figure}
+
 最も単純な場合におけるプラズマ周波数$\omega_p$を求めよう。そのためには以下の仮定を設ける： （1）磁場が存在しない;（2）熱運動がない($KT=0$);（3）イオンが空間内で均一で固定されている;（4）プラズマが無限に広がっている;（5）電子運動がx方向のみに生じる。
 最後の仮定の結果として、次の式が得られる：
 
@@ -1734,15 +1741,86 @@ $\bm{B}$が一定であれば、図\refeq{fig3.9}が示すように、$\phi$はn
 \begin{equation}
   m\left[\frac{\partial \bm{v}_1}{\partial t} + (\bm{v}_1 \cdot \nabla)\bm{v}_1\right] = -e\bm{E}_1 \label{4.17}
 \end{equation}
+となる。ここで、二次の項$(\bm{v}_1 \cdot \nabla)\bm{v}_1$は無視できる。同様に、\eqref{4.13}式は、
+
+\[
+  \frac{\partial n_1}{\partial t} + \nabla \cdot (n_0\bm{v}_1 + n_1\bm{v}_1) = 0 
+\]
+第３項$n_1\bm{v}_1$は二次の項なので無視できる。微分を進めると、
+\begin{equation}
+  \frac{\partial n_1}{\partial t} + n_0 \nabla \cdot \bm{v}_1 + \bm{v}_1 \cdot \nabla n_0 = 0 \label{4.18}
+\end{equation}
+となる。Poisson方程式\eqref{4.14}式では、平衡のとき、$n_{i0} = n_{e0}$かつイオンが動かないという仮定から$n_{i1} = 0$であるため、
+
+\begin{equation}
+  \epsilon_0 \nabla \cdot \bm{E}_1 = -en_1 \label{4.19}
+\end{equation}
+となる。
+
+摂動量は正弦的に振動すると仮定する；
+
+\begin{align}
+  \begin{split}
+    \bm{v}_1 = v_1 e^{i(kx - \omega t)}\hat{\bm{x}}\\
+    n_1 = n_1e^{i(kx - \omega t)}\\
+    \bm{E}_1 = E_1 e^{i(kx - \omega)}\hat{\bm{x}}
+  \end{split} \label{4.20}
+\end{align}
+これより、時間微分$\partial/\partial t$は$-i\omega$に、空間微分$\nabla$は$ik\hat{\bm{x}}$に置き換えられる。これを用いて、\eqref{4.17}～\eqref{4.19}式を書き直すと、
+
+\begin{equation}
+  -im\omega v_1 = -eE_1 \label{4.21}
+\end{equation}
+\begin{equation}
+  -i\omega n_1 = -n_0ikv_1 \label{4.22}
+\end{equation}
+\begin{equation}
+  ik\epsilon_0 E_1 = -en_1 \label{4.23}
+\end{equation}
+となる。$n_1$と$E_1$を消去すると、\eqref{4.21}式は
+
+\begin{equation}
+  -im\omega v_1 = -e\frac{-e}{ik\epsilon_0}\frac{-n_0 ikkv_1}{-i\omega} =  -i\frac{n_0 e^2}{\epsilon_0 \omega}v_1 \label{4.24}
+\end{equation}
+$v_1$が0でない限り、
+\[
+  \omega^2 = n_0 e^2 / m\epsilon_0
+\]
+でなければならない。したがって、プラズマ振動数は
+
+\begin{equation}
+  \boxed{\omega_p = \left(\frac{n_0 e^2}{\epsilon_0 m}\right)^{1/2} \hspace{2pc} \text{rad}/\,\text{sec}}\label{4.25}
+\end{equation}
+である。数値を求める際には、次の近似式が便利である。
+
+\begin{equation}
+  \omega_p / 2\pi = f_p \approx 9\sqrt{n} \hspace{2pc} (n\ \text{in}\ \mathrm{m}^{-3}) \label{4.26}
+\end{equation}
+この周波数はプラズマの密度のみに依存しており、プラズマの基本的パラメータの1つである。$m$は小さいので、通常、プラズマ周波数は非常に高い。
+
+\eqref{4.25}式が示すことは、$\omega_p$は波数$k$に依存しないということである。したがって、群速度$d\omega/dk$は0である。すなわち、プラズマ振動は空間的に伝播しない。これの説明はバネの類推によってなされる（図\refeq{fig4.3}）。
+それぞれのバネに接続された球は各電子流体を表している。すべてのバネが同じであれば、すべて同じ振動数で振動する。また、各々の球にそれぞれ位相の差をつければ、任意の波長をもつ振動を作ることができる。しかし、バネは互いに結合されておらず、各電子流体は独立して振動する。したがって、プラズマ振動は伝播しない。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.3.png}
+  \caption{独立した振動子の集まりがつくる波}
+  \label{fig4.3}
+\end{figure}
+
+プラズマ振動は$\bm{k}$と平行な方向の運動を持つので、上の類推が全く正しいわけではない。しかし、電子がイオンと、あるいは電子同士で衝突しなければ、水平方向に運動する独立な振動子と考えて差し支えない。
+では、電場についてはどうであろうか？電場が初期攪乱の領域を超えて広がり、隣接するプラズマの層を震動させないだろうか？理想化した無限系では電場は外に漏れない。正と負の電荷シートが同じ数・同じ面積で並ぶため、生じる電場が左右で完全に打ち消し合うためである。
+しかし、有限の系ではプラズマは伝搬する。図\refeq{fig4.4}に示すように、縁にできた電場は打ち消されず、隣接する層に攪乱を伝えることにより、振動がその場（最初に起きた場所）に閉じ込められたままにならない
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.4.png}
+  \caption{縁にできた電場により有限媒質中を伝搬するプラズマ振動}
+  \label{fig4.4}
+\end{figure}
 
 
-
-
-
-
-
-
-
+\subsection{電子プラズマ波} \label{section4.4}
 
 
 
