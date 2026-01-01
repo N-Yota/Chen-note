@@ -23,7 +23,7 @@
   \mathrel{\mathop{#2}\limits_{\mathclap{\lower#1\hbox{\text{\footnotesize\textcircled{\scriptsize #3}}}}}}%
 }
 
-
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}
 
 \usepackage[normalem]{ulem} % \uline, \uwave
 
@@ -190,7 +190,7 @@ f(u) = A \exp\left(-\frac{1}{2}mu^2/KT\right),\hspace{2pc} A = n\left(\frac{m}{2
 密度が $10^{18}$--$10^{19} \ \mathrm{m^{-3}}$ と低いため、壁加熱は深刻な問題とならない。
 
 
-\subsection{デバイ遮蔽}
+\subsection{デバイ遮蔽} \label{section1.4}
 プラズマが示す特徴的な挙動は電位を遮蔽することである。図\refeq{fig.debye}のように電源に繋がれた２つの荷電粒子をプラズマ中に入れた状況を考える。それぞれの荷電粒子は逆符号の粒子を印加し、荷電粒子の周りにイオンまたは電子の「雲」が作られる。
 荷電粒子のすぐ近くでは多くのイオン(電子)が引き寄せられるため、密度及びポテンシャルの勾配は高く、逆に遠方では低い。もしプラズマが低温で、熱運動がないのであれば、ポテンシャルは完全に遮蔽される。しかし、温度が高ければ、「雲」の
 端では静電ポテンシャルが低いため、熱エネルギーがその壁を越えることができる。このときの「雲」の縁は、ポテンシャルエネルギーが粒子の熱エネルギーKTとほぼ等しくなる半径で生じ、遮蔽は完全ではない。
@@ -256,7 +256,7 @@ $q=-e$として、$u$で積分すると、
 
 \begin{eqbox}{デバイ長}
 \begin{equation}
- \lambda_D = \left(\dfrac{\epsilon_0 KT_e}{ne^2}\right)^{1/2} \label{debye}
+ \lambda_D = \left(\dfrac{\epsilon_0 KT_e}{ne^2}\right)^{1/2} \label{1.16}
 \end{equation}
 \end{eqbox}
 これにより、式\eqref{debye.eq}の解は、
@@ -264,12 +264,12 @@ $q=-e$として、$u$で積分すると、
   \phi = \phi_0 \exp(-|x|/\lambda_D) \label{debye.poten}
 \end{equation}
 となる。\eqref{debye.poten}の表す意味は、試験電荷などといった外乱で生じた静電ポテンシャルが、距離とともに指数関数的に減衰し、その減衰の速さを決める長さが デバイ長 
-$\lambda_D$\eqref{debye}ということである。具体的に、$1\lambda_D$離れると$\phi$は元の3\%、$3\lambda_D$で約5\%、$5\lambda_D$で1\%未満となる。それより十分大きなスケールではプラズマはほぼ中性に見える。
+$\lambda_D$\eqref{1.16}ということである。具体的に、$1\lambda_D$離れると$\phi$は元の3\%、$3\lambda_D$で約5\%、$5\lambda_D$で1\%未満となる。それより十分大きなスケールではプラズマはほぼ中性に見える。
 ゆえに、デバイ長は遮蔽の距離を決める尺度となる。
 
 密度が増えると$\lambda_D$が減るのは、より電子が集まり、雲が濃くなるからである。$\lambda_D$の定義に使われているのは電子の温度である。なぜなら、電子はイオンに比べはるかに軽く、動きやすいため、電子が動くことにより遮蔽が生じるからである。
 
-式\eqref{debye}の便利な式として、
+式\eqref{1.16}の便利な式として、
 \begin{align}
   \begin{split}
     \lambda_D &= 69(T_e/n)^{1/2}\si{\metre}, \hspace{2pc}  T_e \; \text{in} \; \si{\kelvin}\\
@@ -1471,14 +1471,29 @@ $v_x$を次の2つに分けて考える。
 プラズマの流体方程式での未知量は、密度$n$、流速$\bm{u}$、圧力$p$の3つに対し、ここまでに得た方程式は、流体方程式と連続の方程式の2つ。よって、方程式群をひとまとめにするには、もう一つの関係式が必要となる。
 それは$p$と$n$とを関係づける熱力学の状態方程式（ポアソンの法則）：
 \begin{equation}
-  pV^\gamma = C\hspace{1pc}, \hspace{1pc} \frac{n'RT}{v}V^\gamma = C\hspace{1pc} \to \hspace{1pc} p = Cn^\gamma \label{3.51}
+  pV^\gamma = C
 \end{equation}
-である。ここで、$C$は定数、$\gamma$は比熱比$C_p/C_v$である。欲しいのは$\nabla p$であるから、両対数をとり、微分することで
+である。物質量を$N$、ボルツマン定数を$N_A$とすると、$N = nV/ N_A$から$V = NN_A/n$を代入すると、
+
+\[
+  p\left(\frac{NN_A}{n}\right)^\gamma = C
+\]
+整理して、
+
+\begin{equation}
+  p = C'n^\gamma \label{3.51}
+\end{equation}
+を得る。ここで、$C'$は定数、$\gamma$は比熱比$C_p/C_v$である。欲しいのは$\nabla p$であるから、両対数をとり、微分することで
 
 \begin{equation}
   \frac{\nabla p}{p} = \gamma \frac{\nabla n}{n} \label{3.52}
 \end{equation}
-が得られる。等温圧縮では、
+が得られる。
+
+\[
+  pV = \frac{nV}{N_A}RT , \hspace{2pc} p = nKT
+\]
+より、等温圧縮では、
 \[
   \nabla p = \nabla (nKT) = KT\nabla n
 \]
@@ -1622,14 +1637,14 @@ $v_x$を次の2つに分けて考える。
 \begin{equation}
   \frac{\partial v_z}{\partial t} = \frac{q}{m}E_z - \frac{\gamma KT}{mn}\frac{\partial n}{\partial z} \label{3.71}
 \end{equation}
-となる。この式は、流体が静電的な力と圧力勾配による力を受けて$\bm{B}$に沿って加速されることを示している。\eqref{3.71}式を質量の小さな電子に適用することで、重要な結果が得られる。$m \to 0$,$q=-e$,$\bm{E} = -\nabla \phi$として、
+となる。この式は、流体が静電的な力と圧力勾配による力を受けて$\bm{B}$に沿って加速されることを示している。\eqref{3.71}式を質量の小さな電子に適用することで、重要な結果が得られる。$m \to 0$,\,$q=-e$,\,$\bm{E} = -\nabla \phi$として、
 
 \begin{equation}
   qE_z = e\frac{\partial \phi}{\partial z} = \frac{\gamma KT_e}{n}\frac{\partial n}{\partial z} \label{3.72}
 \end{equation}
 電子の易動度は非常に大きいので、熱伝導度はほぼ無限大である。それゆえ電子を空間的に等温と仮定すると、$\gamma = 1$。さらに積分を行うことで、
 \[
-  e\phi = KT_e \in n + C
+  e\phi = KT_e \ln n + C
 \]
 すなわち
 
@@ -1821,92 +1836,764 @@ $v_1$が0でない限り、
 
 
 \subsection{電子プラズマ波} \label{section4.4}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+プラズマ振動が伝播する原因となる別の効果として、熱運動が挙げられる。熱速度を持って近接するプラズマ層へ流れ込む電子は、振動領域についての情報を運ぶ。したがってプラズマ振動は、プラズマ波と呼ぶのが適切である。
+運動方程式\eqref{4.12}式に$-\nabla p_e$の項を加えることで、この効果を簡単に扱うことができる。1次元問題では\eqref{3.53}式より、$\gamma = 3$であるから、\eqref{3.52}式を用いると
 
 \[
-\hat{\mu}_1
-= g\mu_0
-\begin{pmatrix}
-\beta & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{pmatrix}
+  \nabla p_e = 3KT_e\nabla n_e = 3KT_e \nabla (n_0 + n_1) = 3KT_e \frac{\partial n_1}{\partial x} \hat{\bm{x}}
 \]
+これを加えた線形化された運動方程式は次のようになる。
+
+\begin{equation}
+  mn_0\frac{\partial v_1}{\partial t} = -en_0E_1 - 3KT_e\frac{\partial n_1}{\partial x} \label{4.28}
+\end{equation}
+線形化するときに、$(\bm{v_1} \cdot \nabla)\bm{v}_1$の項と同様、$n_1 \partial v_1 / \partial t$,$n_1E_1$の項も無視した。\eqref{4.20}式を用いると、
+
+\begin{equation}
+  -im\omega n_0v_1 = -en_0E_1 - 3KT_eikn_1 \label{4.29}
+\end{equation}
+連続の式\eqref{4.22}、ポアソン方程式\eqref{4.23}から求めた$n_1$と$E_1$を代入することで、
 
 \[
-\hat{\mu}_2
-= g\mu_0
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & \beta & 0 \\
-0 & 0 & 1
-\end{pmatrix}
+  im\omega n_0v_1 = \left[en_0\left(\frac{-e}{ik\epsilon_0}\right) + 3KT_e ik\right]\frac{n_0ik}{i\omega}v_1
 \]
+\[
+  \omega^2 v_1 = \left(\frac{n_0e^2}{\epsilon_0 m} + \frac{3KT_e}{m}k^2\right)v_1
+\]
+\begin{equation}
+  \boxed{\omega^2 = \omega^2_p + \frac{3}{2}k^2v^2_{th}} \label{4.30}
+\end{equation}
+が得られる。ここで、$v^2_{th} \equiv 2KT_e/m$である。周波数は$k$に依存し、群速度は有限である。
 
 \[
-\hat{\mu}_3
-= g\mu_0
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & \beta
-\end{pmatrix}
+  2\omega d\omega = \frac{3}{2}v^2_{th}2kdk
 \]
+\begin{equation}
+  v_g = \frac{d\omega}{dk} = \frac{3}{2}\frac{k}{\omega}v^2_{th} = \frac{3}{2}\frac{v^2_{th}}{v_\phi} \label{4.31}
+\end{equation}
+$v_\phi$は位相速度である。$v_g$が常に$c$より小さいということは、図\refeq{fig4.5}から簡単にわかる。原点と曲線上の任意の点Pとを結ぶ直線の傾きは位相速度$v_\phi =\omega/k$を与え、Pでの曲線の傾きは群速度を与える。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.5.png}
+  \caption{電子プラズマ（Bohm-Gross 波）の分散関係}
+  \label{fig4.5}
+\end{figure}
+
+\eqref{4.30}式から$\omega$を\eqref{4.31}式に代入すると、
+\[
+  v_g = \frac{3/2 kv^2_{th}}{\sqrt{\omega^2_p + 3/2 k^2v^2_{th}}}
+\]
+群速度が最大になるのは$k\to \infty$のときで、
+\[
+  v_g \overset{k \to \infty}{\longrightarrow} \sqrt{\frac{3}{2}}v_{th}
+\]
+である。これが群速度の上限を与え、非相対論では$c$よりずっと小さい。
+
+図\refeq{fig4.5}から、情報は大きな$k$では熱速度で伝わり、小さな$k$では位相速度 $v_\phi$は大きくなるが、情報はゆっくり伝わる。これは、$\nabla n \sim kn_1$のため密度勾配は$k$に依存する。
+密度勾配が小さければ、隣り合う層どうしで密度差がほとんどなく、「押す／引く」力（圧力差）が弱くなる。これにより、熱運動が近接する層に正味の運動量を運ばないからである。
+
+\subsection{音波} \label{section4.5}
+イオン波を導入するために、大気中の音波の理論を振り返る。粘性を無視すると、これらの波を記述するNavier-Stokes方程式\eqref{3.48}は次のように書ける。
+
+\begin{equation}
+  \rho \left[\frac{\partial \bm{v}}{\partial t} + (\bm{v}\cdot \nabla)\bm{v}\right] = -\nabla p = -\frac{\gamma p}{\rho} \nabla \rho \label{4.32}
+\end{equation}
+連続の方程式は、
+
+\begin{equation}
+  \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \bm{v}) = 0 \label{4.33}
+\end{equation}
+一様な$p_0$と$\rho_0$を用いて、定常状態について線形化すると
+
+\begin{equation}
+  -i\omega \rho_0 \bm{v}_1 = -\frac{\gamma p_0}{\rho_0}i\bm{k}\rho_1 \label{4.34}
+\end{equation}
+\begin{equation}
+  -i\omega \rho_1 + \rho_0 i\bm{k}\cdot \bm{v}_1 = 0 \label{4.35}
+\end{equation}
+$\bm{k} = k\hat{\bm{x}}$,$\bm{v} = v\hat{\bm{x}}$の平面波に対しては、$\rho_1$を消去して
 
 \[
-\hat{\mu}_5
-= \frac{\mu_0}{3}
-\begin{pmatrix}
-\beta+2 & \beta-1 & 1-\beta \\
-\beta-1 & \beta+2 & 1-\beta \\
-1-\beta & 1-\beta & \beta+2
-\end{pmatrix}
+  \omega^2v_1 = k^2\frac{\gamma p_0}{\rho_0}v_1
 \]
+\begin{equation}
+  \boxed{\frac{\omega}{k} = \left(\frac{\gamma p_0}{\rho_0}\right)^{1/2} = \left(\frac{\gamma KT}{M}\right)^{1/2} \equiv c_s} \label{4.36} 
+\end{equation}
+途中の変形には質量密度$\rho_0 = n_0M$（M：粒子1個の質量）を用いた。これは中性気体中の音速$c_s$の表式であり、ある層から次の層へ次々と伝わる圧力波である。中性粒子がなく、衝突もないようなプラズマ中も似た現象が起きる。
+これをイオン音波あるいは簡単に、イオン波と呼ばれる。
+
+
+\subsection{イオン波} \label{section4.6}
+衝突がなければ、通常の音波は発生しない。しかしイオンは電荷を持つため、互いに振動を伝えることができる。つまり、電場を介して音波が生じる。これは質量の大きいイオンの運動が関係するため、
+低周波振動となり、\ref{section3.6}節のプラズマ近似を用いることができる。したがって、$n_i = n_e = n$とおき、Poisson方程式は用いない。磁場が存在しない場合のイオン流体方程式は、
+
+\begin{equation}
+  Mn\left[\frac{\partial \bm{v}_i}{\partial t} + (\bm{v}_i \cdot \nabla)\bm{v}_i\right] = en\bm{E} - \nabla p = -en\nabla \phi - \gamma_i KT_i \nabla n \label{4.37}
+\end{equation}
+となる。平面波を仮定し、線形化すると、
+
+\begin{equation}
+  -i\omega Mn_0v_{i1} = -en_0ik\phi_1 - \gamma_i KT_i in_1 \label{4.38}
+\end{equation}
+電子については$m=0$と仮定し、$\bm{B}$に沿っての運動についての\ref{section3.5}節の議論を、$\bm{B} = 0$についての今回の場合に適用する。Boltzmanの関係式から
 
 \[
-\hat{\mu}_6
-= \frac{\mu_0}{3}
-\begin{pmatrix}
-\beta+2 & 1-\beta & 1-\beta \\
-1-\beta & \beta+2 & \beta-1 \\
-1-\beta & \beta-1 & \beta+2
-\end{pmatrix}
+  n_e = n_i = n_0\exp\left(\frac{e\phi_1}{KT_e}\right) = n_0\left(1 + \frac{e\phi_1}{KT_e} + \cdots\right)
 \]
+これより、電子およびイオンの密度の摂動は
+
+\begin{equation}
+  n_1 = n_0\frac{e\phi_1}{KT_e} \label{4.39}
+\end{equation}
+と表せる。
+
+もう一つの必要な式は、イオンの連続方程式である。線形化したものは\eqref{4.22}式ですでに求めており、
+
+\begin{equation}
+  i\omega n_1 = n_0 ikv_{i1} \label{4.40}
+\end{equation}
+であった。\eqref{4.38}式において、$\phi_1$と$n_1$を\eqref{4.39},\eqref{4.40}式を用いて$v_{i1}$で書き直すと、
 
 \[
-\hat{\mu}_7
-= \frac{\mu_0}{3}
-\begin{pmatrix}
-\beta+2 & 1-\beta & \beta-1 \\
-1-\beta & \beta+2 & 1-\beta \\
-\beta -1 & 1-\beta & \beta+2
-\end{pmatrix}
+  i\omega Mn_0v_{i1} = \left(en_0ik\frac{KT_e}{en_0} + \gamma_i KT_i ik\right) \frac{n_0 ikv_{i1}}{i\omega} 
+\]
+\[
+  \omega^2 = k^2\left(\frac{KT_e}{M} + \frac{\gamma_i KT_i}{M}\right)
 \]
 
+\begin{equation}
+  \boxed{\frac{\omega}{k} = \left(\frac{KT_e + \gamma_i KT_i}{M}\right)^{1/2} \equiv v_s} \label{4.41} 
+\end{equation}
+これが、イオン音波の分散関係式である。$v_s$はプラズマ中の音速を表す。仮定した平面波中ではイオンは1次元の圧縮を受けるので、\eqref{3.53}式より、ここでは$\gamma_i =3$となる。
+電子については、\ref{section3.5}節で述べたように等温とみなすことができるため、$\gamma_e = 1$となる。そうでなければ、\eqref{4.41}式の$KT_e$の前に$\gamma_e$がかかる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.12.png}
+  \caption{イオン音波の分散関係}
+  \label{fig4.12}
+\end{figure}
+
+イオン波に対する分散曲線（図\refeq{fig4.12}）は、電子プラズマ波に対する分散曲線（図\refeq{fig4.5}）とは基本的に異なった特性を持つ。電子プラズマ振動は、本質的には電子の固有振動であり、熱運動はその周波数に空間伝播の補正を加えるだけである。
+そのため、電子波は基本的には定周波数の波である。一方、イオン波は定速度の波で、熱運動があるときにのみしか存在しない。
+この違いは以下のような物理機構が働いている。電子波では\ref{section4.3}節で見たように、電場による電気的復元力が要因であった。対して、イオン波では、電子はイオンの運動に追随して電場を遮蔽するため、電気的復元力は支配的ではない。
+しかし、\ref{section1.4}節で述べたとおり、電子の熱運動があれば遮蔽は完全ではなく、$KT_e/e$程度の電位が残り、これが復元力として働く。さらに、イオン自身の熱運動も圧縮部を拡散させる要因となり、イオンの慣性による行き過ぎによって波が形成される。
+もちろん、電子の熱運動がない場合には遮蔽は完全となり、電場による復元力が消失するため、イオン波は存在しない。
+
+
+\subsection{プラズマ近似の妥当性} \label{section4.7}
+イオン波の速度を導くとき、$\bm{E}$を有限として中性条件$n_i=n_e$を用いた。この過程で生じた誤差を検証するため、$n_i$が$n_e$と異なる場合を想定し、線形化したPoisson方程式を用いる：
+
+\begin{equation}
+  \epsilon_0 \nabla \cdot \bm{E}_1 = \epsilon_0 k^2\phi_1 = e(n_{i1} - n_{e1}) \label{4.43}
+\end{equation}
+電子密度は、線形化したBoltzmann関係式\eqref{4.39}により与えられる：
+
+\begin{equation}
+  n_{e1} = \frac{e\phi_1}{KT_e}n_0 \label{4.44}
+\end{equation}
+これを\eqref{4.43}式に代入すると
+
+\begin{equation}
+  \epsilon_0 \phi_1\left(k^2 + \frac{n_0e^2}{\epsilon_0 KT_e}\right) = en_{i1} \label{4.45}
+\end{equation}
 \[
-  \gamma = \frac{1-\beta}{3}
+  \epsilon_0 \phi_1(k^2\lambda^2_D + 1) = en_{i1}\lambda^2_D
 \]
+変形にはデバイ長\eqref{1.16}式を用いた。イオン密度は、線形化したイオンの連続方程式\eqref{4.40}により与えられる：
+
+\begin{equation}
+  n_{i1} = \frac{k}{\omega}n_0v_{i1} \label{4.46}
+\end{equation}
+\eqref{4.45},\eqref{4.46}式をイオンの連続方程式\eqref{4.38}に代入すると
+
+\begin{align}
+  \begin{split}
+    i\omega Mn_0v_{i1} = \left(\frac{en_0ik}{\epsilon_0}\frac{e\lambda^2_D}{1+k^2\lambda^2_D} + \gamma_iKT_iik\right)\frac{k}{\omega}n_0v_{i1}\\
+    \omega^2 = \frac{k^2}{M}\left(\frac{n_0e^2\epsilon^{-1}_0\lambda^2_D}{1+k^2\lambda^2_D} + \gamma_iKT_i\right)
+  \end{split} \label{4.47}
+\end{align}
+
+\begin{equation}
+  \frac{\omega}{k} = \left(\frac{KT_e}{M}\frac{1}{1+k^2\lambda^2_D} + \frac{\gamma_iKT_i}{M}\right)^{1/2} \label{4.48}
+\end{equation}
+これは、分母の$1+k^2\lambda^2_D$を除けば先に得られた\eqref{4.41}式と同じである。仮定$n_i=n_e$は$k^2\lambda^2_D=(2\pi \lambda_D/\lambda)^2$の程度の誤差を与える。
+多くの実験では$\lambda_D$は非常に小さいので、プラズマ近似は壁に隣接するシースと呼ばれる厚さ数$\lambda_D$の薄い層（\ref{section8}）を除けば十分に適用できる。
+
+
+\subsection{イオン波と電子波の比較} \label{section4.8}
+短波長を考えるため、$k^2\lambda^2_D \gg 1$を取ると
+
+\[
+  \frac{1}{1 + k^2\lambda^2_D} \approx \frac{1}{k^2\lambda_D^2} \hspace{2pc} (k^2\lambda^2_D \gg 1)
+\]
+および簡単のため、$T_i \to 0$の極限を取ると、\eqref{4.47}式は
+
+\begin{equation}
+  \omega^2 = k^2\frac{n_0e^2}{\epsilon_0Mk^2} = \frac{n_0e^2}{\epsilon_0M} \equiv \Omega^2_p \label{4.49}
+\end{equation}
+となる。$\Omega_p$はイオンプラズマ周波数であり、電子のプラズマ振動数\eqref{4.25}式のイオン版である。このように短波長ではイオン音波は一定周波数の波になる。これは短波長では変化が速すぎて、デバイ遮蔽が成立せず、その場の電場支配になるからである。
+
+電子プラズマ波とイオン音波の間には相補的な関係がある。前者は基本的には一定周波数であるが、大きな$k$に対しては一定速度となる。後者は基本的には一定速度であるが、$k$が大きくなると一定周波数となる。これを比較したのが図\refeq{4.13}である。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.13.png}
+  \caption{電子プラズマ波とイオン音波の分散曲線の比較}
+  \label{fig4.13}
+\end{figure}
+
+
+\subsection{\texorpdfstring{$\bm{B}$}{B}に垂直な電子の静電振動} \label{section4.9}
+これまで$\bm{B}=0$という仮定で話を進めていた。磁場が存在する場合、さらに多くの種類の波が存在する。ここでは最も単純な場合、すなわち高周波の静電的電子振動が磁場に直交して伝播するケースを検討しよう。まず、垂直、平行、縦方向、横方向、静電的、電磁的という用語を定義しなければならない。
+平行および垂直は、擾乱されていない磁場$\bm{B}_0$に対する$\bm{k}$の方向を示すとする。縦波および横波は、振動する電場$\bm{E}_1$に対する$\bm{k}$の方向を示すとする。振動する磁場$\bm{B}_1$が0の場合、波は静電的であるとする。そうでない場合、それは電磁的である。
+
+イオンは質量が大きいため今考えている周波数で動くことはできず、固定された均一な正電荷の背景を形成すると仮定する。熱運動も無視することとし、$KT_e=0$とおく。平衡プラズマは通常通り、$n_0$と$B_0$は一様で一定であり、$E_0$と$v_0$は0である。
+電子の運動は次の各線形方程式で表される。
+
+\begin{equation}
+  m\frac{\partial \bm{v}_{e1}}{\partial t} = -e(\bm{E}_1 + \bm{v}_{e1} \times \bm{B}_0) \label{4.52}
+\end{equation}
+\begin{equation}
+  \frac{\partial n_{e1}}{\partial t} + n_0\nabla \cdot \bm{v}_{e1} = 0 \label{4.53}
+\end{equation}
+\begin{equation}
+  \epsilon_0 \nabla \cdot \bm{E}_1 = -en_{e1} \label{4.54}
+\end{equation}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.18.png}
+  \caption{$\bm{B}_0$に対して垂直に伝播する縦の平面波}
+  \label{fig4.18}
+\end{figure}
+
+ここで$\bm{k} \parallel \bm{E}_1$の縦波のみを考える。x軸を$\bm{k}$と$\bm{E}_1$の方向とし、z軸を$\bm{B}_0$の方向とする（図\refeq{fig4.18}）。すると、$k_y=k_z=E_y=E_z=0$,\,$\bm{k}=k\hat{\bm{x}}$,\,$\bm{E}=E\hat{\bm{x}}$である。
+添字1,eを落とし、\eqref{4.52}式を成分に分けて書くと
+
+\begin{equation}
+  -i\omega mv_x = -eE - ev_yB_0 \label{4.55}
+\end{equation}
+\begin{equation}
+  -i\omega mv_y = ev_xB_0 \label{4.56}
+\end{equation}
+\[
+  -i\omega mv_z = 0
+\]
+となる。\eqref{4.56}式の$v_y$を\eqref{4.55}式に代入すると
+
+\[
+  -i\omega mv_x = eE + eB_0\frac{ieB_0}{m\omega}v_x
+\]
+\begin{equation}
+  v_x = \frac{eE/im\omega}{1-\omega^2_c/\omega^2} \label{4.57} 
+\end{equation}
+となる。サイクロトロン共鳴$\omega=\omega_c$では$v_x$は無限大になる。これは、$\omega = \omega_c$では、電子の回転運動と電場の振動が完全に同期し、電場が常に電子の運動方向と同符号で働くため、
+電子は常に加速されるためである。\eqref{4.53}式を線形化して、
+
+\begin{equation}
+  n_1 = \frac{k}{\omega}n_0v_x \label{4.58}
+\end{equation}
+\eqref{4.54}式を線形化し、\eqref{4.57},\eqref{4.58}式を代入すると
+
+\[
+  ik\epsilon_0 E = -e\frac{k}{\omega}n_0\frac{eE}{im\omega}\left(1-\frac{\omega^2_c}{\omega^2}\right)^{-1}
+\]
+\begin{equation}
+  \left(1-\frac{\omega^2_c}{\omega}\right)E = \frac{\omega^2_p}{\omega^2}E \label{4.59}
+\end{equation}
+したがって、分散関係は
+
+\begin{equation}
+  \boxed{\omega^2 = \omega^2_p + \omega^2_c \equiv \omega^2_h} \label{4.60}
+\end{equation}
+周波数$\omega_h$は\textcolor{red}{高域混成周波数}と呼ばれる。$\bm{B}$方向を横切る静電電子波はこの周波数を持つ。一方、$\bm{B}$方向に沿うものは通常のプラズマ振動であり、その周波数は$\omega =\omega_p$である。
+
+この振動の物理的解釈は図\refeq{fig4.19}に与えられる。プラズマ振動と同様に、平面波中の電子は密な領域と疎な領域を形成する。加えて、磁場$\bm{B}$がある。その結果、電子に働く復元力は静電場とLorent力となり、プラズマ振動とLarmor回転運動で表せるのである。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.19.png}
+  \caption{高域混成振動による電子の運動}
+  \label{fig4.19}
+\end{figure}
+
+図\refeq{figP4.9}のように$\bm{B}$に対して角度$\theta$で伝播する場合は、2つの波が得られる。一方はプラズマ振動に類似し、他方は高域混成振動に類似するが、いずれも伝播角度によって少し変わる。
+図\refeq{fig4.21}は$\bm{k}$の磁場に垂直な成分（x成分）を固定し、平行成分（z成分）を変えていったときの分散関係である。図からわかるように、$k_z=0$のときは$\bm{B}$に垂直な方向のみで伝播するため、上に述べたように$\omega_h$のみを持つ。
+それ以外の角度では2つの波が生じていることが読み取れる。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figP4.9.png}
+  \caption{$\bm{B}$に対して角度$\theta$で伝播する波}
+  \label{figP4.9}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig4.21.png}
+  \caption{Trivelpeice-Gould分散曲線}
+  \label{fig4.21}
+\end{figure}
+
+
+\subsection{\texorpdfstring{$\bm{B}$}{B}に垂直な静電イオン波} \label{section4.10}
+次に、$k$が$\bm{B}_0$に垂直な場合のイオン音波の挙動を検討する。$\bm{k}\cdot \bm{B_0}$を厳密にゼロと設定したくなるが、これは（\ref{section4.11}節）で示す結果を導く。
+この節では、$\bm{k}$を$\bm{B}_0$にほぼ垂直とみなす。ここでいう「ほぼ」の意味は後で明確になる。通常の平衡状態にある無限プラズマを想定し、$n_0$と$\bm{B}_0$は一定かつ一様、$\bm{v}_0=\bm{E}_0=0$とする。簡単のため$T_i=0$とする。
+$T_i=0$でもイオン音波は存在するので、重要な効果を見落とすことはない。また、$\bm{B}_1=0$の静電波を仮定する。この様子を図\refeq{fig4.23}に示す。
+イオンの運動に関して、角$1/2\pi - \theta$はとても小さいため、$\bm{E}=E_1\hat{\bm{x}}$,$\nabla= ik\hat{\bm{x}}$ととってよい。一方、電子の場合、$1/2\pi-\theta$が0であるのと、小さいが有限であるとでは大きな違いが生じる。
+電子はlarmor半径が小さいため、電荷の中性を保とうとしてもすぐに曲げられ、x方向に動けない。そのため、電子は$\bm{E}\times \bm{B}$ ドリフトとしてy方向に運動するだけである。しかし、$\theta$がちょうど\pi/2でなければ、電子は$\bm{B}_0$方向の成分をもつ。
+すると、$\bm{B}_0$に沿って波の中を動くことができ、その上下の移動で、x方向に動かずとも中性を保つように電荷を再配置できる。このように、$1/2\pi-\theta$が有限であればDebye遮蔽を形成することができる。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.23.png}
+  \caption{$\bm{B}_0$に対してほぼ垂直に伝播する静電イオンサイクロトロン波}
+  \label{fig4.23}
+\end{figure}
+
+イオンに話を戻すと、イオン波はその慣性のために波の1周期の間に長い距離を動くことができず、上のようなことがほとんど起きない。これがイオンでは厳密に$k$が$\bm{B}_0$に垂直な場合を考えなくてよい理由である。
+「ほぼ」と表現したのは、これの臨界角があるためである。臨界角$\chi=1/2\pi - \theta$は、イオンと電子の平行速度の比に比例する：$\chi \simeq (m/M)^{1/2}$\,[rad]。これより大きな角$\chi$については以下の扱いが成り立ち、より小さな角$\chi$については\ref{section4.11}節で扱われる。
+
+イオンの運動方程式は
+
+\begin{equation}
+  M\frac{\partial \bm{v}_{i1}}{\partial t} = -e\nabla \phi_1 + e\bm{v}_{i1} \times \bm{B}_0 \label{4.61}
+\end{equation}
+x方向に伝播する平面波を仮定し、成分に分けると
+
+\begin{equation}
+  \begin{aligned}
+    -i\omega Mv_{ix} &= -eik\phi_1 &+ ev_{iy}B_0\\
+    -i\omega Mv_{iy} &=            &- ev_{ix}B_0 
+  \end{aligned} \label{4.62}
+\end{equation}
+
+前と同様にして解くことにより
+
+\begin{equation}
+  v_{ix} = \frac{ek}{M\omega}\phi_1\left(1 - \frac{\Omega^2_c}{\omega^2}\right)^{-1} \label{4.63}
+\end{equation}
+ここで$\Omega_c=eB_0/M$はイオンサイクロトロン周波数である。イオンの連続方程式はこれまでのように
+
+\begin{equation}
+  n_{i1} = n_0\frac{k}{\omega}v_{ix} \label{4.64}
+\end{equation}
+である。角$\chi$を有限とし、そのために電子は$\bm{B}_0$に沿って動けると仮定すると、電子についてBoltzmann関係式を使うことができる。線形化した形は\eqref{4.44}式と同じで
+
+\begin{equation}
+  \frac{n_{e1}}{n_0} = \frac{e\phi_1}{KT_e} \label{4.65}
+\end{equation}
+である。プラズマ近似$n_i = n_e$を用いると方程式系は閉じる。\eqref{4.64},\eqref{4.65}式を用いると、\eqref{4.63}式は次のように書き換えられる。
+
+\[
+  \left(1 - \frac{\Omega^2_c}{\omega^2}\right)v_{ix} = \frac{ek}{M\omega}\frac{KT_e}{en_0}\frac{n_0k}{\omega}v_{ix}
+\]
+
+\begin{equation}
+  \omega^2 - \Omega^2_c = k^2\frac{KT_e}{M} \label{4.66}
+\end{equation}
+$KT_i=0$としたので、これから次式が得られる。
+
+\begin{equation}
+  \boxed{\omega^2 = \Omega^2_c + k^2v_s^2} \label{4.67}
+\end{equation}
+これが、静電イオンサイクロトロン波に対する分散関係である。
+
+これらの波の物理的説明は、高域混成波に対する図\refeq{fig4.19}のそれと極めて似ている。イオンは音波型の振動を示すが、Lorentz力が新たな復元力を構成し、\eqref{4.67}式における$\Omega^2_c$項を生じさせるのである。
+
+
+\subsection{低域混成周波数} \label{section4.11}
+$\theta$がちょうど$\pi/2$であり、電子が磁力線に沿って動くことによって電気的中性を保つことができない場合について考える。電子は、Boltzmamm関係式ではなく、\eqref{3.62}式の運動方程式に従うことになる。
+簡単のため、$T_e=0$として$\nabla p$の項を落とす。イオンの運動方程式は\eqref{4.61}式と変わらないから、\eqref{4.63}式より
+
+\begin{equation}
+  v_{ix} = \frac{ek}{M\omega}\phi_1\left(1 - \frac{\Omega^2_c}{\omega^2}\right)^{-1} \label{4.68}
+\end{equation}
+\eqref{4.68}式で$e \to -e$,\,$M \to m$,\, $\Omega_c \to -\omega_c$に変えることにより、$T_e=0$のときの電子の運動方程式：
+
+\begin{equation}
+  v_{ex} = -\frac{ek}{m\omega}\phi_1\left(1 - \frac{\omega^2_c}{\omega^2}\right)^{-1} \label{4.69}
+\end{equation}
+が得られる。連続の方程式は
+
+\begin{equation}
+  n_{i1} = n_0\frac{k}{\omega}v_{i1} \hspace{2pc} n_{e1} = n_0\frac{k}{\omega}v_{e1} \label{4.70}
+\end{equation}
+である。プラズマ近似$n_i =n_e$を用いることで、これは$v_{i1} = v_{e1}$となる。\eqref{4.68}式と\eqref{4.69}式を等しくおくことで
+
+\[
+  M\left(1 - \frac{\Omega^2_c}{\omega^2}\right) = -m\left(1 - \frac{\omega^2_c}{\omega^2}\right)
+\]
+\[
+  \omega^2(M++m) = m\omega^2_c + M\Omega^2_c = e^2B^2\left(\frac{1}{m} + \frac{1}{M}\right)
+\]
+\[
+  \omega^2 = \frac{e^2B^2}{Mm} = \Omega_c \omega_c
+\]
+\begin{equation}
+  \boxed{\omega = (\Omega_c \omega_c)^{1/2} \equiv \omega_l} \label{4.71}
+\end{equation}
+これは、$\theta$が正確に$2/\pi$に等しいときの静電イオン振動の周波数で、\textcolor{red}{低域混成周波数}と呼ばれる。$\theta$をこの値に必要な精度で保っておくことは難しいので、周波数$\omega = \omega_l$はめったに観測されない。
+
+
+\subsection{\texorpdfstring{$\bm{B}_0=0$}{B0=0}のときの電磁波} \label{section4.12}
+難しさの順からいくと、次は$\bm{B}_1 \neq 0$の波の場合である。これは横方向の電磁波（プラズマ中を伝わる光波あるいは電波）である。まずは簡単な真空中から考える。Maxwell方程式は
+
+\begin{equation}
+  \nabla \times \bm{E}_1 = -\dot{\bm{B}}_1 \label{4.72}
+\end{equation}
+\begin{equation}
+  c^2\nabla \times \bm{B}_1 = \dot{\bm{E}}_1 \label{4.73}
+\end{equation}
+となる。\eqref{4.72}式は次のように書き換えることもできる。
+
+\[
+  \bm{k} \times \bm{E}_1 = \omega \bm{B}_1
+\]
+縦波であれば、$\bm{B}_1 = 0$となり、波は静電波になったのである（\ref{section4.9}）。
+
+
+\eqref{4.73}式の回転をとり、\eqref{4.72}式を時間微分した式に代入すると
+
+\begin{equation}
+  c^2 \nabla \times (\nabla \times \bm{B}_1) = \nabla \times \dot{\bm{E}}_1 = -\ddot{\bm{B}}_1 \label{4.74}
+\end{equation}
+再び $\exp[i(kx-\omega t)]$の平面波を仮定すると
+
+\begin{equation}
+  \omega^2 \bm{B}_1 = -c^2\bm{k} \times (\bm{k} \times \bm{B}_1) = -c^2[\bm{k}(\bm{k}\cdot \bm{B}_1) - k^2\bm{B}_1] \label{4.75}
+\end{equation}
+他のMaxwell方程式より、$\bm{k} \cdot \bm{B}_1 = -i\nabla \times \bm{B}_1 = 0$であるから
+
+\begin{equation}
+  \omega^2 = k^2c^2 \label{4.76}
+\end{equation}
+これより、$c$は光波の位相速度$\omega / k$である。
+
+空間に電流があるときには、\eqref{4.73}式に$\bm{j}_1/\epsilon_0$を加える必要がある：
+
+\begin{equation}
+  c^2\nabla \times \bm{B}_1 = \frac{\bm{j}_1}{\epsilon_0} + \dot{\bm{E}}_1 \label{4.77}
+\end{equation}
+時間微分すると
+
+\begin{equation}
+  c^2\nabla \times \dot{\bm{B}}_1 = \frac{1}{\epsilon_0}\frac{\partial \bm{j}_1}{\partial t} + \ddot{\bm{E}}_1 \label{4.78}
+\end{equation}
+一方、\eqref{4.72}の回転は
+
+\begin{equation}
+  \nabla \times (\nabla \times \bm{E}_1) = \nabla(\nabla \cdot \bm{E}_1) - \nabla^2 \bm{E}_1 = -\nabla times \dot{\bm{B}}_1 \label{4.79}
+\end{equation}
+2次の量$\nabla \times \dot{\bm{B}}_1$を無視し、$\exp [i(\bm{k}\cdot \bm{r} - \omega t)]$の形を考慮すれば
+
+\begin{equation}
+  -\bm{k}(\bm{k}\cdot \bm{E}_1) + k^2\bm{E}_1 = \frac{i\omega}{\epsilon_0 c^2}\bm{j}_1 + \frac{\omega^2}{c^2}\bm{E}_1 \label{4.80}
+\end{equation}
+横波は$\bm{k}\cdot \bm{E}_1 =0$であるので、この式は
+
+\begin{equation}
+  (\omega^2 - c^2k^2)\bm{E}_1 = -i\omega \bm{j}_1 / \epsilon_0 \label{4.81}
+\end{equation}
+となる。光波やマイクロ波を考えると、これらは非常に高い周波数を持つため、イオンは固定されていると見なすことができる。したがって電流$\bm{j}_1$はすべて電子の運動によるものである：
+
+\begin{equation}
+  \bm{j}_1 = -n_0 e\bm{v}_{e1} \label{4.82}
+\end{equation}
+$\bm{B}_0 = 0$のプラズマを考えると、線形化した電子の運動方程式から（$KT_e = 0$）：
+
+\[
+  m\frac{\partial \bm{v}_{e1}}{\partial t} = -e\bm{E}
+\]
+\begin{equation}
+  \bm{v}_{e1} = \frac{e\bm{E}_1}{im\omega} \label{4.83}
+\end{equation}
+これを用いると、\eqref{4.81}式は次のように書ける。
+
+\begin{equation}
+  (\omega^2 - c^2k^2)\bm{E}_1 = \frac{i\omega}{\epsilon_0}n_0e\frac{e\bm{E}_1}{im\omega} = \frac{n_0e^2}{\epsilon_0 m}\bm{E_1} \label{4.84}
+\end{equation}
+\begin{equation}
+  \omega^2 = \omega^2_p + c^2k^2 \label{4.85}
+\end{equation}
+これは、定常磁場のないときのプラズマ中を伝播する電磁波の分散関係式である。真空中の関係式\eqref{4.76}が、プラズマ振動で現れた$\omega^2_p$の項だけ修正された形である。プラズマ中の光波の位相速度は光速度より大きい。
+しかし、群速度は光速度は超えない。\eqref{4.85}式から
+
+\begin{equation}
+  \frac{d\omega}{dk} = v_g = \frac{c^2}{v_\phi}  < c \label{4.87}
+\end{equation}
+
+分散関係式\eqref{4.85}を図\refeq{fig4.26}に示す。この図はプラズマ波の図\refeq{fig4.5}に似ているが、図\refeq{fig4.26}の漸近速度$c$は図\refeq{fig4.5}の熱速度$v_th$よりもはるかに大きいため、分散関係は実際には大きく異なる。
+もっと重要なことは、波の減衰に違いがある点である。大きな$kv_{th}$を持つプラズマ波は大きく減衰する。このことは\ref{section7}章の運動論から得られる。一方、電磁波は大きな$kc$では通常の光波となり、この極限ではプラズマの存在によって減衰されない。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.26.png}
+  \caption{定常磁場のないときのプラズマ中を伝播する電磁波の分散関係式}
+  \label{fig4.26}
+\end{figure}
+
+\eqref{4.85}式のような分散関係は、\textcolor{red}{カットオフ}と呼ばれる現象を表す。カットオフの議論では、外部から固定された周波数$\omega$のマイクロ波ビームをプラズマ中を通過させる。
+すると、プラズマ中の波長$2\pi/k$は\eqref{4.85}式で規定される値をとる。波が進み、プラズマ密度が高い領域に進入すると、$\omega^2_p$は増加する一方で、$k^2$は必然的に減少し、波長はどんどん長くなる。
+最終的に、$k^2$が0となる密度に達する。これより大きな密度に対しては、\eqref{4.85}式は実数の$k$に対しては満たされず、波は伝播できない。このカットオフの条件は、$\omega = \omega_p$の臨界密度$n_c$のところで起きる。
+その条件は、\eqref{4.25}式から
+
+\begin{equation}
+  n_c = m\epsilon_0 \omega^2 / e^2 \label{4.88}
+\end{equation}
+
+$n$が大きすぎたり、$\omega$が小さすぎる場合、電磁波はプラズマを通過できない。このとき、\eqref{4.85}から$k$が虚数となる：
+
+\begin{equation}
+  ck = (\omega^2 - \omega^2_p)^{1/2} = i|\omega^2_p - \omega^2|^{1/2} \label{4.89}
+\end{equation}
+波は空間的には$\exp(ikx)$の形をしているので、$k$が虚数であれば指数的に減衰する。表皮深さは次のようになる：
+
+\begin{equation}
+  e^{ikx} = e^{-|k|x} = e^{-x/\delta} \hspace{2pc} \delta = |k|^{-1} = \dfrac{c}{(\omega^2_p - \omega^2)^{1/2}} \label{4.90}
+\end{equation}
+多くの実験室にあるプラズマのカットオフ周波数は、マイクロ波の領域にある。
+
+プラズマのカットオフについて最もよく知られた効果は、短波無線通信への応用である。電波が電離層内でプラズマ密度が十分に高い高度に到達すると、波は反射される（図\refeq{fig4.32}）。これにより信号を地球に伝送することが可能となる。
+最大密度を$10^6 \,\mathrm{m}^3$とすると、臨界周波数は$10 \,\text{MHz}$のオーダーである。人工衛星と通信するためには、電離層を透過させるためにこの値以上の周波数が必要である。
+しかし、人工衛星の大気圏再突入時には、激しい摩擦熱によってプラズマが発生する。これによりプラズマによるカットオフが生じ、再突入中に通信不能となるときがある。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.32.png}
+  \caption{プラズマが電波通信に与える影響を説明するための、地球の電離層の模式図}
+  \label{fig4.32}
+\end{figure}
+
+
+\subsection{\texorpdfstring{$\bm{B}_0$}{B0}に垂直な電磁波} \label{section4.14}
+ここでは、磁場が存在するときの電磁場の伝播について考える。はじめに垂直な伝播$\bm{k} \perp \bm{B}_0$を取り扱う。$\bm{k} \perp \bm{E}_1$の横波の場合、\ctext{1}\,$\bm{E}_1 \parallel \bm{B}_0$と\ctext{2}\,$\bm{E}_1 \perp \bm{B}_0$が存在する。（図\refeq{fig4.33}）
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.33.png}
+  \caption{$\bm{B}_0$に垂直に伝播する電磁波}
+  \label{fig4.33}
+\end{figure}
+
+
+\subsubsection{\ctext{1}\, 正常波,\, \texorpdfstring{$\bm{E}_1 \parallel \bm{B}_0$}{E1\parallel B0}} \label{section4.14.1}
+$\bm{E}_1 \parallel \bm{B}_0$のとき、$\bm{B}_0 = B_0 \hat{\bm{z}}$,\,$\bm{E}_1 = E_1\hat{\bm{z}}$,\,$\bm{k}=k\hat{\bm{x}}$と書ける（図\refeq{fig4.34}）。 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig4.34.png}
+  \caption{正常波の様子}
+  \label{fig4.34}
+\end{figure}
+
+この場合、波の方程式は\eqref{4.81}式と同じである。
+
+\begin{equation}
+  (\omega^2 - c^2k^2)\bm{E}_1 = -i\omega \bm{j}_1 /\epsilon_0 = in_0e\omega \bm{v}_{e1}/\epsilon_0 \label{4.92}
+\end{equation}
+$\bm{E}_1 = E_1\hat{\bm{z}}$であるため、$v_{ez}$だけわかればよい。これは次の運動方程式で与えられる。
+
+\begin{equation}
+  m\frac{\partial v_{ez}}{\partial t} = -eE_z \label{4.93}
+\end{equation}
+これらの式は$\bm{B}_0 = 0$に対する方程式と同じなので、結果も前に$\bm{B}_0 = 0$として得られた同じになる：
+
+\begin{equation}
+  \boxed{\omega^2 = \omega^2_p + c^2k^2} \label{4.94}
+\end{equation}
+$\bm{E_1}\parallel \bm{B}_0$のこの波は\textcolor{red}{正常波}と呼ばれる。「正常」および「異常」という用語は結晶光学から借用されたものである。
+プラズマ物理学においては、磁場の影響を受けない波を「正常」波と呼ぶほうが親しみやすい。厳密に結晶光学にならうならば、この波は「異常」波と呼ばれるはずのものである。
+
+
+\subsubsection{\ctext{2}\, 異常波,\, \texorpdfstring{$\bm{E}_1 \perp \bm{B}_0$}{E1\perp B0}} \label{section4.14.2}
+$\bm{E}_1 \perp \bm{B}_0$のとき、電子の運動は$\bm{B}_0$に影響され、分散関係は変化する。この場合、$\bm{E}_1 = E_1\hat{\bm{y}}$,\,$\bm{k}=k\hat{\bm{x}}$ととる（図\refeq{fig4.33}）。
+しかし、ローレンツ力$\bm{v}_{e1} \times \bm{B}_0$による電子の曲がった運動のために電場は純粋な横波ではいられず、$\bm{E}_1 \perp \bm{B}_0$の波は平面偏光ではなく楕円偏光になる。
+そのため、この波がプラズマ中を伝播すると、一部は縦波に、一部は横波になる。したがって、このモードを正しく扱うには、$\bm{E_1}$がx,\,y両成分を持つとする必要がある（図\refeq{fig4.35}）：
+
+\begin{equation}
+  \bm{E}_1 = E_x\hat{\bm{x}} + E_y\hat{\bm{y}} \label{4.95}
+\end{equation}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.35.png}
+  \caption{異常波の楕円偏光}
+  \label{fig4.35}
+\end{figure}
+
+線形化した電子の運動方程式は（$KT_e = 0$として）
+
+\begin{equation}
+  -im\omega \bm{v}_{e1} = -e(\bm{E} + \bm{v}_{e1} \times \bm{B}_0) \label{4.96}
+\end{equation}
+xとy成分は、添字を省いて
+
+\begin{equation}
+  \begin{aligned}
+    v_x &= \frac{-ie}{m\omega}(E_x + v_yB_0)\\
+    v_y &= \frac{-ie}{m\omega}(E_y - v_xB_0)
+  \end{aligned} \label{4.97}
+\end{equation}
+これまで通り$v_x$と$v_y$について解くと
+
+\begin{equation}
+  \begin{aligned}
+    v_x &= \frac{e}{m\omega}\left(-iE_x - \frac{\omega_c}{\omega}E_y\right)\left(1 - \frac{\omega^2_c}{\omega^2}\right)^{-1}\\
+    v_y &= \frac{e}{m\omega}\left(-iE_y - \frac{\omega_c}{\omega}E_x\right)\left(1 - \frac{\omega^2_c}{\omega^2}\right)^{-1}
+  \end{aligned} \label{4.98}
+\end{equation}
+波の方程式は\eqref{4.80}式で与えられるが、ここでは、縦波なので$\bm{k} \cdot \bm{E}_1 = kE_x$とする必要がある。
+
+\begin{equation}
+  (\omega^2 - c^2k^2)\bm{E}_1 + c^2kE_x\bm{k} = - i\omega\bm{j}_1/\epsilon_0 = in_0\omega\bm{v}_{e1}/\epsilon_0 \label{4.99}
+\end{equation}
+x成分とy成分とに分け、\eqref{4.98}式を用いると
+
+\begin{equation}
+  \begin{aligned}
+    \omega^2E_x &= -\frac{i\omega n_0e}{\epsilon_0}\frac{e}{m\omega}\left(iE_x + \frac{\omega_c}{\omega}E_y\right)\left(1 - \frac{\omega^2_c}{\omega^2}\right)^{-1}\\
+    (\omega^2 - c^2k^2)E_y &= -\frac{i\omega n_0e}{\epsilon_0}\frac{e}{m\omega}\left(-iE_y - \frac{\omega_c}{\omega}E_x\right)\left(1 - \frac{\omega^2_c}{\omega^2}\right)^{-1}
+  \end{aligned} \label{4.100}
+\end{equation}
+$\omega_p$で書き換えて、さらに計算を進めると
+
+\begin{equation}
+  \begin{aligned}
+    \left[\omega^2\left(1-\underset{\text{\ctext{A}}}{\frac{\omega_c^2}{\omega^2}}\right) - \omega^2_p\right]E_x + i\underset{\text{\ctext{B}}}{\frac{\omega^2_p \omega_c}{\omega}}E_y = &0\\
+    \left[(\omega^2 - c^2k^2)\left(1-\underset{\text{\ctext{D}}}{\frac{\omega_c^2}{\omega^2}}\right) - \omega^2_p\right]E_y - i\underset{\text{\ctext{C}}}{\frac{\omega^2_p \omega_c}{\omega}}E_x = &0
+  \end{aligned} \label{4.101}
+\end{equation}
+これらが意味のある解をもつためには
+
+\begin{equation}
+  \begin{Vmatrix}
+   A & B \\
+   C & D
+  \end{Vmatrix} = 0 \label{4.102}
+\end{equation}
+高域混成周波数\eqref{4.60}を用いると、係数Aは$\omega^2 - \omega^2_h$である。これより、条件 $AD = BC$は次のように書ける。
+
+\begin{equation}
+  \begin{aligned}
+    (\omega^2 - \omega^2_h)\left[\omega^2 - \omega^2_h - c^2k^2\left(1 - \frac{\omega^2_c}{\omega^2}\right)\right] = \left(\frac{\omega^2_p \omega_c}{\omega}\right)^2\\
+    \frac{c^2k^2}{\omega^2} = \dfrac{\omega^2 - \omega^2_h - \left[(\omega^2_p \omega_c/\omega)^2 / (\omega^2 - \omega^2_h)\right]}{\omega^2 - \omega^2_c}
+  \end{aligned} \label{4.103}
+\end{equation}
+これは若干の計算で簡単な形になる。右辺の最初の$\omega^2_h$を$\omega^2_c + \omega^2_p$で書き換えると
+
+\begin{align*}
+  \frac{c^2k^2}{\omega^2} &= 1 - \frac{\omega^2_p(\omega^2 - \omega^2_h) + (\omega^4_p\omega^2_c/\omega^2)}{(\omega^2 - \omega^2_c)(\omega^2 - \omega^2_h)}\\
+                          &= 1 - \frac{\omega^2_p}{\omega^2}\frac{\omega^2(\omega^2 - \omega^2_h) + \omega^2_p\omega^2_c}{(\omega^2 - \omega^2_c)(\omega^2 - \omega^2_h)}\\
+                          &= 1 - \frac{\omega^2_p}{\omega^2}\frac{\omega^2(\omega^2 - \omega^2_c) - \omega^2_p(\omega^2 - \omega^2_c)}{(\omega^2 - \omega^2_c)(\omega^2 - \omega^2_h)}
+\end{align*}
+
+\begin{equation}
+  \boxed{\frac{c^2k^2}{\omega^2} = \frac{c^2}{v^2_\phi} = 1 - \frac{\omega^2_p}{\omega^2}\frac{\omega^2 - \omega^2_p}{\omega^2 - \omega^2_h}} \label{4.104}
+\end{equation}
+これが異常波の分散関係である。$\bm{E}_1$が$\bm{B}_0$に垂直であり、$\bm{B}_0$に垂直に伝播する縦横両成分をもつ電磁波である。
+
+
+\subsection{カットオフと共鳴} \label{section4.15}
+異常波の分散関係は、今まで出てきたもののどれよりもはるかに複雑である。その意味することを知るためには、カットオフと共鳴ということばを定義しておくと便利である。
+その前にまず、屈折率について確認しよう。
+
+屈折率は「真空と比べて、位相がどれだけ遅く進むか」を表す量である。これより屈折率を
+
+\begin{equation}
+  \boxed{\tilde{n} \equiv \frac{\text{真空中の位相速度}}{\text{媒質中の位相速度}} = \frac{c}{v_\phi} = \frac{ck}{\omega}}
+\end{equation}
+と定義することができる。
+
+カットオフでは電磁波は進行できないため、屈折率は0となる。これは次のことからも示せる。\eqref{4.85}式から$k$について解くと、
+
+\[
+  k^2 = (\omega^2 - \omega^2_p)/c^2
+\]
+これより、屈折率は
+\[
+  n^2 = \frac{c^2k^2}{\omega^2} = 1 - \frac{\omega^2_p}{\omega^2} 
+\]
+と表せる。\ref{section4.12}節より、カットオフの条件は$\omega = \omega_p$であった。ゆえに、カットオフ条件下では屈折率が0になる。また、屈折率の定義から、カットオフは波長が無限大のときに起こることも言える。
+一方、共鳴（$\omega = \omega_c$）は屈折率が無限になるときに起きる。あるいは、波長が0になるときである。$\omega_p$と$\omega_c$が変動する領域を波が伝播していくと、カットオフや共鳴にぶつかる。
+一般に、波はカットオフの点で反射され、共鳴点で吸収される。
+
+異常波の共鳴は\eqref{4.104}式において$k$を無限大とすることに相当する。左辺の$c$および$\omega$は有限であるため、$k\,\to\,\infty$のとき、$\omega\,\to\,\omega_h$である。
+つまり、共鳴はプラズマ中
+
+\begin{equation}
+  \omega^2_h = \omega^2_p + \omega^2_c = \omega^2 \label{4.105}
+\end{equation}
+の点で起きる。これは$\bm{B}_0$を横切って伝播する電磁波に関する分散関係と考えてよい（\eqref{4.60}式）。
+周波数$\omega$の波が共鳴点に近づくにつれて、位相速度や群速度は0となり、電磁波として空間を運ばれていたエネルギーが、共鳴点で電子の集団的な高域混成振動に転換される。
+異常波は元々、一部電磁的で、一部静電的の混成波であるが、共鳴点では電磁的特性を失い、静電振動になる（Problem\,4.14）。
+
+異常波のカットオフは、\eqref{4.104}式で$k$を0にすることに相当する。
+
+\[
+  0 = 1 - \frac{\omega^2_p}{\omega^2}\frac{\omega^2 - \omega^2_p}{\omega^2 - \omega^2_p - \omega^2_c}
+\]
+\[
+  1 - \frac{\omega^2_c}{\omega^2 - \omega^2_p} = \frac{\omega^2_p}{\omega^2}
+\]
+\[
+  1 - \frac{\omega^2_p}{\omega^2} = \frac{\omega^2_c/\omega^2}{1 - (\omega^2_p/\omega^2)}
+\]
+\[
+  \left(1 - \frac{\omega^2_p}{\omega^2}\right)^2 = \frac{\omega^2_c}{\omega^2}
+\]
+\[
+  1 - \frac{\omega^2_p}{\omega^2} = \pm \frac{\omega_c}{\omega}
+\]
+\begin{equation}
+  \omega^2 \mp \omega \omega_c - \omega^2_p = 0 \label{4.107}
+\end{equation}
+\pm \,の2つの符号は、それぞれ異なったカットオフ周波数を与える。それらを$\omega_R$と$\omega_L$とすると、解の公式より
+
+\begin{equation}
+  \begin{aligned}
+    \omega_R &= \frac{1}{2}\left[\omega_c + (\omega^2_c + 4\omega^2_p)^{1/2}\right]\\
+    \omega_L &= \frac{1}{2}\left[-\omega_c + (\omega^2_c + 4\omega^2_p)^{1/2}\right]
+  \end{aligned} \label{4.108}
+\end{equation}
+と求まる。カットオフ周波数$\omega_R$と$\omega_L$はそれぞれ、右回りおよび左回りカットオフと呼ばれるが、その理由は次節で説明する。
+
+カットオフと共鳴の周波数は、位相速度-周波数の図を使う方が分かりやすい（図\refeq{fig4.36}）。この図を見方として、一定周波数$\omega$の波が外からプラズマに送り込まれることを想像すればいい。
+あるいは、密度一定のプラズマ中で$\omega$が変動する様子を想像すればいい。前者の観点に立つと、波が密度の増大する領域にくると、周波数$\omega_L$,\,$\omega_p$\,$\omega_h$,\,$\omega_R$はすべて増大し、図の右側に動いていく。
+後者の観点に立つと、$\omega$が大きい（密度が小さい）ときに、位相速度が光速度に近づく。波がさらに進むと、右回りのカットオフ$\omega_R$になるまで$v_\phi$は増大し、そこで無限大になる。
+$\omega=\omega_R$と$\omega=\omega_h$の間では$\omega^2/k^2$は負で、伝播は不可能になる。$\omega=\omega_h$では共鳴が起こり、$v_\phi$は0になる。$\omega=\omega_h$と$\omega=\omega_L$の間では伝播が再び可能となり、この領域では、$\omega$が$\omega_p$より小さいか大きかにより、波は$c$より速くあるいは遅く伝わる。
+\eqref{4.104}式から、$\omega=\omega_p$では波は速度$c$で伝わることが明らかである。$\omega < \omega_L$では再び波は伝わらなくなる。それゆえ異常波は、非伝播領域で分けられた2つの伝播領域をもつことになる。
+比較のために、図\refeq{fig4.37}に正常波に対する同様の図を示す。この図にはただ1つのカットオフがあり、共鳴はない。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.36.png}
+  \caption{異常波の分散図。斜線部では波は伝わらない。}
+  \label{fig4.36}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.37.png}
+  \caption{正常波の分散図}
+  \label{fig4.37}
+\end{figure}
+
+
+\subsection{\texorpdfstring{$\bm{B}_0$}{B0}に平行な電磁波} \label{section4.16}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
