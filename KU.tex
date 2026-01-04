@@ -2402,7 +2402,7 @@ $\bm{E}_1 = E_1\hat{\bm{z}}$であるため、$v_{ez}$だけわかればよい�
 これらの式は$\bm{B}_0 = 0$に対する方程式と同じなので、結果も前に$\bm{B}_0 = 0$として得られた同じになる：
 
 \begin{equation}
-  \boxed{\omega^2 = \omega^2_p + c^2k^2} \label{4.94}
+  \boxed{\omega^2 = \omega^2_p + c^2k^2} \hspace{2pc} (\text{O\,波}) \label{4.94}
 \end{equation}
 $\bm{E_1}\parallel \bm{B}_0$のこの波は\textcolor{red}{正常波}と呼ばれる。「正常」および「異常」という用語は結晶光学から借用されたものである。
 プラズマ物理学においては、磁場の影響を受けない波を「正常」波と呼ぶほうが親しみやすい。厳密に結晶光学にならうならば、この波は「異常」波と呼ばれるはずのものである。
@@ -2491,7 +2491,7 @@ $\omega_p$で書き換えて、さらに計算を進めると
 \end{align*}
 
 \begin{equation}
-  \boxed{\frac{c^2k^2}{\omega^2} = \frac{c^2}{v^2_\phi} = 1 - \frac{\omega^2_p}{\omega^2}\frac{\omega^2 - \omega^2_p}{\omega^2 - \omega^2_h}} \label{4.104}
+  \boxed{\frac{c^2k^2}{\omega^2} = \frac{c^2}{v^2_\phi} = 1 - \frac{\omega^2_p}{\omega^2}\frac{\omega^2 - \omega^2_p}{\omega^2 - \omega^2_h}} \hspace{2pc} (\text{X\,波}) \label{4.104}
 \end{equation}
 これが異常波の分散関係である。$\bm{E}_1$が$\bm{B}_0$に垂直であり、$\bm{B}_0$に垂直に伝播する縦横両成分をもつ電磁波である。
 
@@ -2583,6 +2583,109 @@ $\omega=\omega_R$と$\omega=\omega_h$の間では$\omega^2/k^2$は負で、伝�
 
 
 \subsection{\texorpdfstring{$\bm{B}_0$}{B0}に平行な電磁波} \label{section4.16}
+$\bm{k}$はz方向で、$\bm{E}_1$はx,\,y成分を持つとする。
+
+\begin{equation}
+  \bm{k} = k\hat{\bm{z}} \hspace{2pc} \bm{E}_1 = E_x\hat{\bm{x}} + E_y\hat{\bm{y}} \label{4.109}
+\end{equation}
+異常波の方程式\eqref{4.99}において、$\bm{k}$を$k\hat{\bm{c}}$から$k\hat{\bm{z}}$に変えればそのまま使うことができる。$\bm{k}\cdot \bm{E}_1 = 0$より
+
+\[
+  (\omega^2 - c^2k^2)\bm{E}_1 = in_0\omega e\bm{v}_{e1}/\epsilon_0
+\]
+各成分は、\eqref{4.98}式を用いると
+
+\begin{align*}
+  (\omega^2 - c^2k^2)E_x &= -\frac{i\omega n_0e}{\epsilon_0}\frac{e}{m\omega}\left(iE_x + \frac{\omega_c}{\omega}E_y\right)\left(1 - \frac{\omega^2_c}{\omega^2}\right)^{-1}\\
+  (\omega^2 - c^2k^2)E_y &= -\frac{i\omega n_0e}{\epsilon_0}\frac{e}{m\omega}\left(-iE_y - \frac{\omega_c}{\omega}E_x\right)\left(1 - \frac{\omega^2_c}{\omega^2}\right)^{-1}
+\end{align*}
+
+\begin{equation}
+  \begin{aligned}
+    (\omega^2 - c^2k^2)E_x &= \frac{\omega^2_p}{1 - \omega^2_c/\omega^2}\left(E_x - \frac{i\omega_c}{\omega}E_y\right)\\
+    (\omega^2 - c^2k^2)E_y &= \frac{\omega^2_p}{1 - \omega^2_c/\omega^2}\left(E_y + \frac{i\omega_c}{\omega}E_x\right)
+  \end{aligned} \label{4.110}
+\end{equation}
+次の略式
+
+\begin{equation}
+  \alpha \equiv \frac{\omega^2_p}{1 - (\omega^2_c/\omega^2)} \label{4.111}
+\end{equation}
+を用いると、
+
+\begin{equation}
+  \begin{aligned}
+    (\omega^2 - c^2k^2 - \alpha)E_x + i\alpha\frac{\omega_c}{\omega}E_y &= 0\\
+    (\omega^2 - c^2k^2 - \alpha)E_y - i\alpha\frac{\omega_c}{\omega}E_x &= 0
+  \end{aligned} \label{4.112}
+\end{equation}
+と書ける。係数行列式を0とおくことから、
+
+\begin{equation}
+  (\omega^2 - c^2k^2 - \alpha)^2 = (\alpha\omega_c/\omega)^2 \label{4.113}
+\end{equation}
+
+\begin{equation}
+  \omega^2 - c^2k^2 - \alpha = \pm \alpha\omega_c/\omega \label{4.114}
+\end{equation}
+それゆえ
+
+\begin{align}
+  \omega^2 - c^2k^2 &= \alpha\left(1 \pm \frac{\omega_c}{\omega}\right) = \frac{\omega^2_p}{1 - (\omega^2_c/\omega^2)}\left(1 \pm \frac{\omega_c}{\omega}\right) \nonumber \\
+                    &= \omega^2_p \frac{1 \pm (\omega_c/\omega)}{[1 + (\omega_c/\omega)][1 - (\omega_c/\omega)]} = \frac{\omega^2_p}{1 \mp (\omega_c/\omega)} \label{4.115}
+\end{align} 
+$\mp$の2つの符号は、\eqref{4.112}式には2つの解があり、$\bm{B}_0$に沿って伝わることのできる波は2種類あることを表す。分散関係は
+
+\begin{equation}
+  \boxed{\tilde{n}^2 = \frac{c^2k^2}{\omega^2} = 1 - \frac{\omega^2_p/\omega^2}{1 - (\omega_c/\omega)}} \hspace{2pc} (\text{R\,波}) \label{4.116}
+\end{equation}
+
+\begin{equation}
+  \boxed{\tilde{n}^2 = \frac{c^2k^2}{\omega^2} = 1 - \frac{\omega^2_p/\omega^2}{1 + (\omega_c/\omega)}} \hspace{2pc} (\text{L\,波})\label{4.117}
+\end{equation}
+である。R波とL波は円偏光であり、RとLの意味はそれぞれ、右回り円偏光および左回り円偏光を表す（Problem\,4.17）。その形状は図\refeq{fig4.38}に示される。
+R波およびL波は$k^2$にのみ依存するので、$\bm{E}$の回転方向は$k$の正負によらない。つまり、偏光は反対方向に伝播する波についても同じである。
+
+ここまでをまとめると、$\bm{B}_0$に沿って伝播する主な電磁波は、右回り（R）および左回り（L）の円偏波である。$\bm{B}_0$を横切って伝播する主な波は、平面偏光波（O波）および楕円偏光波（X波）である。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.38.png}
+  \caption{$\bm{B}_0$に沿って伝播する右回りおよび左回り円偏光波}
+  \label{fig4.38}
+\end{figure}
+
+次に、R波とL波の共鳴とカットオフを考える。R波については、$\omega=\omega_c$で$k$は無限大となり、そのとき波は電子のサイクロトロン運動に共鳴する。これは、R波は電子の旋回と同じ向きに回転するため、$\omega=\omega_c$では波は電子を常に加速することになり、
+電磁エネルギーが電子の運動に吸収されて伝播できなくなるためである。一方、L波は反対方向に回転するため、電子とサイクロトロン共鳴をせず、\eqref{4.117}式からわかるように、正の$\omega$に対して共鳴点を持たない。
+以上の考察にイオンの運動も考慮に入れるとすれば、L波もイオンの回転と同じに回転するので、$\omega=\Omega_c$で共鳴する。
+
+カットオフは\eqref{4.116},\eqref{4.117}式で$k=0$とすることによって得られる。2つまとめて、
+
+\[
+  1 = \frac{\omega^2_p/\omega^2}{1\mp \omega_c/\omega}
+\]
+\[
+  1 \pm \frac{\omega_c}{\omega} = \frac{\omega^2_p}{\omega^2}
+\]
+\[
+  \omega^2 \mp \omega \omega_c - \omega^2_p = 0
+\]
+となる。これはX波のカットオフと同じ式となっている（\eqref{4.107}式）。したがって、カットオフ周波数は\eqref{4.108}式と同じである。そのため、前節で$\omega_R$,$\omega_c$と表記したのである。
+
+R波とL波の分散関係は図\refeq{fig4.39}に示される。L波は低い周波数で非伝播領域を持ち、カットオフが$\omega_p$ではなく$\omega_L$で起こると考えれば、O波と同様にふるまうと考えられる。
+R波は$\omega_c$と$\omega_R$の間に非伝播領域を持ち、$\omega_c$以下に$v_phi < c$の第2の伝播帯を持つ。この低周波数領域の波はホイスラーモードと呼ばれ、電離層の現象の研究において極めて重要である。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.39.png}
+  \caption{L波とR波の分散図。非伝播領域は2つの波で異なるので、斜線は施していない。}
+  \label{fig4.39}
+\end{figure}
+
+
+\subsection{磁気流体波} \label{section4.18}
+
+
 
 
 
