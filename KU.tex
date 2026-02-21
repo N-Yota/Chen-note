@@ -2712,15 +2712,25 @@ Maxwell方程式から、
     v_{iy} &= \frac{e}{M\omega}\frac{\Omega_c}{\omega}\left(1 - \frac{\Omega^2_c}{\omega^2}\right)^{-1}E_1
   \end{aligned} \label{4.120}
 \end{equation}
-  対応する電子の運動方程式の解は、$M\to m$, $e\to -e$, $\Omega_c \to -\omega_c$とし、$\omega^2_c \gg \omega^2$の極限をとればよい。
+$\Omega^2_c \gg \omega^2$の極限を考えると、
+
+\begin{equation*}
+  \begin{aligned}
+    v_{ix} &= -\frac{ie\omega}{M\Omega^2_c}E_1 = \frac{e}{M\Omega_c}\cdot \frac{M}{eB_0}\cdot \frac{dE_1}{dt} = \frac{1}{\Omega_cB_0}\frac{dE_1}{dt}\\
+    v_{iy} &= -\frac{e}{M\Omega_c}E_1 = -\frac{E_1}{B_0}
+  \end{aligned}
+\end{equation*}
+$v_{ix}$は分極ドリフトを表し、$v_{iy}$は$\bm{E}\times \bm{B}$ドリフトを表している。
+
+対応する電子の運動方程式の解は、$M\to m$, $e\to -e$, $\Omega_c \to -\omega_c$とし、$\omega^2_c \gg \omega^2$の極限をとればよい。
 
 \begin{equation}
   \begin{aligned}
     v_{ex} &= \frac{ie}{m\omega}\frac{\omega^2}{\omega^2_c}E_1\to 0\\
     v_{ey} &= -\frac{e}{m}\frac{\omega_c}{\omega^2_c}E_1 = -\frac{E_1}{B_0}
-  \end{aligned}
+  \end{aligned} \label{4.121}
 \end{equation}
-  この極限において、電子のLarmor回転は無視され、電子は単にy方向に$\bm{E}\times \bm{B}$ドリフトすることになる。これらの解を\eqref{4.119}式に代入することで、
+この極限において、電子のLarmor回転は無視され、ここでも電子は単にy方向に$\bm{E}\times \bm{B}$ドリフトすることになる。これらの解を\eqref{4.119}式に代入することで、
 
 \begin{equation}
   \epsilon_0(\omega^2 - c^2k^2)E_1 = -i\omega n_0e\frac{ie}{M\omega}\left(1 - \frac{\Omega^2_c}{\omega^2}\right)^{-1}E_1 \label{4.122}
@@ -2739,7 +2749,13 @@ Maxwell方程式から、
 \begin{equation}
   \frac{\omega^2}{k^2} = \frac{c^2}{1 + (\rho/\epsilon_0B^2_0)c^2} \label{4.124}  
 \end{equation}
-となる。この式の分母は、低周波かつ磁場に垂直な運動（$\perp$方向）に対するプラズマの誘電定数と等しい（付録\ref{Appendix1}参照）。
+となる。この式の分母は、低周波かつ磁場に垂直な運動に対するプラズマの誘電定数$\epsilon_R$と等しい（付録\ref{Appendix1}参照）。
+これより、\eqref{4.124}式は、
+
+\begin{equation} \label{4.124.0}
+  \frac{\omega^2}{k^2} = \frac{c^2}{\epsilon_R}
+\end{equation}
+と表される。
 
 この式の解釈は通常の誘電体中の電磁波と比較するとわかりやすい。電流なしの波動方程式は、
 
@@ -2759,35 +2775,217 @@ Maxwell方程式から、
 となる。ここで、比誘電率$\epsilon_r = \epsilon/\epsilon_0$,および比透磁率$\mu_r = \mu/\mu_0$を用いると、誘電体中の電磁波の分散関係：
 
 \begin{equation}
-  \boxed{\frac{\omega^2}{k^2} = \frac{c^2}{\epsilon_r \mu_r}} \label{4.124.0}
+  \frac{\omega^2}{k^2} = \frac{c^2}{\epsilon_r \mu_r} \label{4.124.1}
 \end{equation}
 が得られる。
 
-\eqref{4.124}式と\eqref{4.124.0}式を比較すると、$\mu_r=1$において、\eqref{4.124}式は単に誘電媒質中の電磁場の位相速度を与える。
-プラズマの誘電定数を$\epsilon$とすると、
+\eqref{4.124.0}式と\eqref{4.124.1}式を比較すると、$\mu_r=1$において、\eqref{4.124.0}式は単に誘電媒質中の電磁場の位相速度を与えることがわかる。
 
-\[
-  \frac{\omega}{k} = \frac{c}{\epsilon^{1/2}}
-\]
-実験室プラズマでは$\epsilon$は1よりずっと大きいので、近似的に、
+実験室プラズマでは$\epsilon_R$は1よりずっと大きいので、
+
+\begin{equation}
+  \epsilon_R = 1 + \frac{\mu_0 \rho c^2}{B} = 1 + \frac{\rho}{\epsilon_0B^2} \simeq \frac{\rho}{\epsilon_0B^2} \label{4.124.2}
+\end{equation}
+と表すことができる。よって、その位相速度は、近似的に、
 
 \begin{equation}
   \frac{\omega}{k} = v_\phi = \frac{B_0}{(\mu_0\rho)^{1/2}} \label{4.125}
 \end{equation}
-と書ける。これらの波は、Alfven速度と呼ばれ、一定速度$v_A$で$\bm{B}_0$に沿って伝播する：
+と書ける。これらの波は、一定速度$v_A$で$\bm{B}_0$に沿って伝播し、\textcolor{red}{Alfven速度}と呼ばれる：
 
 \begin{equation}
   \boxed{v_A \equiv B_0/(\mu_0\rho)^{1/2}} \label{4.126}
 \end{equation}
+これは、摂動が磁力線上を伝播する際の特性速度となる。\eqref{4.124.2}式の誘電定数は、Alfven速度を用いて、次のように表される：
+
+\begin{equation}
+  \epsilon_R = \epsilon/\epsilon_0 = 1 + (c^2/v^2_A)
+\end{equation}
+かなり密度の高い、よく電離したプラズマでは$v_A$は小さく、したがって$\epsilon_R$は大きいことは留意されたい。
+
+Alfven波の物理的機構を理解するには、この波は次式で示される変動磁場$\bm{B}_1$によって与えられる電磁波であることから話を始める。
+
+\begin{equation}
+  \nabla \times \bm{E}_1 = -\dot{\bm{B}}_1,\hspace{2pc} E_x = (\omega/k)B_y \label{4.128}
+\end{equation}
+$\bm{B}_0$に小さな成分$B_y$が加えられると、図\refeq{fig4.46}に示すように、磁力線に正弦状の小波ができる。図中に示されている点では、$B_y$は正であるため、式\eqref{4.128}より、$E_x$も正のx方向である。
+電場$E_x$は、プラズマを負のy方向に$\bm{E}_1 \times \bm{B}_0$ドリフトさせる。これにより、図\ref{fig4.45}に示したように、流体はy方向に左右するのである。その速度は$|E_x/B_0|$である。
+式\eqref{4.120}，\eqref{4.121}から、イオンも電子も同じ軌道を描く。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.46.png}
+  \caption{Alfven波中で振動している量の間の関係と磁力線の変形（誇張されている）}
+  \label{fig4.46}
+\end{figure}
+
+次に、磁力線の上下の速度を求めてみよう。磁力線の関係は、
+\[
+  \frac{dy}{dz} = \frac{B_y}{B_z} = \frac{B_y}{B_0}
+\]
+ここで、$B_y$の波をいつものように$B_y = \tilde{B}e^{i(kz - \omega t)}$と仮定し、これを代入すると、
+
+\[
+  \frac{dy}{dz} = \frac{\tilde{B}}{B_0}e^{i(kz - \omega t)}
+\]
+zで積分することで、
+
+\[
+  y(z, t) = i\frac{\tilde{B}}{kB_0}e^{i(kz - \omega t)}
+\]
+を得る。これより、求めたい磁力線の速度は、
+
+\begin{equation}
+  \left|\frac{\partial y}{\partial t}\right| = \left|i\frac{\tilde{B}}{kB_0}\frac{\partial}{\partial t}e^{i(kz - \omega t)}\right| = \left|\frac{\omega \tilde{B}}{kB_0}e^{i(kz - \omega t)}\right| = \frac{\omega}{k}\left|\frac{B_y}{B_0}\right| \label{4.128.0}
+\end{equation}
+である。これは式\eqref{4.128}によれば、ちょうど流体速度$|E_x/B_0|$に等しい。
+
+このように、流体と磁力線はちょうど粒子が磁力線に張り付いているかのように一緒に振動する。つまり、磁力線は、あたかも張力をかけられた糸のように振る舞い、Alfven波は、その糸がはじかれたときに起こる攪乱の伝播とみなすことができる。
+この、磁力線に凍り付いて一緒に動くプラズマという概念は、多くの低周波プラズマ現象を理解するのに有効である。このことは、$\bm{B}$に沿って電場がない限りいつも成り立つ。
+
+我々が仮定した電場$E_x$がどのような要因によって維持されているのかを明らかにする必要が残されている。$\bm{E}_1$が変動すると、イオンは慣性により電子より遅れ、$\bm{E}_1$の方向に分極ドリフト$\bm{v}_p$が生じる。
+式\eqref{4.120}で与えられるこのドリフト$v_{ix}$は、ｘ方向の電流$\bm{j}_1$のもととなり、その結果、流体に働く力$\bm{j}_1 \times \bm{B}_1$はy方向となる。この力は$\bm{v}_1$と位相が$\ang{90}$ずれており、振動子が力と変位が逆向きであるため振動するように、これも振動する。
+振動を持続させる要因はイオンの慣性がオーバーシュートを引き起こすためである。
 
 
+\subsection{磁気音波} \label{section4.19}
+最後に，$\bm{B}_0$を横切って伝播する低周波数の電磁波を考える．設定は，再び$\bm{B}_0 = B_0\hat{\bm{z}}$，$\bm{E}_1=E_1\hat{\bm{x}}$であるが，進行方向に関しては$\bm{k}=k\hat{\bm{y}}$とする（図\refeq{fig4.50}）．
+$\bm{E}_1 \times \bm{B}_0$ドリフトは$\bm{k}$方向であるから，プラズマは振動で圧縮されたり膨張したりする．したがって，前にはなかった$\nabla p$の項を運動方程式中に付け加える必要がある．
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig4.50.png}
+  \caption{$\bm{B}_0$に垂直に伝播する磁気音波}
+  \label{fig4.50}
+\end{figure}
+
+イオンに対して，
+
+\begin{equation}
+  Mn_0\frac{\partial \bm{v}_{i1}}{\partial t} = en_0(\bm{E}_1 + \bm{v}_{i1} \times \bm{B}_0) - \gamma_iKT_i\nabla n_1 \label{4.129}
+\end{equation}
+$\bm{E}_1$と$\bm{k}$の向きを考えると，各成分は，
+
+\begin{equation}
+  v_{ix} = \frac{ie}{M\omega}(E_x + v_{iy}B_0) \label{4.130} 
+\end{equation}
+\begin{equation}
+  v_{iy} = \frac{ie}{M\omega}(-v_{ix}B_0) + \frac{k}{\omega}\frac{\gamma_iKT_i}{M}\frac{n_1}{n_0} \label{4.131}
+\end{equation}
+
+連続の方程式は，
+
+\[
+  \frac{\partial n}{\partial t} + \nabla \cdot (n\bm{v}_{i1}) = 0
+\]
+から，$n = n_0 + n_1$，および$n_1\bm{v}_{i1}$は無視できることに注意すると，
+\begin{equation}
+  \frac{n_1}{n_0} = \frac{k}{\omega}v_{iy} \label{4.132}
+\end{equation}
+したがって，式\eqref{4.131}は次のようになる：
+
+\begin{equation}
+  v_{iy} = -\frac{ie}{M\omega}v_{ix}B_0 + \frac{k^2}{\omega^2}\frac{\gamma_iKT_i}{M}v_{iy} \label{4.133}
+\end{equation}
+ここで，
+
+\[
+  A \equiv \frac{k^2}{\omega^2}\frac{\gamma_iKT_i}{M}
+\]
+とおくと，
+
+\begin{equation}
+  v_{iy}(1-A) = -\frac{i\Omega_c}{\omega}v_{ix} \label{4.134}
+\end{equation}
+これを式\eqref{4.130}と組み合わせて
+
+\begin{equation}
+  \begin{gathered}[c]
+    v_{ix} = \frac{ie}{M\omega}E_x + \frac{i\Omega_c}{\omega}\left(-\frac{i\Omega_c}{\omega}\right)(1-A)^{-1}v_{ix}\\
+    v_{ix}\left(1 - \frac{\Omega^2_c/\omega^2}{1-A}\right) = \frac{ie}{M\omega}E_x
+  \end{gathered} \label{4.135}
+\end{equation}
+を得る．これは，我々の必要とする$\bm{v}_{i1}$の唯一の解である．というのは，波動方程式\eqref{4.81}の非自明な解は
+
+\begin{equation}
+  \epsilon_0(\omega^2 - c^2k^2)E_x = -i\omega n_0e(v_{ix}-v_{ex}) \label{4.136}
+\end{equation}
+だけだからである．$v_{ex}$を得るためには，式\eqref{4.135}の中を書き換え、電子の質量が小さいという極限をとればよい．ゆえに，
+
+\[
+  \left(1 - \frac{\Omega^2_c/\omega^2}{1-A}\right)^{-1} \simeq \left(\frac{\Omega^2_c/\omega^2}{1-A}\right)^{-1}
+\]
+の近似を用いて，
+
+\begin{equation}
+  v_{ex} = \frac{ie}{m\omega}\frac{\omega^2}{\omega^2_c}\left(1 - \frac{k^2}{\omega^2}\frac{\gamma_eKT_e}{m}\right)E_x \rightarrow -\frac{ik^2}{\omega B^2_0}\frac{\gamma_e KT_e}{e}E_x \label{4.137}
+\end{equation}
+ここで，電子の熱速度$v^2_{the} = \frac{KT_e}{m}$，および$\omega^2\ll k^2v^2_{the}$から
+
+\[
+ \left(1 - \frac{k^2}{\omega^2}\frac{\gamma_eKT_e}{m}\right) = \left(1 - \frac{k^2v^2_{the}}{\omega^2}\gamma_e\right) \simeq - \frac{k^2}{\omega^2}\frac{\gamma_eKT_e}{m}
+\]
+を用いた．この近似は熱速度が遅いイオンでは成り立たない．
+
+式\eqref{4.136}に式\eqref{4.135}，\eqref{4.137}を代入すると，
+
+\begin{equation}
+  \epsilon_0(\omega^2 - c^2k^2)E_x = -i\omega n_0e\left[\frac{ie}{M\omega}E_x\left(\frac{1-A}{1-A-(\Omega^2_c/\omega^2)}\right) + \frac{ik^2M}{\omega B^2_0}\frac{\gamma_eKT_e}{eM}E_x\right] \label{4.138}
+\end{equation}
+$\omega^2 \ll \Omega^2_c$より，$1-A$は$\Omega^2_c/\omega^2$に比べ無視され，$\Omega_p$と$v_A$の定義から，
+
+\begin{equation}
+  \begin{gathered}
+    (\omega^2 - c^2k^2) = -\frac{\Omega^2_p}{\Omega^2_c}\omega^2(1-A) + \frac{k^2c^2}{v^2_A}\frac{\gamma_eKT_e}{M}\\
+    \omega^2 - c^2k^2\left(1 + \frac{\gamma_eKT_e}{M}\right) + \frac{\Omega^2_p}{\Omega^2_c}\left(\omega^2 - k^2\frac{\gamma_iKT_i}{M}\right) = 0
+  \end{gathered} \label{4.139}
+\end{equation}
+を得る．さらに，
+
+\begin{equation}
+  \frac{\Omega^2_p}{\Omega^2_c} = \frac{n_0e^2}{\epsilon_0M}\cdot \frac{M^2}{e^2B^2_0} = \frac{n_0M}{\epsilon_0B^2_0c^2}\cdot c^2 = \frac{c^2}{v^2_A} \label{4.140}
+\end{equation}
+であるので，式\eqref{4.139}は次のようになる：
+
+\begin{equation}
+  \omega^2\left(1 + \frac{c^2}{v^2_A}\right) = c^2k^2\left(1 + \frac{\gamma_eKT_e + \gamma_iKT_i}{Mv^2_A}\right) = c^2k^2\left(1 + \frac{v^2_s}{v^2_A}\right) \label{4.141}
+\end{equation}
+ここで，$v_s$は先の音速であり，最終的に，
+
+\begin{equation}
+  \boxed{\frac{\omega^2}{k^2} = c^2\frac{v^2_s + v^2_A}{c^2 + v^2_A}} \label{4.142}
+\end{equation}
+を得る．これは，$\bm{B}_0$に垂直に伝播する磁気音波の分散関係である．磁気音波は$\bm{E}\times \bm{B}$ドリフトによる圧縮と膨張によって生じる音波である．
+$\bm{B}_0\rightarrow0$，$v_A\rightarrow0$の極限では，磁気音波は通常のイオン音波になる．$KT\rightarrow0$の極限では，$v_s\rightarrow0$となり，圧力勾配による力は消え，波は修正されたAlfven波になる．
+磁気音波モードの位相速度はほとんど常に$v_A$より大きくなり，このことからしばしば，単に「速い磁気流体波」と呼ばれることもある．
 
 
+\subsection{基本的なプラズマ波のまとめ} \label{section4.20}
+この章で扱ったプラズマ波をまとめる．
+\vskip\baselineskip
 
+電子波（静電的）
+\begin{align}
+  B_0=0\quad \text{または}\quad \bm{k}\parallel\bm{B}_0\,:\hspace{1pc}
+  \omega^2 &= \omega_p^2 + \frac{3}{2}k^2 v_{th}^2
+  \quad \text{（プラズマ振動）}
+  \label{4.143}\\
+  \bm{k}\perp \bm{B}_0\,:\hspace{1pc}
+  \omega^2 &= \omega_p^2 + \omega_c^2 = \omega_h^2
+  \quad \text{（高域混成振動）}
+  \label{4.144}
+\end{align}
 
-
-
-
+イオン波（静電的）
+\begin{align}
+  \bm{B}_0 = 0 \quad \text{または}\quad \bm{k}\parallel \bm{B}_0\,: \hspace{1pc}
+  \omega^2 &= k^2v^2_s\notag \\
+           &= k^2\frac{\gamma_eKT_e + \gamma_iKT_i}{M}\quad \text{（音波）}\\ \label{4.145} 
+  \bm{k}\perp \bm{B}_0\,:\hspace{1pc}
+  \omega^2 &= \Omega^2_c + k^2v^2_s \quad \text{（静電的イオンサイクロトロン波）}\\
+           &\text{あるいは}\notag \\
+  \omega^2&=\omega^2_l = \Omega_c\omega_c \quad \text{（低域混成振動）}          
+\end{align}
 
 
 
