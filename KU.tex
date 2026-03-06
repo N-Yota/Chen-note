@@ -14,6 +14,7 @@
 \usepackage{cancel}
 \usepackage{float} % ← プリアンブルに追加
 \usepackage{titlesec}
+\usepackage{enumitem}
 \numberwithin{equation}{section} % 数式番号をセクションごとに分ける
 \titleformat{\subsubsection}
   {\normalfont\large\bfseries}
@@ -1554,10 +1555,10 @@ $v_x$を次の2つに分けて考える。
 \]
 としてもよい。これと$\bm{B}$との外積をとると
 \begin{align*}
-  0 &= qn[\bm{E}\times \bm{B} + (\bm{V}_\perp \times \bm{B})\times \bm{B}] - \nabla p \times \bm{B}\\
+  0 &= qn[\bm{E}\times \bm{B} + (\bm{v}_\perp \times \bm{B})\times \bm{B}] - \nabla p \times \bm{B}\\
     &= qn[\bm{E}\times \bm{B} + \bm{B}(\bm{v}_\perp \cdot \bm{B}) -\bm{v}_\perp \bm{B}^2] - \nabla p \times \bm{B}
 \end{align*}
-式変形にベクトル解析の公式$\bm{A}\times (\bm{B}\times \bm{C}) = (\bm{A}\cdot \bm{C})\bm{B} - (\bm{A}\times \bm{B})\bm{C}$を用いた。第二項は0になる。これより、
+式変形にベクトル解析の公式$\bm{A}\times (\bm{B}\times \bm{C}) = (\bm{A}\cdot \bm{C})\bm{B} - (\bm{A}\times \bm{B})\bm{C}$を用いた。第2項は0になる。これより、
 
 \begin{equation}
   \bm{v}_\perp = \frac{\bm{E}\times \bm{B}}{B^2} - \frac{\nabla p \times \bm{B}}{qnB^2} \equiv \bm{v}_E + \bm{v}_D \label{3.63}
