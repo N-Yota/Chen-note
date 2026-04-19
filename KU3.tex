@@ -83,6 +83,106 @@
 
 
 
+0次の電子流は存在しないので，電子によって運ばれる1次の電流は次のように与えられる：
+
+\begin{equation}
+  j_1 = -en_0u_1 = -e(\omega/k)n_1 = i\epsilon_0\omegaE_1 = -\epsilon_0\dot{E}_1 \label{16.9}
+\end{equation}
+これをMaxwell方程式：
+
+\begin{equation}
+  \nabla \times \bm{B}_1 = \mu_0\bm{j}_1 + \mu_0\epsilon_0\dot{\bm{E}}_1 \label{16.10}
+\end{equation}
+に代入することで，摂動された磁場が存在しないことが示される．すなわち，この「縦波」は（「縦」とは$\bm{E}_1 \parallel \bm{k}$を意味する）先に述べたように確かに静電的である．
+縦波が一般に静電的であることを確認する別の方法として，任意の摂動量$\bm{X}_1$が$\exp[i(\bm{k}\cdot \bm{x} -\omega t)]$の形で変化する場合，$\nabla \times \bm{X}_1$は$i\bm{k}\times \bm{X}_1$と同じになることを用いることができる．
+もし$\bm{E}_1$が$\bm{k}$に平行であれば，$\nabla \times \bm{E}_1 = 0$となる．これは$i\omega\bm{B}=0$を意味する．
+
+まず、式\eqref{16.7}を$n_0u_1$について解くと，
+
+\begin{equation}
+  n_0u_1 = (\omega/k)n_1 \label{16.11}
+\end{equation}
+となる．また，式\eqref{16.8}を$E_1$について解くと
+
+\begin{equation}
+  E_1 = -en_1/ik\epsilon_0 \label{16.12}
+\end{equation}
+となる．そして，これらを式\eqref{16.6}に代入して，1次の量としてのみを含む方程式を得る．すると，
+
+\begin{equation}
+  \frac{i\omega^2mn_1}{k} = -\frac{e^2n_0n_1}{ik\epsilon_0} + 3iTn_1 \label{16.13}
+\end{equation}
+が得られる．ここで，両辺に$-ik/mn_1$を掛ける（自明な解$n_1=0$を除くと仮定する）と，Bohm-Gross分散関係が得られる．これはBohmとGrossによって最初に導かれたものである：
+
+\begin{equation}
+  \omega^2 = \omega^2_{pe} + \frac{3k^2T}{m} = \omega^2_{pe} + 3k^2v^2_{t,e} \label{16.14}
+\end{equation}
+ここで，$\omega_{pe}$は「電子プラズマ振動数」であり，次のように与えられる：
+
+\begin{equation}
+  \omega^2_{pe} \equiv \frac{n_ee^2}{\epsilon_0m_e} \label{16.15}
+\end{equation}
+また，$v_{t,e}=(T/m)^{1/2}$は通常の電子の熱速度である\footnote{1次元のMaxwell分布から導かれる結果である．詳しくは\url{https://bluepost69-tech.hatenablog.com/entry/2016/11/06/182915}を見てほしい．}．イオンにも同様にイオンプラズマ振動数が定義される（その定義にはすべてイオンの量が入る）が，こちらはあまり一般的ではないため，添字なしで$\omega_p$と書かれる場合は通常$\omega_{pe}$を指す．
+
+式\eqref{16.14}は$\omega=\omega(k)$の形に書くことができる．このような関係は「分散関係」と呼ばれ，この場合は静電的プラズマ波，すなわちLangmuir波に対応している．
+このBohm-Gross分散関係は，図\ref{fig16.2}に示されているように，両辺を$\omega_p$で割ることで無次元化された軸上にプロットすると便利である．
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig16.2.png}
+  \caption{無磁場プラズマ中における高周波静電Langmuir波のBohm-Gross分散関係．}
+  \label{fig16.2}
+\end{figure}
+まず最初に，$\omega<\omega_p$の場合には，Langmuir波はまったく存在しないことに注意する．さらに，$\omega>\omega_p$の波は，有限温度効果の結果としてのみ現れる．
+長波長（すなわち小さい$k$）や低温の場合，波の位相速度$\omega/k$（これは原点から分散曲線への直線の傾きに比例する）は，任意に大きくなり得て，電子の熱速度よりもはるかに大きくなり，さらには光速$c$を超えることさえある．
+これは確かに，断熱近似の仮定を正当化する\footnote{波の速度が熱速度よりも速いため，熱が追いつかず，熱のやり取りがない．だから断熱として扱えるのである．}．すなわち，熱伝導は移動する波の前面に追いつくことができない．
+これとは対照的に、群速度$\partial \omega/\partial k$（これは分散曲線の接線の傾きに比例する）は，この領域ではゼロに近づくため，情報やエネルギーは伝播しない．
+この低$k$における伝播しない振動は，「プラズマ振動」と呼ばれることがある．これは，この新しい物質状態において最初に観測された振動であったためである．
+
+一方で、大きな$k$（短波長）または高温の場合には，Bohm-Gross分散関係は電子音波にかなり似た形になる．このとき，群速度と位相速度の両方が$\sqrt{3}v_{t,e}$に収束し，波は音波のような仕方で前方へ伝播する．
+気体中の音波とは対照的に，この場合の力学は電場と圧力勾配$\nabla p_e$の両方によって媒介される．しかしながら，最大の違いは，波の位相速度に近い速度で運動する粒子群に関連した無衝突の運動論的効果を考慮したときに現れる．
+これらの効果は「ランダウ減衰」と呼ばれ，第24章で議論される．
+
+
+\subsection{イオン音波} \label{section16.2}
+次に，無磁場プラズマ中のもう一つの縦波（$\bm{k}\parallel \bm{E}_1$，したがって静電波）を考えよう．この場合，周波数が十分に低いため，イオンが運動に参加できると仮定する（そして後でそれを確認する）．
+一方で電子は，振動の時間スケールにおいてほぼ完全な力の釣り合い（すなわちボルツマン分布）を確立できるとする．
+また、これまでと同様に$\bm{B}_0=0$とし，さらに$\bm{k}\parallel \bm{E}_1$を仮定するので，$\bm{B}_1=0$でもある．
+このとき，スカラー圧力を仮定したイオン流体の運動方程式は次のようになる：
+
+\begin{equation}
+  Mn_i[\dot{\bm{u}}_i + (\bm{u}_i \cdot \nabla)\bm{u}_i] = en_i\bm{E} - \nabla p_i \label{16.16} 
+\end{equation}
+ここで，$M$はイオンの質量を表し，また$Z=1$を仮定している．
+さて（通常どおり），この方程式を線形化する．振動が静電的であることを利用して，$\bm{E}_1$をポテンシャルの勾配として書く（$\nabla \times \bm{E}_1$\footnote{ベクトル解析の基本事実：$\nabla \times \bm{E} =0$であれば，$\bm{E}=-\nabla \phi$を思い出そう．$\nabla \times \bm{E}=0$}であれば，線積分が経路によらない．したがって，ポテンシャル$\phi$が定義できるのである．）．また，状態方程式を用いて$p_{i1}$と$n_{i1}$を関係づける．
+さらに，通常のように平面波かつ正弦波の仮定を行い，この無磁場の縦波においては，流体の運動は$\bm{k}$方向以外を向く理由がないことに注意する．したがって，$u_{i1}$はスカラー量，すなわち$\bm{k}$方向の成分として扱う．
+すると，式\eqref{16.16}は次のようになる：
+
+\begin{equation}
+  -i\omega Mn_{i0}u_{i1} = -en_{i0}ik\phi_1 - \gamma_iT_iikn_{i1} \label{16.17}
+\end{equation}
+電子については，ボルツマン分布を仮定する：
+
+\begin{equation}
+  \begin{aligned}
+    n_e &= n_{e0}\exp (e\phi_1/T_e) \approx n_{e0}(1+e\phi_1/T_e)\\
+    n_{e1} &= n_{e0}(e\phi_1/T_e) 
+  \end{aligned} \label{16.18}
+\end{equation}
+
+次にPoisson方程式を用いると（もし小さい$k$の極限，すなわち$k\lambda_D\ll 1$のみを扱うのであれば，デバイ遮蔽の知識から準中性条件$n_{i1}=n_{e1}$を用いることもできる．）
+
+\begin{equation}
+  \epsilon_0\nabla \cdot \bm{E}_1 = \epsilon_0k^2\phi_1 = e(n_{i1} - n_{e1}) = e[n_{i1 - n_{e0}(e\phi_1/T_e)}] \label{16.19}
+\end{equation}
+を得る．これにより，$n_{i1}$を$\phi_1$の関数として解くことができる．すなわち
+
+\begin{equation}
+  n_{i1} = [n_{i0}(e/T_e)+\epsilon_0k^2/e]\phi_1 \label{16.20}
+\end{equation}
+
+
+
 
 
 
